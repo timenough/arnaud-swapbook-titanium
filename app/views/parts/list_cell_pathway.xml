@@ -1,0 +1,16 @@
+<Alloy>
+	<TableViewRow class="templateCell">
+		<View class="template_container">
+			<View class="list_img_row_container" id="bookPhotoContainer" bindId="bookPhotoContainer">
+				<ImageView id="bookPhoto" bindId="bookPhoto" class="list_img_row" image="http://micefa.org/wp-content/uploads/2011/07/Photo-GM-Paris-Diderot2-1024x682.jpg" />
+			</View>
+			<Label id="bookTitle" bindId="bookTitle" class="labl row_title" text="Paris 7 - Diderot" />
+		</View>
+		<View id="bookAuthor" bindId="bookAuthor" height="0" width="0" visible="false" />
+		<View id="bookEdition" bindId="bookEdition" height="0" width="0" visible="false" />
+		<View id="bookDescription" bindId="bookDescription" height="0" width="0" visible="false" />
+		<View id="bookPrices" bindId="bookPrices" height="0" width="0" visible="false" />
+		<View id="bookSellers" bindId="bookSellers" height="0" width="0" visible="false" />
+		<View id="bookIsReco" bindId="bookIsReco" height="0" width="0" visible="false" />
+	</TableViewRow>
+</Alloy>

@@ -1,0 +1,587 @@
+".window":{
+	width:'100%',
+	backgroundColor: "#ffffff",
+	orientationModes: [
+        Ti.UI.PORTRAIT
+    ]
+},
+".window[platform=android]": {
+	exitOnClose: true
+},
+
+".content":{
+	top: 110,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: false,
+},
+
+".start_screen":{
+	top: 135,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'vertical',
+	width: '100%',
+	height:"180dp",
+	visible: false
+},
+
+	".start_img":{
+		top:0,
+		width:"150dp",
+		height:"150dp",
+		zIndex: 2
+	},
+	
+	".start_labl":{
+		top: '6dp',
+		height: 26,
+		width:"150dp",
+		color:Alloy.Globals.BLUE_COLOR,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		wordWrap: false,
+		font:{
+			fontSize: 23,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".start_labl[platform=ios]":{
+		font:{
+			fontSize: 19,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+
+".code":{
+	top: 110,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'horizontal',
+	backgroundColor: "#CCd6d6d6",
+	zIndex: 100,
+	width: '100%',
+	height: '50dp',
+	visible: false
+},
+
+	".code_labl":{
+		top: '15dp',
+		height: 20,
+		left: 15,
+		color:"black",
+		wordWrap: true,
+		font:{
+			fontSize: 20
+		},
+	},
+	".code_labl[platform=ios]":{
+		font:{
+			fontSize: 18
+		},
+	},
+	
+	".code_button":{
+		top: '13dp',
+		height: 26,
+		left: 15,
+		width:"100dp",
+		color:"#ffffff",
+		borderRadius: 12,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		wordWrap: false,
+		font:{
+			fontSize: 22,
+			fontFamily:"Wask_New_Bold"
+		},
+		backgroundColor:Alloy.Globals.BLUE_COLOR
+	},
+	".code_button[platform=ios]":{
+		font:{
+			fontSize: 18,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+
+".field-container":{
+	left: 0,
+	bottom: 58,
+	height:80,
+	backgroundColor:'transparent',
+	borderWidth:0,
+	borderRadius:0,
+	layout:'absolute',
+	touchEnabled: true,
+	zIndex:10
+},
+
+".field-over-container":{
+	left: 0,
+	bottom: 58,
+	height:80,
+	backgroundColor:'#ffffff',
+	zIndex:9
+},
+
+".top_border": {
+	top: 0,
+	width:'100%',
+	height: 2,
+	backgroundColor: '#949494'
+}
+
+".view-field":{
+	top: 13,
+	left:'12dp',
+	color:'#868686',
+	width:'90%',
+	height:'34dp',
+	borderWidth:1,
+	borderRadius:16,
+	borderColor:'#d6d6d6',
+	backgroundColor:'#ffffff',
+    backgroundSelectedColor:'transparent',
+    backgroundFocusedColor:'transparent',
+    zIndex:4,
+},
+
+".field":{
+	top:5,
+	left:42,
+	height:'22dp',
+	width:'74%',
+	color:'#868686',
+	maxLength: 700,
+	wordWrap: false,
+	suppressReturn: false,
+	backgroundColor:'#ffffff',
+	textAlign: 'left',
+	verticalAlign: 'top',
+	keyboardType: Ti.UI.KEYBOARD_TYPE_DEFAULT,
+  	returnKeyType: Ti.UI.RETURNKEY_DEFAULT,
+	font:{
+		fontSize:21,
+	},
+	zIndex: 3,
+},
+".field[platform=ios]":{
+	font:{
+		fontSize:17,
+	},
+},
+
+".photo":{
+	left:'20dp',
+	top: 12,
+	layout:'horizontal',
+	width:34,
+	height:34,
+	touchEnabled: true,
+	zIndex:10
+},
+
+".send":{
+	right:'10dp',
+	bottom: '12dp',
+	width:58,
+	height:58,
+	touchEnabled: true,
+	zIndex:10,
+	borderRadius:28,
+	backgroundColor:'#ffffff',
+},
+
+".modal_menuOuter": {
+	right: "-280dp",
+	width: "280dp",
+	height: "100%",
+	layout:'vertical',
+	backgroundColor:"#ffffff",
+	borderRadius: 0,
+	zIndex:900
+},
+
+".modal_menuOuter_shadow": {
+	right: "-15dp",
+	width: "15dp",
+	height: "100%",
+	backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '100%', y: '0%' },
+        endPoint: { x: '0%', y: '0%' },
+        colors: [ 
+        	{ color: '#65000000', offset: 0 },
+      		{ color: '#00000000', offset: 1 } 
+       	],
+   },
+	zIndex:899
+},
+	
+	"#modal_banner": {
+		top: 0,
+		left: 0,
+		width: Alloy.Globals.backdropImageWidth,
+		height:"150dp",
+	},
+		
+		"#modal_banner_img":{
+			top:-75,
+			left:0,
+			width:"280dp",
+			height:"280dp",
+			zIndex: 2
+		},
+
+		"#modal_banner_overlay":{
+			top: 0, 
+			height:'100%',
+			width:'100%',
+			zIndex: 3,
+		},
+
+		".fille":{
+			backgroundGradient: {
+		        type: 'linear',
+		        startPoint: { x: '0%', y: '0%' },
+		        endPoint: { x: '0%', y: '100%' },
+		        colors: [ 
+		        	{ color: '#e6e893b6', offset: 0 },
+		      		{ color: '#1ae893b6', offset: 1 } 
+		       	],
+		    }
+		},
+
+		".garcon":{
+			backgroundGradient: {
+		        type: 'linear',
+		        startPoint: { x: '0%', y: '0%' },
+		        endPoint: { x: '0%', y: '100%' },
+		        colors: [ 
+		        	{ color: '#e61f67ab', offset: 0 },
+		      		{ color: '#1a1f67ab', offset: 1 } 
+		       	],
+		    }
+		},
+		
+		"#modal_banner_img_user":{
+			top: 24,
+			width: 90,
+			height:90,
+			borderRadius: 44,
+			zIndex: 20
+		},
+		
+		"#modal_banner_uname":{
+			bottom:7,
+			height:24,
+			width:'100%',
+		  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color:"#fff",
+			zIndex: 4,
+			wordWrap: true,
+			font:{
+				fontSize: 20,
+				fontFamily:"Wask_New_Bold"
+			}
+		},
+		"#modal_banner_uname[platform=ios]":{
+			font:{
+				fontSize: 16,
+				fontFamily:"WaskNew-Bold",
+			}
+		},
+		
+		"#user_rename":{
+			visible: false,
+			height: 24,
+			bottom:6,
+			width:268,
+			maxlength: 80,
+		  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color:"#fff",
+			zIndex: 6,
+			borderWidth: 1,
+			borderRadius: 0,
+			borderColor: "#fff",
+			backgroundColor: "transparent",
+			suppressReturn: false,
+			keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+			returnKeyType:Ti.UI.RETURNKEY_DEFAULT,
+			borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+			font:{
+				fontSize: 20,
+				fontFamily:"Wask_New_Bold"
+			}
+		},
+		"#user_rename[platform=ios]":{
+			font:{
+				fontSize: 16,
+				fontFamily:"WaskNew-Bold"
+			}
+		},
+		
+		"#addGroupPhoto": {
+			top: 42,
+			left:26,
+			width: 42,
+			height:42,
+			zIndex: 20,
+			opacity: 0.9
+		},
+		
+		"#goToUserProfile": {
+			top: 42,
+			left:26,
+			width: 42,
+			height:42,
+			zIndex: 20,
+			opacity: 0.9,
+			visible: false
+		},
+		
+		"#modal_close": {
+			top: 54,
+			right:34,
+			width: 22,
+			height:22,
+			zIndex: 20
+		},
+	
+	"#modal_search": {
+		top: 0,
+		left: 0,
+		layout:'absolute',
+		width: '100%',
+		height:'30dp',
+		borderWidth:0,
+		borderRadius:0,
+		backgroundColor:"#fff",
+		touchEnabled: true
+	},
+		
+		".modal_search_view_field":{
+			top: 0,
+			left: 9,
+			color:'#868686',
+			width:'263dp',
+			height:'100%',
+			borderRadius:10,
+		    zIndex:4,
+		},
+		
+		".modal_search_photo":{
+			left:18,
+			top: 6,
+			width:18,
+			height:18,
+			opacity: 0.5,
+			zIndex:10
+		},
+		
+		".modal_search_field":{
+			color:'#868686',
+			width:'84%',
+			left:34,
+			height: '80%',
+			zIndex: 3,
+			font:{
+				fontSize:19,
+			},
+		},
+		".modal_search_field[platform=ios]":{
+			font:{
+				fontSize:15,
+			},
+		},
+
+	".renameGroup": {
+		top:0,
+		left:0,
+		width:"100%",
+		height:"34dp",
+		color:"#949494",
+		borderWidth: 0,
+		backgroundColor:"#ffffff",
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		font:{
+			fontSize: 24,
+			fontFamily:"Wask_New_Bold"
+		}
+	},
+	".renameGroup[platform=ios]":{
+		font:{
+			fontSize: 18,
+			fontFamily:"WaskNew-Bold"
+		}
+		},
+
+	"#renameGroupSave": {
+		color:Alloy.Globals.BLUE_COLOR,
+		visible: false,
+		height:0
+	},
+			
+	"#modal_participants_list": {
+		top: 0,
+		left: 0,
+		width: Alloy.Globals.backdropImageWidth,
+		height:"142dp",
+		layout:'vertical',
+		backgroundColor:"#ffffff",
+		showVerticalScrollIndicator: false,
+		showHorizontalScrollIndicator: false,
+	},
+	
+	"#modal_possible_list": {
+		top: 0,
+		left: 0,
+		width: Alloy.Globals.backdropImageWidth,
+		height:"70%",
+		layout:'vertical',
+		backgroundColor:"#ffffff",
+		showVerticalScrollIndicator: false,
+		showHorizontalScrollIndicator: false,
+	},
+		
+		".user_conv_template_container":{
+			left: 0,
+			height: 70,
+			width: Ti.UI.FILL,
+			borderRadius: 0,
+			touchEnabled:true,
+		},
+		".user_conv_template_container[platform=ios]":{
+			left: 0,
+		},
+		
+			".user_conv_photo_container":{
+				left: 13,
+				top: 8,
+				width: 54,
+				height: 54,
+				borderRadius: 27,
+			},
+			".user_conv_photo_container[platform=ios]":{
+				left: 13,
+			},
+			
+				".user_conv_photo":{
+					top:0,
+					left:0,
+					width: '100%',
+					height:  '100%',
+				},
+		
+			".labl":{
+				left:78,
+				color:'#3b3b3b',
+				verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+				font:{
+					fontSize: 16,
+					fontFamily:"sans-serif"
+				},
+			},
+			".labl[platform=ios]":{
+				font:{
+					fontSize: 12,
+					fontFamily:"sans-serif"
+				},
+			},
+			
+			".user_conv_name":{
+				top:8,
+				layout:"vertical",
+				color:Alloy.Globals.BLUE_COLOR,
+				height:26,
+				wordWrap: true,
+				width:'58%',
+				textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+				touchEnabled:true,
+				font:{
+					fontSize: 21,
+					fontFamily:"Wask_New_Bold"
+				},
+			},
+			".user_conv_name[platform=ios]":{
+				font:{
+					fontSize: 17,
+					fontFamily:"WaskNew-Bold"
+				},
+			},
+			
+			".user_conv_friends":{
+				top:30,
+				color:"#949292",
+				wordWrap: false,
+				font:{
+					fontSize: 13
+				},
+			},
+			".user_conv_friends[platform=ios]":{
+				font:{
+					fontSize: 9
+				},
+			},
+			
+			".user_conv_last_status_date":{
+				left:76,
+				top:46,
+				color:"#949292",
+				wordWrap: false,
+				font:{
+					fontSize: 15,
+					fontFamily:"Wask_New_Italic"
+				},
+				touchEnabled:true,
+			},
+			".user_conv_last_status_date[platform=ios]":{
+				font:{
+					fontSize: 11,
+					fontFamily:"WaskNew-Italic"
+				},
+			},
+			
+			".online":{
+				color: '#04ca2e',
+				font:{
+					fontSize: 17,
+					fontFamily:"Wask_New_Bold"
+				},
+			},
+			".online[platform=ios]":{
+				font:{
+					fontSize: 13,
+					fontFamily:"WaskNew-Bold"
+				},
+			},
+		
+			".btn":{
+				top: 19,
+				right:"17dp",
+				width: 30,
+				height: 30,
+				touchenabled: true
+			},
+			
+			".user_conv_delete":{
+				opacity: 0.7,
+			},
+		
+			".user_conv_add":{
+				opacity: 0.9,
+			},
+		
+			".user_conv_separator": {
+				bottom: 0,
+				width:'100%',
+				height: 0.5,
+				backgroundColor: '#e0e0e0'
+			},
+		
+"#tabBar": {
+	backgroundColor: "transparent",
+	zindex: 10
+}

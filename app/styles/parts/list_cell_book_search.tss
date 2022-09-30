@@ -1,0 +1,248 @@
+".templateCell":{
+		height: 140,
+		width: Ti.UI.FILL,
+		borderRadius: 0,
+		touchEnabled:true,
+	},
+	
+	".template_container":{
+		left: '13dp',
+	},
+	".template_container[platform=ios]":{
+		left: 0,
+	},
+		
+		".list_img_book_container":{
+			left: 6,
+			top: 15,
+			height: 108,
+			width: 92,
+			layout: 'horizontal',
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			borderRadius: 0
+		},
+		".list_img_book_container[platform=ios]":{
+			left: 10,
+		},
+		
+			".list_img_book":{
+				top:0,
+				height: '100%',
+				zIndex:2,
+				borderWidth:'3dp',
+				borderColor:"#fff",
+			},
+			".list_img_book[platform=ios]":{
+				borderColor:"transparent",
+			},
+		
+		".labl":{
+			color:'#3b3b3b',
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+			font:{
+				fontSize: 16,
+				fontFamily:"sans-serif"
+			},
+		},
+		".labl[platform=ios]":{
+			font:{
+				fontSize: 12,
+				fontFamily:"sans-serif"
+			},
+		},
+		
+		".book_title":{
+			top:14,
+			color:"black",
+			left:92,
+			font:{
+				fontSize: 11,
+				fontWeight: 'bold',
+			},
+			height: 42,
+			width: '49%',
+			wordWrap: false,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+			touchEnabled:true,
+		},
+		".book_title[platform=ios]":{
+			left:112,
+			font:{
+				fontSize: 15,
+				fontWeight: 'bold',
+			},
+		},
+	
+		".book_title[if=Alloy.Globals.iPhoneShortWidth]":{
+			width: '45%',
+			height: 52,
+		},
+		
+		".book_reco":{
+			bottom:24,
+			left:38,
+			width: 54,
+			height: 26,
+			zIndex: 4,
+			color:"white",
+			backgroundColor: "red",
+			borderColor: "white",
+			borderRadius: 4,
+			borderWidth: 1,
+			font:{
+				fontSize: 11
+			},
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+			wordWrap: false
+		},
+		".book_reco[platform=ios]":{
+			left:52,
+			font:{
+				fontSize: 7
+			},
+		},
+			
+		".book_author":{
+			top:56,
+			left:92,
+			height: 12,
+			width: '50%',
+			wordWrap: false,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+			color:Alloy.Globals.BLUE_COLOR_v3,
+			touchEnabled:true,
+			font:{
+				fontSize: 15,
+				fontWeight: 'bold',
+			}
+		},
+		".book_author[platform=ios]":{
+			left:112,
+			font:{
+				fontSize: 11,
+				fontWeight: 'bold',
+			},
+		},
+	
+		".book_author[if=Alloy.Globals.iPhoneShortWidth]":{
+			top:62,
+		},
+		
+		".book_edition":{
+			top:73,
+			left:92,
+			height: 12,
+			width: '50%',
+			wordWrap: false,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+			color:Alloy.Globals.BLUE_COLOR,
+			touchEnabled:true,
+			font:{
+				fontSize: 15,
+			}
+		},
+		".book_edition[platform=ios]":{
+			left:112,
+			font:{
+				fontSize: 11
+			},
+		},
+	
+		".book_edition[if=Alloy.Globals.iPhoneShortWidth]":{
+			width: '40%',
+			top:80,
+		},
+		
+		".book_desc":{
+			top:91,
+			height:40,
+			left:92,
+			color:Alloy.Globals.BLUE_COLOR_v3,
+			font:{
+				fontSize: 16,
+				fontFamily:"Wask_New_Italic"
+			},
+			touchEnabled:true,
+			wordWrap: true,
+			width: '42%',
+		},
+		".book_desc[platform=ios]":{
+			left:112,
+			font:{
+				fontSize: 12,
+				fontFamily:"WaskNew-Italic"
+			},
+		},
+	
+		".book_desc[if=Alloy.Globals.iPhoneShortWidth]":{
+			visible: false
+		},
+		
+		".book_prices":{
+			layout:"horizontal",
+			top:16,
+			right:30,
+			color:"white",
+			zIndex:10,
+			backgroundColor:Alloy.Globals.BLUE_COLOR,
+			borderColor:"#ffffff",
+			width: 68,
+			height: 68,
+			borderRadius: 34,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+			touchEnabled:true,
+			wordWrap: true,
+			font:{
+				fontSize: 25,
+				fontFamily:"Wask_New_Bold"
+			}
+		},
+		".book_prices[platform=ios]":{
+			font:{
+				fontSize: 21,
+				fontFamily:"WaskNew-Bold"
+			}
+		},
+	
+		".book_prices[if=Alloy.Globals.iPhoneShortWidth]":{
+			top:30,
+			right:18,
+		},
+		
+		".book_sellers":{
+			bottom:16,
+			right:25,
+			height: 32,
+			color:Alloy.Globals.BLUE_COLOR_v3,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			width: 80,
+			wordWrap: false,
+			touchEnabled:true,
+			font:{
+				fontSize: 14,
+				fontFamily:"Wask_New_Bold_Italic"
+			}
+		},
+		".book_sellers[platform=ios]":{
+			font:{
+				fontSize: 12,
+				fontFamily:"WaskNew-BoldItalic"
+			}
+		},
+	
+		".book_sellers[if=Alloy.Globals.iPhoneShortWidth]":{
+			width: Ti.UI.SIZE,
+			bottom:0,
+			right:18,
+		},
+	
+		"#separator": {
+			bottom: 0,
+			width:'100%',
+			height: 0.5,
+			backgroundColor: '#ffffff'
+		}
+	

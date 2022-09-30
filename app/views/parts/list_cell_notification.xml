@@ -1,0 +1,15 @@
+<Alloy>
+	<TableViewRow class="templateCell">
+		<View id="rowContainer" bindId="rowContainer" class="template_container">
+			<View id="photoContainer" bindId="photoContainer" class="notif_photo_container">
+				<ImageView id="notiPhoto" bindId="notiPhoto" class="notif_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" gotoProfile="false" />
+			</View>
+			<Label id="notiText" bindId="notiText" class="labl notif_text" text="Parfait, on se retrouve samedi matin devant le parvis de l'université" />
+			<Label id="notiDate" bindId="notiDate" class="notif_text_date" text="Aujourd'hui à 20h31" />
+			<ImageView id="Decline" bindId="Decline" class="decline" image="/images/crossBlue.png" />
+			<ImageView id="Accept" bindId="Accept" class="accept" image="/images/validate.png" />
+			<View id="separator" bindId="separator" />
+		</View>
+		<Label id="Supprimer" bindId="Supprimer" class="notif_delete" text="Supprimer" />
+	</TableViewRow>
+</Alloy>

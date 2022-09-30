@@ -1,0 +1,110 @@
+".templateCell":{
+	top: 0,
+	height: 110,
+	width: Ti.UI.FILL,
+	borderRadius: 0,
+	touchEnabled:true,
+},
+
+".template_container":{
+	left: 0,
+	height: 110,
+	width: Ti.UI.FILL,
+	borderRadius: 0,
+	touchEnabled:true,
+},
+".template_container[platform=ios]":{
+	left: 0,
+},
+
+	".user_photo_container":{
+		left: 20,
+		top: 16,
+		width: 76,
+		height: 76,
+		borderWidth: 1,
+		borderColor: 'gray',
+		borderRadius: 38,
+	},
+	
+		".user_photo":{
+			top:0,
+			left:0,
+			width: '100%',
+			height:  '100%',
+		},
+
+	".labl":{
+		left:116,
+		width:"100%",
+		color:'#949292',
+		wordWrap: false,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+		font:{
+			fontSize: 14,
+			fontFamily:"sans-serif"
+		},
+	},
+	".labl[platform=ios]":{
+		font:{
+			fontSize: 10,
+			fontFamily:"sans-serif"
+		},
+	},
+	
+	".user_name":{
+		top:16,
+		layout:"vertical",
+		color:Alloy.Globals.BLUE_COLOR,
+		height:26,
+		wordWrap: true,
+		width:'50%',
+		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+		touchEnabled:true,
+		font:{
+			fontSize: 26,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".user_name[platform=ios]":{
+		font:{
+			fontSize: 22,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+	".user_friends":{
+		top:40,
+		color:"#949292",
+		wordWrap: false,
+	},
+	
+	".user_univ":{
+		top:66,
+		color:"black",
+	},
+	
+	".user_diplome":{
+		top:82,
+		color:"black",
+	},
+	
+	".btn":{
+		top: 24,
+		right: 24,
+		width: 60,
+		height: 60,
+		borderRadius: 30,
+		borderWidth: 1,
+		borderColor: '#ee5c5f',
+		touchenabled: true
+	},
+
+	".user_separator": {
+		bottom: 0,
+		width:'92%',
+		height: 0.5,
+		backgroundColor: '#b9b8b8'
+	},
+	

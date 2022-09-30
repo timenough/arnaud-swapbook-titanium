@@ -1,0 +1,179 @@
+".templateCell":{
+		height: 160,
+		width: Ti.UI.FILL,
+		borderRadius: 0,
+		touchEnabled:true
+	},
+	
+	".template_container":{
+		left: '13dp',
+	},
+	".template_container[platform=ios]":{
+		left: 0,
+	},
+		
+		".list_img_book_container":{
+			touchEnabled:true,
+			left: 6,
+			top: 15,
+			height: 128,
+			width: 110,
+			layout: 'horizontal',
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			borderRadius: 0
+		},
+		".list_img_book_container[platform=ios]":{
+			left: 10,
+		},
+		
+			".list_img_book":{
+				top:0,
+				height: '100%',
+				zIndex:2,
+				borderWidth:'3dp',
+				borderColor:"#fff",
+			},
+			".list_img_book[platform=ios]":{
+				borderColor:"transparent",
+			},
+		
+		".labl":{
+			left:102,
+			color:'#3b3b3b',
+			touchEnabled:true,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+			font:{
+				fontSize: 16,
+				fontFamily:"sans-serif"
+			},
+		},
+		".labl[platform=ios]":{
+			left:128,
+			font:{
+				fontSize: 12,
+				fontFamily:"sans-serif"
+			},
+		},
+		
+		".book_title":{
+			top:18,
+			width: '66%',
+			height: 28,
+			layout:"vertical",
+			color:"black",
+			font:{
+				fontSize: 24,
+				fontWeight: 'bold',
+			},
+			textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+			wordWrap: true
+		},
+		".book_title[platform=ios]":{
+			font:{
+				fontSize: 18
+			},
+		},
+	
+		".book_title[if=Alloy.Globals.iPhoneShortWidth]":{
+			width: '60%',
+			wordWrap: false,
+			font:{
+				fontSize: 13
+			},
+		},
+			
+		".book_author":{
+			top:45,
+			height: 12,
+			width: '46%',
+			wordWrap: false,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+			color:"black",
+			font:{
+				fontSize: 15,
+				fontWeight: 'bold',
+			}
+		},
+		".book_author[platform=ios]":{
+			font:{
+				fontSize: 11
+			},
+		},
+		
+		".book_edition":{
+			top:60,
+			width: '48%',
+			wordWrap: true,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+			height:20,
+			color:"#949292",
+			touchEnabled:true,
+			font:{
+				fontSize: 15,
+			}
+		},
+		".book_edition[platform=ios]":{
+			font:{
+				fontSize: 10
+			},
+		},
+		
+		".book_price":{
+			top:81,
+			height:20,
+			color: Alloy.Globals.BLUE_COLOR,
+			font:{
+				fontSize: 15,
+				fontWeight: "bold",
+			}
+		},
+		".book_price[platform=ios]":{
+			font:{
+				fontSize: 13,
+				fontWeight: "bold",
+			},
+		},
+		
+		".book_sale_statut":{
+			top:100,
+			height:20,
+			color:"#949292",
+			font:{
+				fontSize: 9,
+				fontFamily:"Wask_New_Italic"
+			}
+		},
+		".book_sale_statut[platform=ios]":{
+			font:{
+				fontSize: 14,
+				fontFamily:"WaskNew-Italic"
+			},
+		},
+		
+		".code_statut":{
+			top:122,
+			height:22,
+			color:"red",
+			borderWidth:1,
+			borderRadius:6,
+			borderColor:"red",
+			backgroundColor: '#ffffff',
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+			font:{
+				fontSize: 15,
+			}
+		},
+		".code_statut[platform=ios]":{
+			font:{
+				fontSize: 11
+			},
+		},
+	
+		"#separator": {
+			bottom: 0,
+			width:'90%',
+			height: 0.5,
+			backgroundColor: '#b7b5b5'
+		}
+	

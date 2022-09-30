@@ -1,0 +1,14 @@
+<Alloy>
+  <Window id="window" navBarHidden ="true">
+  	
+    <View id="one" class="content1">
+        <Require src="page_2_a_1_messages" id="TheLeft" />
+		<View id="sepa" class="separator" />
+    </View>
+
+    <View id="two" class="content2">
+        <Require src="page_2_a_2_oneconversation" passedData='{"id":-1,"titre":"titre par defaut","type":"duo","theme":"garcon","image":"images/Default.png","after_sale":false}' />
+    </View>
+    
+  </Window>
+</Alloy>

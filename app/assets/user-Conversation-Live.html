@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+
+        <title>Messenger</title>
+
+        <meta http-equiv="content-type"                 content="text/html; charset=utf-8" />
+        <meta http-equiv="x-ua-compatible"              content="IE=edge" />
+
+        <meta name="viewport"                           content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly"                   content="true" />
+        <meta name="MobileOptimized"                    content="320" />
+        <meta name="apple-mobile-web-app-capable"       content="yes" />
+
+        <style type="text/css" media="all">
+            *{
+                outline:none;
+                position:relative;
+                cursor:default;
+                box-sizing:border-box; 
+                -moz-box-sizing:border-box; 
+                -webkit-box-sizing:border-box;
+            }
+
+            *::after{
+                box-sizing:border-box; 
+                -moz-box-sizing:border-box; 
+                -webkit-box-sizing:border-box;
+            }
+
+            *::before{
+                box-sizing:border-box; 
+                -moz-box-sizing:border-box; 
+                -webkit-box-sizing:border-box;
+            }
+
+            html{
+                min-width:320px;
+            }
+
+            body{
+                background-color:white;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                font-style:normal;
+                -moz-font-feature-settings:normal;
+                -moz-font-language-override:normal;
+                -x-system-font:none;
+                font-size-adjust:none;
+                font-stretch:normal;
+                font-variant:normal;
+                min-width:320px;
+                vertical-align:middle;
+                display:block;
+                margin:0;
+                padding:12px 12px 12px 20px;
+                position:relative;
+            }
+
+            div{
+                margin:auto;
+                padding:0;
+                border:none;
+                overflow:hidden;
+                vertical-align:middle;
+            }
+
+            ol,ul,li{
+                display:inline-block;
+                list-style:none;
+                list-style-image:none;
+                list-style-position:outside;
+                list-style-type:none;
+                vertical-align: bottom;
+            }
+
+            ul.horizontal li{
+                vertical-align:top;
+                display:inline;
+            }
+
+            ul.vertical li{
+                vertical-align:middle;
+                display:block;
+            }
+
+            .u{
+                text-decoration:underline;
+            }
+
+            a,a>*{
+                display:inline-block;
+                cursor:pointer;
+                text-decoration:none;
+                color:#FFF;
+            }
+
+            a:hover,a:focus,a:visited{
+                color:silver;
+            }
+
+            /**********************************/
+
+            .animable{
+                -webkit-transition:all 240ms linear;  
+                -moz-transition:all 240ms linear;  
+                -o-transition:all 240ms linear;  
+                -ms-transition:all 240ms linear;  
+                transition:all 240ms linear;
+            }
+
+            ul.messenger{
+                margin: 0;
+                padding: 0;
+                position: relative;
+                left:0;
+                width: 100%;
+                height: auto;
+                display: block;
+                float: left;
+            }
+
+            ul.messenger li{
+                margin: 0;
+                padding: 0;
+                float: left;
+                width:inherit;
+                position: relative;
+                height: auto;
+                margin-bottom:12px;
+            }
+
+            ul.messenger li.date{
+                font-size: .6em;
+                color: #616161;
+                text-align: center;
+            }
+
+            ul.messenger.un_loaded{
+                position: fixed;
+                left: 20px;
+                bottom: 0;
+            }
+
+            ul.messenger.rm{
+                /*visibility:hidden;*/
+            }
+
+            ul.messenger.on{
+                visibility:visible;
+            }
+
+            ul.messenger li.date button{
+                color: gray;
+                margin: 0;
+                margin-top: 12px;
+                font-size: 1.2em;
+                border: none;
+                background-color: transparent;
+                text-align: center;
+                padding: 0 6px;
+                display: inline;
+            }
+
+            ul.messenger li.date button:first-child{
+                border-right:1px solid #d0d0d0;
+                padding-right: 10px;
+            }
+
+            ul.messenger li.left_message{
+                text-align: left;
+            }
+
+            ul.messenger li.right_message{
+                text-align: right;
+            }
+
+            ul.messenger li#the_last_item{
+                margin-bottom: 94px;
+            }
+
+            ul.messenger li.un_loaded{
+                visibility:hidden;
+            }
+
+            ul.messenger.is_group li.last_message{
+                margin-bottom: 32px;
+            }
+
+            ul.messenger.is_group li.right_message p:last-child{
+                margin-bottom: 20px;
+            }
+
+            ul.messenger.is_group li.last_message p:last-child{
+                margin-bottom: 0;
+            }
+
+            ul.messenger li img.user{
+                border-radius: 50%;
+                border: 1px solid #949494;
+                display:inline-block;
+                width: 48px;
+                height: 48px;
+                position:absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+            ul.messenger li p{
+                display: inline-block;
+                text-align: left;
+                margin: 0;
+                padding: 0;
+                width:auto;
+                max-width:70%;
+                border-radius: 18px;
+                padding: 8px 12px;
+                line-height: 1.3em;
+                letter-spacing: 0.2px;
+                vertical-align: baseline;
+                overflow: hidden;
+            }
+
+            ul.messenger li.left_message p{
+                overflow: visible;
+                z-index: 103;
+            }
+
+            ul.messenger li.left_message p span.group_author{
+                display: none;
+            }
+
+            ul.messenger.is_group li.left_message p span.group_author{
+                display: block;
+                position: absolute;
+                left: 14px;
+                top: -22px;
+                color: gray;
+                font-size: .9em;
+                white-space: pre;
+            }
+
+            ul.messenger li.left_message p{
+                                                                                        background-color: #e9787c;
+                left:57px;
+                bottom: 0;
+                color:white;
+                z-index: 102;
+            }
+
+            ul.messenger li.right_message p{
+                                                                                        background-color: #4486c5;
+                color:white;    
+                float: right;
+                overflow: visible;
+            }
+
+            ul.messenger li p.share{
+                width:70%;
+                padding:0;
+            }
+
+            ul.messenger.is_group li.left_message.group p{
+                margin-top: 16px;
+            }
+
+            ul.messenger li.left_message p.groupped {
+                display: block;
+                float: left;
+                clear: both;
+            }
+
+            ul.messenger li.right_message p.groupped {
+                display: block;
+                float: right;
+                clear: both;
+            }
+
+            ul.messenger li.left_message p.s_first {
+                border-bottom-left-radius: 8px;
+            }
+
+            ul.messenger li.right_message p.s_first {
+                border-bottom-right-radius: 8px;
+            }
+
+            ul.messenger li.left_message p.s_middle {
+                border-bottom-left-radius: 8px;
+                border-top-left-radius: 8px;
+                margin-top: 3px !important;
+            }
+
+            ul.messenger li.right_message p.s_middle {
+                border-bottom-right-radius: 8px;
+                border-top-right-radius: 8px;
+                margin-top: 3px !important;
+            }
+
+            ul.messenger li.left_message p.s_last {
+                margin-top: 3px !important;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 18px;
+            }
+
+            ul.messenger li.right_message p.s_last {
+                margin-top: 3px !important;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 18px;
+            }
+
+            ul.messenger li.right_message:last-child p:last-child,
+            ul.messenger li.right_message p.s_last{
+                border-bottom-right-radius: 10px !important;
+            }
+
+            ul.messenger li.left_message p.s_middle span.group_author,
+            ul.messenger li.left_message p.s_last span.group_author{
+                display: none;
+            }
+
+            ul.messenger li p.share a{
+                width:100%;
+                border-radius: inherit;
+                display: block;
+            }
+
+            ul.messenger li p.share a img{
+                width:100%;
+                border-radius: inherit;
+                height:auto;
+            }
+
+            ul.messenger li.writing{
+                margin-top: 10px;
+            }
+
+            ul.messenger li.writing p{
+                width: auto !important;
+                background-color: #dedede !important;
+            }
+
+            ul.messenger li.writing p img{
+                width: 24px !important;
+                height: auto !important;
+                margin: 4px 10px 0 10px !important;
+            }
+
+            /**************** PASTILLES ANNULEES LE 09/03/2017 POUR NE PAS PRENDRE DE RISQUES AVANT LA SORTIE DE L'APP. ****************/
+            
+            /*
+            ul.messenger img.floating_pastille,
+            ul.messenger li.right_message p::after{
+                position: absolute;
+                right: -21px;
+                top: 0;
+                width: 18px;
+                height: 18px;
+                border: none;
+                border-radius: 50%;
+                z-index: 100;
+                background: white;
+            }
+
+            ul.messenger img.floating_pastille{
+                opacity: 0;
+            }
+
+            ul.messenger img.floating_pastille.over{
+                z-index: 101;
+            }
+
+            ul.messenger li.stepped{
+                margin-bottom: 2px;
+            }
+
+            ul.messenger li.right_message p.step1,
+            ul.messenger li.right_message p.step2{
+                margin-bottom: 0 !important;
+            }
+
+            ul.messenger li.right_message p::before{
+                position: absolute;
+                left: 14px;
+                bottom: -20px;
+                color: gray;
+                font-size: 70%;
+                visibility: hidden;
+            }
+
+            ul.messenger li.right_message p.overclick::before{
+                visibility: visible;
+            }
+
+            ul.messenger li.right_message p::after{
+                position: absolute;
+                right: -21px;
+                bottom: 0;
+                display: block;
+                top: auto;
+                margin: 0;
+                padding: 0;
+                content:'';
+            }
+
+            ul.messenger li.right_message p.step1:last-child:before{
+                content:'Envoi en cours...';
+            }
+            ul.messenger li.right_message p.step1::after{
+                background-size: 100% 100%;
+                background-image: url('https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/validate@2x.png')!important;
+            }
+
+            ul.messenger li.right_message p.step2:last-child:before{
+                content:'Envoyé';
+            }
+            ul.messenger li.right_message p.step2::after{
+                background-size: 100% 100%;
+                background-image: url('https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/validateBlue@2x.png')!important;
+            }
+
+            ul.messenger li.right_message p.step3:last-child:before{
+                content:'Vu et lu';
+            }
+            ul.messenger.is_group li.right_message p.step3::before{
+                content:'Vu et lu par tout le monde';
+            }
+            ul.messenger li.right_message p.step3::after{
+                display:none;
+            }
+            */
+
+            * html .imgzoom-container { height: 1%; }
+
+            .imgzoom-overlay {
+                background-color: transparent;
+            }
+
+            .imgzoom-wrap {
+                z-index: 10000 !important;
+                background: transparent;
+                padding: 0;
+                position: fixed;
+                display: table;
+                box-shadow: 5px 5px 20px rgba(0,0,0,.7);
+                -moz-box-shadow: 5px 5px 20px rgba(0,0,0,.7);
+                -webkit-box-shadow: 5px 5px 20px rgba(0,0,0,.7);
+                height: 101% !important;
+            }
+
+            .imgzoom-pre-container {
+                vertical-align: middle;
+                display: table-cell;
+                height: auto;
+                background: black;
+                overflow: hidden;
+            }
+
+            .imgzoom-container {
+                position: relative;
+                margin-bottom: 0.4em;
+                overflow: hidden;
+                z-index: 99;
+            }
+
+            .imgzoom-prev, .imgzoom-next {
+                display: block;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: #000;
+                width: 50%;
+                float: left;
+                line-height: 10em;
+                text-decoration: none;
+                background: url(app://assets/images/imgzoom-blank.gif);
+                overflow: hidden;
+                height: 100%;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                z-index: 100;
+            }
+
+            .imgzoom-prev {
+                margin-left: 0;
+                left: 0;
+            }
+
+            .imgzoom-next {
+                left: 50%;
+                text-align: right;
+            }
+
+            .imgzoom-prev span, .imgzoom-next span {
+                display: block;
+                width: 4em;
+                height: 4em;
+                line-height: 1.5em;
+                vertical-align: middle;
+                padding: 1em;
+                position: absolute;
+                top: 25%;
+                background-color: rgba(0,0,0,.4) !important;
+            }
+
+            .imgzoom-prev span {
+                left: 0;
+            }
+
+            .imgzoom-next span {
+                right: 0;
+            }
+
+            .imgzoom-prev span::before, .imgzoom-next span::before{
+                position: absolute;
+                top: 22px;
+                content: "";
+                display: inline-block;
+                border-top: 0.2em solid white;
+                width: 1.3em;
+                height: 1.3em;
+            }
+
+            .imgzoom-prev span::before{
+                left: 24px;
+                border-left: 0.2em solid white;
+                transform: rotate(-45deg);
+            }
+
+            .imgzoom-next span::before{
+                right: 24px;
+                border-right: 0.2em solid white;
+                transform: rotate(45deg);
+            }
+
+            .imgzoom-prev:hover, .imgzoom-next:hover {
+                visibility: inherit;
+            }
+
+            .imgzoom-wrap-first .imgzoom-prev {
+                display: none;
+            }
+
+            .imgzoom-wrap-last .imgzoom-next {
+                display: none;
+            }
+
+            .imgzoom-counter, .imgzoom-title, .imgzoom-close {
+                float: left;
+                width: 20%;
+                vertical-align: middle;
+            }
+
+            .imgzoom-title {
+                width: 60%;
+                color: #333;
+                font-family: Georgia, serif;
+                font-style: italic;
+                font-size: 110%;
+            }
+
+            .imgzoom-close {
+                float: right;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+                display: inline-block;
+                width: 4em;
+                height: 4em;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 9999;
+                background-color: rgba(0,0,0,.4);
+            }
+
+            .imgzoom-share {
+                cursor: pointer;
+                display: inline-block;
+                overflow: hidden;
+                position: fixed;
+                margin: auto;
+                width: 4em;
+                height: 4em;
+                bottom: 2px;
+                left: 0;
+                right: 0;
+                z-index: 9999;
+                background-color: rgba(0,0,0,.4);
+            }
+
+            .imgzoom-share img{
+                width: 80%;
+                height: 80%;
+                left: 10%;
+                top: 10%;
+                position: absolute;
+            }
+
+            /* https://codepen.io/ndeniche/pen/ljbDL */
+
+            .imgzoom-close::before, .imgzoom-close::after{
+                content: '';
+                position: absolute;
+                width: 42%;
+                top: 54%;
+                left: 28%;
+                background: #fff;
+                height: 3px;
+                margin-top: -4px;
+                border-radius: 5px;
+            }
+
+            .imgzoom-close::before{
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            .imgzoom-close::after {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+        </style>
+
+        <script type="text/javascript"                  src="app://assets/jquery-1.11.3.js"></script>
+        <script type="text/javascript"                  src="app://assets/jquery.imgzoom.js"></script>
+        <script type="text/javascript"                  src="app://assets/jquery.cookie.js"></script>
+        <!--
+        <script type="text/javascript"                  src="jquery-1.11.3.js"></script>
+        <script type="text/javascript"                  src="jquery.imgzoom.js"></script>
+        <script type="text/javascript"                  src="jquery.cookie.js"></script>
+        -->
+
+</head>
+
+<body>
+
+    <ul class="messenger vertical rm un_loaded">
+
+        <!--<li class="date" id="the_first_item">
+            <button class="more">Charger des messages plus anciens</button>
+        </li>-->
+
+        <li class="date un_loaded" id="the_last_item">
+            <button class="gestion" data-participants="0" data-messages="0">0 participants, 0 messages</button>
+            <button class="quit">Quitter la discussion</button>
+        </li>
+
+    </ul>
+
+    <script type="text/javascript">
+
+        var content_prefix                              = 'app://assets/';
+        var imgZoomOptions                              = {
+            duration:               150, 
+            showOverlay:            true, 
+            fastSwitch:             true,
+            opacity:                1,
+            loadingImg:             content_prefix+'images/imgzoom-loading.gif',
+            wrap:                   '<div class="imgzoom-wrap imgzoom-width">'
+                                        +'<div class="imgzoom-pre-container">'
+                                                +'<div class="imgzoom-container imgzoom-width imgzoom-height">'
+                                                +'<a href="#" class="imgzoom-prev arrow"><span></span></a>'
+                                                +'<a href="#" class="imgzoom-next arrow"><span></span></a>'
+                                            +'</div>'
+                                            +'<span class="imgzoom-close"></span>'
+                                            +'<a href="#" class="imgzoom-share"><img src="'+content_prefix+'images/shareWhite@2x.png" alt="Menu"></a>'
+                                        +'</div>'
+                                    +'</div>'
+        };
+        var websocket_endpoint;
+        var websocket                                   = null;
+        var re_connexions_attemps                       = 0;
+        var max_connexions_attemps                      = 25;
+        var last_loads                                  = {};
+        var par_500                                     = 0;
+        var local_count_new_messages                    = 0;
+        var start_total_messages                        = 0;
+        var start_messages_array                        = [];
+        var not_sent_messages_array                     = {};
+        var waiting_for_6_message_to_send               = false;
+        var is_sending_the_pile                         = false;
+        var recheck_for_6_message_to_send               = null;
+        var UpdateConversationParticipantsPastillesTimer= null;
+        var max_rechecks_for_6_message_to_send          = 3;
+        var deja_dit                                    = [];
+        var start_participants_array                    = [];
+        var start_load                                  = '0,200';
+        var start_participants;
+        var start_endpoint;
+        var start_id_user;
+        var start_id_conv;
+
+/* *
+// TESTING
+// http://www.w3schools.com/js/tryit.asp?filename=tryjs_nav_appversion
+content_prefix                      = '';
+websocket_endpoint                  = 'ws://swapbook.daworld.co:9008/api/user-Conversations-Server';
+start_endpoint                      = 'http://swapbook.daworld.co/api/user-Conversation-GetAndRead';
+start_endpoint                      = 'http://swapbook.daworld.co/api/user-Conversation-GetAndRead';
+start_id_conv                       = 2;
+start_load                          = '0,200';
+start_id_user                       = 2;
+if(navigator.appVersion == '5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36')start_id_user= 39; // Chrome Normal
+if(navigator.appVersion == '5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/602.3.12 (KHTML, like Gecko) Version/10.0.2 Safari/602.3.12')start_id_user= 15; // Safari
+if(navigator.appVersion == '5.0 (Macintosh)')start_id_user= 38; // Firefox
+if(navigator.appVersion.indexOf('OPR') > -1)start_id_user= 42; // Opera
+if(navigator.appVersion == '5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/602.3.12 (KHTML, like Gecko) Maxthon/4.5.3')start_id_user= 47; // Maxthon
+console.log('USER === '+start_id_user);
+BeforeExecution_Function_InitConversation(start_endpoint,start_load);
+/* */
+
+        /* ******************** DOCUMENT READY ******************** */
+
+        jQuery(document).ready(function(){
+            
+            /* ******************** 1 = PLUS DE MESSAGES ANCIENS ******************** */
+
+            // jQuery('ul.messenger li.date button.more','body').on('click',function(e){
+
+            //     e.preventDefault();
+    
+            //     Alloy.Globals.preventDoubleClick(this);
+
+            //     if($(this).hasClass('locked'))return;
+            //     if($(this).hasClass('disabled'))return;
+            //     preventDoubleClick(this);
+
+            //     par_500                                 +=500;
+            //     BeforeExecution_Function_InitConversation(start_endpoint,'0,500');  // 0,500 ou bien 500,500 et ainsi de suite
+
+            // });
+            
+            /* ******************** 2 = GESTION PARTICIPANTS ******************** */
+
+            jQuery('ul.messenger li.date button.gestion','body').on('click',function(e){
+
+                e.preventDefault();
+
+                if($(this).hasClass('disabled'))return;
+                preventDoubleClick(this);
+
+                if(typeof Ti != 'undefined')Ti.App.fireEvent('app:fromWebView', {return_commande:'open_add_participants_modal',from_id_sender:0});
+
+            });
+            
+            /* ******************** 3 = QUITTER LA DISCUSSION ******************** */
+
+            jQuery('ul.messenger li.date button.quit','body').on('click',function(e){
+
+                e.preventDefault();
+    
+                if($(this).hasClass('disabled'))return;
+                preventDoubleClick(this);
+
+                if(typeof Ti != 'undefined')Ti.App.fireEvent('app:fromWebView', {return_commande:'quit_the_conversation',from_id_sender:0});
+
+            });
+
+            /* ******************** 4 = LISTEN APPCELERATOR + TITANIUM INPUT ******************** */
+
+            if(typeof Ti != 'undefined')Ti.App.addEventListener('app:fromTitanium', function(e) {
+
+                /* ******************** 1 = LOAD MESSAGES EXISTANTS ******************** */
+
+                if( e.commande == 'init_load_messages_and_start_the_websocket' ){
+
+                    websocket_endpoint                  = e.ws_endpoint;
+                    start_endpoint                      = e.endpoint;
+                    start_id_user                       = e.id_sender;
+                    start_id_conv                       = e.id_conversation;
+                    start_load                          = e.limit;
+                    
+                    BeforeExecution_Function_InitConversation(start_endpoint,start_load);// 0,500 ou bien 500,500 et ainsi de suite
+
+                }
+
+                /* ******************** 2 = AJUSTEMENT DU BOTTOM MARGIN AVANT ENVOI D'UN MESSAGE ******************** */
+
+                else if( e.commande == 'add_margin_at_bottom' ){
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (DEMANDE D\'AJUSTEMENT BIEN RECU) : ');
+                    // if(typeof Ti != 'undefined')Ti.API.info(e.value);
+
+                    jQuery('ul.messenger li#the_last_item').animate({'margin-bottom':e.value},400);
+
+                    setTimeout(function(){
+                        
+                        $('html, body').scrollTop( $(document).height() );
+
+                    },500);
+
+                    setTimeout(function(){
+                        
+                        $('html, body').scrollTop( $(document).height() );
+
+                    },1000);
+
+                }
+
+                /* ******************** 3 = CHANGEMENT DE LA PHOTO DU GROUPE ******************** */
+
+                else if( e.commande == 'tell_people_new_group_photo' ){
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (PHOTO DU GROUPE CHANGE : BIEN RECU)...');
+                    // if(typeof Ti != 'undefined')Ti.API.info(e);
+
+                    /////////////////////
+                    ///////////////////// TRANSMISSION A WEBSOCKET
+                    /////////////////////
+
+                    var websocket_code                  = 'GPNP';
+
+                    if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                    if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                        JSON.stringify(
+                            {
+                                'context_id':           start_id_conv,
+                                'time':                 Math.round(new Date().getTime()/1000),
+                                'signal':               String(websocket_code),
+                                'type':                 String('global'),
+                                'by':                   start_id_user,
+                                'value':                String('Le id_user = '+start_id_user+' a change la photo du groupe'),
+                                'pack':                     {
+                                    'id_sender':                e.id_sender,
+                                    'message_to_show':          String(e.message_to_show),
+                                    'image_to_show':            String(e.image_to_show),
+                                }
+                            }
+                        )
+                    );
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (PHOTO DU GROUPE CHANGE : ENVOYE)...');
+
+                }
+
+                /* ******************** 4 = CHANGEMENT DU NOM DU GROUPE ******************** */
+
+                else if( e.commande == 'tell_people_new_group_name' ){
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (NOM DU GROUPE CHANGE : BIEN RECU)...');
+                    // if(typeof Ti != 'undefined')Ti.API.info(e);
+
+                    /////////////////////
+                    ///////////////////// TRANSMISSION A WEBSOCKET
+                    /////////////////////
+
+                    var websocket_code                  = 'GPNC';
+
+                    if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                    if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                        JSON.stringify(
+                            {
+                                'context_id':           start_id_conv,
+                                'time':                 Math.round(new Date().getTime()/1000),
+                                'signal':               String(websocket_code),
+                                'type':                 String('global'),
+                                'by':                   start_id_user,
+                                'value':                String('Le id_user = '+start_id_user+' a change le nom du groupe'),
+                                'pack':                     {
+                                    'id_sender':                e.id_sender,
+                                    'message_to_show':          String(e.message_to_show),
+                                    'name_to_return':           String(e.name_to_return),
+                                }
+                            }
+                        )
+                    );
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (NOM DU GROUPE CHANGE : ENVOYE)...');
+
+                }
+
+                /* ******************** 5 = NOUVEAU PARTICIPANT A LA DISCUSSION ******************** */
+
+                else if( e.commande == 'tell_people_new_group_member' ){
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (MEMBRE DU GROUPE AJOUTE : BIEN RECU)...');
+                    // if(typeof Ti != 'undefined')Ti.API.info(e);
+
+                    /////////////////////
+                    ///////////////////// CONSEQUENCE LOCALE
+                    /////////////////////
+
+                    jQuery('ul.messenger').addClass('is_group');
+
+                    /////////////////////
+                    ///////////////////// TRANSMISSION A WEBSOCKET
+                    /////////////////////
+
+                    var websocket_code                  = 'GPMA';
+
+                    if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                    if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                        JSON.stringify(
+                            {
+                                'context_id':           start_id_conv,
+                                'time':                 Math.round(new Date().getTime()/1000),
+                                'signal':               String(websocket_code),
+                                'type':                 String('global'),
+                                'by':                   start_id_user,
+                                'value':                String('Le id_user = '+start_id_user+' a ajoute un user au groupe'),
+                                'pack':                     {
+                                    'id_sender':                e.id_sender,
+                                    'message_to_show':          String(e.message_to_show),
+                                    'message_to_return':        String(e.message_to_return),
+                                    'image_to_show':            String(e.image_to_show)
+                                }
+                            }
+                        )
+                    );
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (MEMBRE DU GROUPE AJOUTE : ENVOYE)...');
+
+                }
+
+                /* ******************** 6 = PARTICIPANT SUPPRIME DANS LA DISCUSSION ******************** */
+
+                else if( e.commande == 'tell_people_group_member_deleted' ){
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (MEMBRE DU GROUPE SUPPRIME : BIEN RECU)...');
+                    // if(typeof Ti != 'undefined')Ti.API.info(e);
+
+                    /////////////////////
+                    ///////////////////// TRANSMISSION A WEBSOCKET
+                    /////////////////////
+
+                    var websocket_code                  = 'GPMD';
+
+                    if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                    if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                        JSON.stringify(
+                            {
+                                'context_id':           start_id_conv,
+                                'time':                 Math.round(new Date().getTime()/1000),
+                                'signal':               String(websocket_code),
+                                'type':                 String('global'),
+                                'by':                   start_id_user,
+                                'value':                String('Le id_user = '+start_id_user+' a supprime le id_user = '+e.user_to_remove+' du groupe'),
+                                'pack':                     {
+                                    'id_sender':                e.id_sender,
+                                    'message_to_show':          String(e.message_to_show),
+                                    'user_to_remove':           e.user_to_remove
+                                }
+                            }
+                        )
+                    );
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (MEMBRE DU GROUPE SUPPRIME : ENVOYE)...');
+
+                }
+
+                /* ******************** 7 = EN TRAIN D'ECRIRE ******************** */
+
+                else if( e.commande == 'tell_people_start_typing' ){
+
+                    // 
+                    if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (EN TRAIN D\'ECRIRE : BIEN RECU)...');
+                    // 
+                    if(typeof Ti != 'undefined')Ti.API.info(e);
+
+                    /////////////////////
+                    ///////////////////// TRANSMISSION A WEBSOCKET
+                    /////////////////////
+
+                    var websocket_code                  = 'TYPB';
+                    var user_img                        = JSON.parse(e.user_image);
+
+                    if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                    if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                        JSON.stringify(
+                            {
+                                'context_id':           e.conv_id,
+                                'time':                 Math.round(new Date().getTime()/1000),
+                                'signal':               String(websocket_code),
+                                'type':                 String('global'),
+                                'by':                   start_id_user,
+                                'value':                String('Le id_user = '+start_id_user+' est en train d\'écrire'),
+                                'pack':                     {
+                                    'user_id':                  e.user_id,
+                                    'user_name':                String(e.user_name),
+                                    'user_img':                 String(user_img.current)
+                                }
+                            }
+                        )
+                    );
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (EN TRAIN D\'ECRIRE : ENVOYE)...');
+
+                }
+
+                /* ******************** 8 = N'ECRIS PLUS ******************** */
+
+                else if( e.commande == 'tell_people_stop_typing' ){
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (PLUS EN TRAIN D\'ECRIRE : BIEN RECU)...');
+                    // if(typeof Ti != 'undefined')Ti.API.info(e);
+
+                    /////////////////////
+                    ///////////////////// TRANSMISSION A WEBSOCKET
+                    /////////////////////
+
+                    var websocket_code                  = 'TYPE';
+
+                    if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                    if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                        JSON.stringify(
+                            {
+                                'context_id':           e.conv_id,
+                                'time':                 Math.round(new Date().getTime()/1000),
+                                'signal':               String(websocket_code),
+                                'type':                 String('global'),
+                                'by':                   start_id_user,
+                                'value':                String('Le id_user = '+start_id_user+' n\'est plus en train d\'écrire'),
+                                'pack':                     {
+                                    'user_id':                  e.user_id,
+                                }
+                            }
+                        )
+                    );
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (PLUS EN TRAIN D\'ECRIRE : ENVOYE)...');
+
+                }
+
+                /* ******************** 9 = ENVOI D'UN MESSAGE ******************** */
+
+                else if( e.commande == 'send_message_to_the_websocket' ){
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (NOUVEAU MESSAGE : BIEN RECU)...');
+                    // if(typeof Ti != 'undefined')Ti.API.info(e);
+
+                    send_message_to_the_websocket_PRE_PILE(e);
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (NOUVEAU MESSAGE : ENVOYE)');
+
+                }
+
+                setTimeout(function(){
+                    
+                    $('html, body').scrollTop( $(document).height() );
+
+                },750);
+
+            });
+
+            $('html, body').scrollTop( $(document).height() );
+
+            setTimeout(function(){
+                
+                $('html, body').scrollTop( $(document).height() );
+
+            },750);
+        
+        });
+
+        /* ******************** AJAX CALLS ******************** */
+
+        function RequestsMaker(
+            form_method,
+            form_async,
+            form_endpoint,
+            form_data,
+            input_object,
+            someFiles,
+            silentMode
+        ){
+
+            //if(!silentMode)RequestsLoader('show');
+
+            var AJAX_object                             = {
+                type:                           form_method,
+                url:                            form_endpoint,
+                data:                           form_data,
+                async:                          form_async,
+                dataType:                       'json',
+                cache:                          false,
+                timeout:                        11000
+            };
+
+            if(someFiles){
+
+                AJAX_object['contentType']              = false;
+                AJAX_object['processData']              = false;
+                
+            }
+
+            var AJAX_call                               = jQuery.ajax(AJAX_object)
+                .always(function(_JSON_answer){
+
+                    /************* ASYNCHRONOUS *************/
+
+                    if(
+                        form_async &&
+                        input_object != null &&
+                        typeof input_object['async_params'] != 'undefined'
+                    ){
+
+                        var answer                      = typeof _JSON_answer['responseJSON'] !== 'undefined' ? _JSON_answer['responseJSON'] : _JSON_answer;
+                        input_object['async_execution'](answer,input_object['async_params']);
+
+                    }
+
+                    /************* SYNCHRONOUS *************/
+
+                    else{
+
+                        if(input_object != null)input_object.JSON= _JSON_answer;
+
+                    }
+
+                    //RequestsLoader('hide');
+
+                })
+                .fail(function(jqXHR, textStatus, errorThrown){
+
+                    /************* ASYNCHRONOUS *************/
+
+                    if(form_async){
+                
+                    }
+
+                    /************* SYNCHRONOUS *************/
+
+                    else{
+
+                        if(input_object != null)input_object.JSON= {
+                            'error':                    501,
+                            'error-message':            'Impossible de se connecter au Endpoint de cette API'
+                        };
+
+                    }
+
+                    /*****************************/
+                    /* ALERT */
+                    /*****************************/
+                    if(jqXHR.status != 403){
+                        
+                        if(jqXHR.status == 413){
+                            
+                            // Ti.API.info('+++++++ INSIDE WEBVIEW : Le fichier que vous avez tenté d\'envoyer pèse plus lourd que le poids limite accepté par notre serveur');
+                            
+                        }
+                        else{
+                            
+                            // Ti.API.info('+++++++ INSIDE WEBVIEW : Une erreur liée au serveur et de type "'+errorThrown+'" empêche la bonne exécution de votre requête');
+                            
+                        }
+                        
+                    }
+                    
+                });
+
+        };
+
+        /* ******************** AJAX BEFORE PROCESS FUNCTIONS ******************** */
+
+        function BeforeExecution_Function_InitConversation(endpoint,_load){
+
+            // LOCK DU LOAD MORE
+            // jQuery('ul.messenger li.date button.more').addClass('locked');
+
+            /* ********* EXEC PREVENT 2 ******** */
+
+            if( typeof last_loads.init_conversation != 'undefined' ){
+
+                var new_load                            = (new Date().getTime()) / 1000;
+                var new_load_diff                       = new_load - last_loads.init_conversation;
+
+                if(new_load_diff < 8){
+
+                    if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (DEJA EXECUTE MOINS DE 8 SECONDES)');
+                    return;
+
+                }
+
+            }
+
+            /* ********* QUERY PREPARATION ********* */
+
+            var request_input                           = [];
+            request_input['async_execution']            = AfterExecution_Function_InitConversation;
+            request_input['async_params']               = {id_user:start_id_user,mode:'start_messenger'};
+
+            /* ********* QUERY ********* */
+
+            RequestsMaker(
+                'POST',
+                true,
+                endpoint,
+                {
+                    id_user:                            start_id_user,
+                    id_conv:                            start_id_conv,
+                    load:                               _load,
+                },
+                request_input,
+                false,
+                false
+            );
+
+        };
+
+        /* ******************** AJAX AFTER PROCESS FUNCTIONS ******************** */
+
+        function AfterExecution_Function_InitConversation(JSON_returned,local_params){
+
+            if(
+                typeof JSON_returned['error'] !== 'undefined'
+            ){
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (error) : '+JSON_returned['error-message']);
+                
+            }
+            else{
+
+                /********** 1 = RECEIVED API DATAS ************/
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (success) : '+JSON_returned['output-array']);
+
+                /********** 2 = EXEC PREVENT 1 ************/
+
+                if(typeof JSON_returned['output-array'] != 'undefined'){
+
+                    last_loads.init_conversation        = (new Date().getTime()) / 1000;
+
+                }
+
+                /********** 3 = PRE-PARSING ************/
+
+                jQuery('ul.messenger li.rm').remove();
+                jQuery('ul.messenger').removeClass('un_loaded');
+
+                start_participants_array                = JSON_returned['output-array-participants'];
+
+                /********** 4 = PARSING API DATAS ************/
+
+                if(JSON_returned['output-array'].length > 0){
+                    
+                    start_total_messages                = 0;
+                    start_messages_array                = JSON_returned['output-array'];
+                    var local_array                     = GroupSucessiveMessagesOfOneUser(start_messages_array);
+                    var cookies_test_array              = $.cookie('not_sent_messages_array_CONV_'+start_id_conv);
+
+                    if ( typeof cookies_test_array == 'undefined' ){
+                        $.cookie.json                   = true;
+                        $.cookie('not_sent_messages_array_CONV_'+start_id_conv, not_sent_messages_array, { expires: 31, path: '/' });
+                    }
+
+                    /* ******************** UPDATE PARTICIPANTS + MESSAGES INFOS ******************** */
+
+                    jQuery.each(local_array,function(num,values){
+
+                        var author_img                  = JSON.parse(values['user_image']);
+                        var left_or_right               = ( parseInt(values['id_user_author']) != parseInt(local_params.id_user) ) ? 'left_message' : 'right_message';
+                        var add_the_author              = ( left_or_right == 'left_message' ) ? '<span class="group_author">'+values['user_title']+'</span>' : '';
+                        var add_the_group_class         = ( left_or_right == 'left_message' && values['conversation_type'] == 'group' ) ? 'group ' : '';
+                        var add_the_author_img          = ( left_or_right == 'left_message' && typeof author_img == 'object' ) ? '<img src="'+ author_img.current +'" class="user" alt="user" />' : '';
+
+                        if( !jQuery('ul.messenger').hasClass('is_group') && values['conversation_type'] == 'group' )jQuery('ul.messenger').addClass('is_group');
+                        
+                        if(values['type'] == 'timeago' || values['type'] == 'event'){
+
+                            jQuery('ul.messenger #the_last_item').before('<li class="date rm">'+values['le_message']+'</li>');
+
+                        }
+                        else{
+
+                            var final_display           = '';
+                            var each_message_class      = 'first';
+                            var li_is_last_message      = (num == local_array.length-1) ? ' last_message post_load' : '';
+
+                            ////////////
+                            //////////// LOOP FOR IMAGES PRELOADING
+                            ////////////
+
+                            var sources                 = [];
+                            var images                  = [];
+
+                            jQuery.each(values['groupped_content'],function(under_num,under_values){
+                                if(under_values['type'] == 'image'){
+                                    var message_content = JSON.parse(under_values['le_message']);
+                                    sources.push(message_content.current);
+                                }
+                            });
+
+                            for(i = 0, length = sources.length; i < length; ++i){
+                                images[i]               = new Image();
+                                images[i].src           = sources[i];
+                            }
+
+                            ////////////
+                            //////////// LOOP FOR HTML EFFECTIVE DISPLAY
+                            ////////////
+
+                            jQuery.each(values['groupped_content'],function(under_num,under_values){
+
+                                if(under_num == 0 && values['groupped_content'].length > 1)each_message_class+= ' groupped s_first';
+                                if(under_num > 0)each_message_class+= (under_num == values['groupped_content'].length-1 ) ? ' groupped s_last' : ' groupped s_middle';
+
+                                if(under_values['type'] == 'text'){
+
+                                    final_display       += '<p id="m'+under_values['id_message']+'" data-by="'+under_values['id_user_author']+'" data-time="'+under_values['date_message']+'" class="'+each_message_class+'">'+nl2br(under_values['le_message']+add_the_author)+'</p>';
+
+                                    deja_dit.push(under_values['le_message']);
+
+                                    start_total_messages++;
+
+                                }
+                                else if(under_values['type'] == 'image'){
+
+                                    var message_content = JSON.parse(under_values['le_message']);
+
+                                    final_display       += '<p id="m'+under_values['id_message']+'" data-by="'+under_values['id_user_author']+'" data-time="'+under_values['date_message']+'" class="share '+each_message_class+'"><a href="'+message_content.current+'"><img src="'+message_content.current+'" class="imgZoomable" alt="" /></a>'+add_the_author+'</p>';
+
+                                    deja_dit.push(message_content.current);
+
+                                    start_total_messages++;
+
+                                }
+
+                                if(under_num == values['groupped_content'].length-1){
+
+                                    final_display       = '<li class="'+left_or_right+' '+add_the_group_class+'true_message rm'+li_is_last_message+'">'+add_the_author_img+final_display+'</li>';
+
+                                }
+
+                            });
+                            
+                            jQuery('ul.messenger #the_last_item').before(final_display);
+
+                        }
+
+                    });
+
+                }
+
+                /* ******************** 5 = UPDATE PARTICIPANTS INFOS ******************** */
+
+                start_participants                      = start_participants_array.length;
+
+                UpdateConversationParticipantsPastilles(
+                    start_participants_array,
+                    start_messages_array,
+                    'load'
+                );
+
+                if(local_params.mode == 'start_messenger')jQuery(window).on('resize',function(){
+
+                    UpdateConversationParticipantsPastilles(
+                        start_participants_array,
+                        start_messages_array,
+                        'resize'
+                    );
+
+                });
+
+                /* ******************** 6 = UPDATE TOTAL MESSAGES INFOS ******************** */
+
+                UpdateConversationMessages(start_participants,start_total_messages);
+
+                /* ******************** 7 = ACTIVATION OF IMAGE ZOOMING ******************** */
+
+                jQuery('.imgZoomable').imgZoom(imgZoomOptions);
+
+                jQuery('ul.messenger li p.share img.imgZoomable','body').on('click',function(e){
+
+                    e.preventDefault();
+        
+                    if($(this).hasClass('disabled'))return;
+                    preventDoubleClick(this);
+
+                    if(typeof Ti != 'undefined')Ti.App.fireEvent(
+                        'app:fromWebView',
+                        {
+                            return_commande:            'zoom_on_one_image',
+                            from_id_sender:             start_id_user
+                        }
+                    );
+
+                });
+
+                /* ******************** 8 = WEBSOCKET ******************** */
+
+                if(
+                    local_params.mode == 'start_messenger' &&
+                    websocket == null
+                ){
+
+                    AfterExecution_Function_InitWEBSOCKET();
+
+                    /*setTimeout(function(){
+                        send_message_to_the_websocket_PRE_PILE('load');
+                    },3000);*/
+
+                }
+
+                // UNLOCK DU LOAD MORE
+                // jQuery('ul.messenger li.date button.more').removeClass('locked');
+
+            }
+                    
+        };
+
+        /* ******************** WEBSEOCK START ******************** */
+
+        function AfterExecution_Function_InitWEBSOCKET(){
+
+            websocket                                   = new WebSocket(websocket_endpoint);
+
+            websocket.onopen                            = function(websocketEvent){
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : WEBSOCKET Connection Started');
+                else console.log('+++++++ INSIDE WEBVIEW : WEBSOCKET Connection Started');
+
+                ///////////
+                /////////// ENVOI D'IN SIGNAL "MSGR" (Messages reçus)
+                ///////////
+
+                if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                    JSON.stringify(
+                        {
+                            'context_id':           start_id_conv,
+                            'time':                 Math.round(new Date().getTime()/1000),
+                            'signal':               String('MSGR'),
+                            'type':                 String('global'),
+                            'by':                   start_id_user,
+                            'value':                String('Le id_user = '+start_id_user+' a bien reçu les derniers messages'),
+                            'pack':                     {
+                                'id_sender':                start_id_user
+                            }
+                        }
+                    )
+                );
+
+            };
+
+            websocket.onmessage                         = function(websocketEvent){
+
+                var webSocketReception                  = JSON.parse(websocketEvent.data);
+
+                //////////////////
+                ////////////////// READ JUST DATA OF THE CURRENT CONVERSATION
+                //////////////////
+                if(
+                    typeof webSocketReception['context_id'] != 'undefined' &&
+                    webSocketReception['context_id'] == start_id_conv
+                ){
+
+                    //////////////////
+                    ////////////////// A = DEBUG
+                    //////////////////
+
+                    // if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : WEBSOCKET Data received');
+                    // else console.log('+++++++ INSIDE WEBVIEW : WEBSOCKET Data received');
+                    // if(typeof Ti != 'undefined')Ti.API.info(webSocketReception);
+                    // else console.log(webSocketReception);
+
+                    //////////////////
+                    ////////////////// B = RECEPTION OF : A MESSAGE (global)
+                    //////////////////
+
+                    if(
+                        webSocketReception['signal'] == 'MSGI' ||
+                        webSocketReception['signal'] == 'MSGT'
+                    ){
+                    
+                        /////////////////////
+                        ///////////////////// UPDATE EN step2 DE TOUS MES MESSAGES EN step1
+                        /////////////////////
+
+                        jQuery('ul.messenger li p.step1','body').removeClass('step1').addClass('step2');
+
+                        if( webSocketReception['by'] == start_id_user )return;
+
+                        /////////////////////
+                        ///////////////////// INCREMENTATION DU DISPLAY
+                        /////////////////////
+
+                        start_messages_array.push(webSocketReception['pack']);
+
+                        AfterExecution_Function_InitConversation(
+                            {
+                                'output-array':         start_messages_array,
+                                'output-array-participants':start_participants_array    
+                            },
+                            {
+                                mode:                   'update_messenger',
+                                id_user:                start_id_user
+                            }
+                        );
+
+                        /////////////////////
+                        ///////////////////// REQUETE DE MISE A JOUR DES DATES : VU/PAS VU 
+                        /////////////////////
+
+                        var _request_input              = [];
+                        _request_input['async_execution']= function(a,b){
+                            if( typeof a['output-array-participants'] != 'undefined' )
+                                start_participants_array= a['output-array-participants'];
+
+                            ///////////
+                            /////////// ENVOI D'IN SIGNAL "MSGR" (Messages reçus)
+                            ///////////
+
+                            if(websocket != null && websocket.readyState != websocket.OPEN && typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : send() ERROR > WEBSOCKET CLOSED !');
+                            if(websocket != null && websocket.readyState === websocket.OPEN)websocket.send(
+                                JSON.stringify(
+                                    {
+                                        'context_id':           webSocketReception['context_id'],
+                                        'time':                 Math.round(new Date().getTime()/1000),
+                                        'signal':               String('MSGR'),
+                                        'type':                 String('global'),
+                                        'by':                   start_id_user,
+                                        'value':                String('Le id_user = '+start_id_user+' a bien reçu les derniers messages'),
+                                        'pack':                     {
+                                            'id_sender':                start_id_user
+                                        }
+                                    }
+                                )
+                            );
+
+                        };
+                        _request_input['async_params']  = {};
+
+                        RequestsMaker(
+                            'POST',
+                            true,
+                            start_endpoint,
+                            {
+                                id_user:                start_id_user,
+                                id_conv:                start_id_conv,
+                                load:                   '1',
+                                just_update:            true
+                            },
+                            _request_input,
+                            false,
+                            false
+                        );
+
+                        setTimeout(function(){
+                            
+                            $('html, body').scrollTop( $(document).height() );
+
+                        },500);
+
+                    }
+
+                    //////////////////
+                    ////////////////// C = RECEPTION OF : A READ AND SEEN MESSAGE
+                    //////////////////
+
+                    else if(
+                        webSocketReception['signal'] == 'MSGR'
+                    ){
+
+                        if( webSocketReception['by'] == start_id_user )return;
+                    
+                        /////////////////////
+                        ///////////////////// REQUETE DE MISE A JOUR DES DATES DES PARTICIPANTS
+                        /////////////////////
+
+                        var _request_input              = [];
+                        _request_input['async_execution']= function(a,b){
+                            if( typeof a['output-array-participants'] != 'undefined' )
+                                start_participants_array= a['output-array-participants'];
+                        };
+                        _request_input['async_params']  = {};
+
+                        RequestsMaker(
+                            'POST',
+                            true,
+                            start_endpoint,
+                            {
+                                id_user:                start_id_user,
+                                id_conv:                start_id_conv,
+                                load:                   '1~',
+                                just_one_participant:   true
+                            },
+                            _request_input,
+                            false,
+                            false
+                        );
+
+                        setTimeout(function(){
+                            
+                            $('html, body').scrollTop( $(document).height() );
+
+                        },500);
+
+                        ///////////////////// UPDATE DU DISPLAY (PASSAGE EN step3 DE TOUS MES MESSAGES EN step2)
+
+                        AfterExecution_Function_InitConversation(
+                            {
+                                'output-array':         start_messages_array,
+                                'output-array-participants':start_participants_array    
+                            },
+                            {
+                                mode:                   'update_messenger',
+                                id_user:                start_id_user
+                            }
+                        );
+
+                    }
+
+                    //////////////////
+                    ////////////////// D = RECEPTION OF : A BEGINING TAPING (global)
+                    //////////////////
+
+                    else if(
+                        webSocketReception['signal'] == 'TYPB'
+                    ){
+                    
+                        if( webSocketReception['by'] == start_id_user )return;
+
+                        /////////////////////
+                        ///////////////////// AJOUT DU PSEUDO MESSAGE "EN TRAIN DE TAPER" AU DISPLAY
+                        /////////////////////
+
+                        var add_the_group_class         = jQuery('ul.messenger').hasClass('is_group') ? 'group ' : '';
+
+                        if(jQuery('ul.messenger #writing_u'+webSocketReception['pack']['user_id']).length < 1)
+                            jQuery('ul.messenger #the_last_item').before(
+                                '<li id="writing_u'+webSocketReception['pack']['user_id']+'" class="writing left_message '+add_the_group_class+'true_message rm">'
+                                    +'<img src="'+webSocketReception['pack']['user_img']+'" class="user" alt="user" />'
+                                    +'<p class="share">'
+                                        +'<img src="'+content_prefix+'images/writing@2x.png" alt="the user is writing" />'
+                                        +'<span class="group_author">'+webSocketReception['pack']['user_name']+'</span>'
+                                    +'</p>'
+                                +'</li>'
+                            );
+
+                        jQuery('ul.messenger #writing_u'+webSocketReception['pack']['user_id']).show();
+
+                        /////////////////////
+                        ///////////////////// RETOUR A APPCELERATOR/TITANIUM SUR LE FAIT QU'IL EST EN TRAIN DE TAPER
+                        /////////////////////
+
+                        if(typeof Ti != 'undefined')Ti.App.fireEvent(
+                            'app:fromWebView',
+                            {
+                                return_commande:        'the_other_user_is_writing',
+                                from_id_sender:         webSocketReception['pack']['user_id']
+                            }
+                        );
+
+                    }
+
+                    //////////////////
+                    ////////////////// E = RECEPTION OF : A END TAPING (global)
+                    //////////////////
+
+                    else if(
+                        webSocketReception['signal'] == 'TYPE'
+                    ){
+                    
+                        if( webSocketReception['by'] == start_id_user )return;
+
+                        /////////////////////
+                        ///////////////////// SUPRESSION PSEUDO MESSAGE "EN TRAIN DE TAPER" AU DISPLAY
+                        /////////////////////
+
+                        var add_the_group_class         = jQuery('ul.messenger').hasClass('is_group') ? 'group ' : '';
+
+                        if(jQuery('ul.messenger #writing_u'+webSocketReception['pack']['user_id']).length > 0)
+                            jQuery('ul.messenger #writing_u'+webSocketReception['pack']['user_id']).hide();
+
+                        /////////////////////
+                        ///////////////////// RETOUR A APPCELERATOR/TITANIUM SUR LE FAIT QU'IL EST EN TRAIN DE TAPER
+                        /////////////////////
+
+                        if(typeof Ti != 'undefined')Ti.App.fireEvent(
+                            'app:fromWebView',
+                            {
+                                return_commande:        'the_other_user_is_not_writing',
+                                from_id_sender:         webSocketReception['pack']['user_id']
+                            }
+                        );
+
+                    }
+
+                    //////////////////
+                    ////////////////// F = RECEPTION OF : NEW MEMBER IN THE GROUP (local + global)
+                    //////////////////
+
+                    else if(
+                        webSocketReception['signal'] == 'GPMA'
+                    ){
+
+                        /////////////////////
+                        ///////////////////// AJOUT AU DISPLAY
+                        /////////////////////
+
+                        jQuery('ul.messenger #the_last_item').before('<li class="date rm">'+webSocketReception['pack']['message_to_show']+'</li>');
+                        jQuery('ul.messenger').addClass('is_group');
+
+                        /////////////////////
+                        ///////////////////// REQUETE DE RECUPERATION DES PARTICIPANTS
+                        /////////////////////
+
+                        var _request_input              = [];
+                        _request_input['async_execution']= AfterExecution_Function_InitConversation;
+                        _request_input['async_params']  = {};
+
+                        RequestsMaker(
+                            'POST',
+                            true,
+                            start_endpoint,
+                            {
+                                id_user:                start_id_user,
+                                id_conv:                start_id_conv,
+                                load:                   start_load
+                            },
+                            _request_input,
+                            false,
+                            false
+                        );
+
+                        ///////////////////// UPDATE DU DISPLAY (PASTILLES SELON DATES DE VU REçUES)
+                        
+                        AfterExecution_Function_InitConversation(
+                            {
+                                'output-array':         start_messages_array,
+                                'output-array-participants':start_participants_array    
+                            },
+                            {
+                                mode:                   'update_messenger',
+                                id_user:                start_id_user
+                            }
+                        );
+
+                        /////////////////////
+                        ///////////////////// RETOUR A APPCELERATOR/TITANIUM SUR LE FAIT QU'IL EST EN TRAIN DE TAPER
+                        /////////////////////
+
+                        if(typeof Ti != 'undefined')Ti.App.fireEvent(
+                            'app:fromWebView',
+                            {
+                                return_commande:        'new_group_member',
+                                from_id_sender:         webSocketReception['pack']['id_sender'],
+                                new_group_name:         webSocketReception['pack']['message_to_return'],
+                                new_group_image:        webSocketReception['pack']['image_to_show']
+                            }
+                        );
+
+                        setTimeout(function(){
+                            
+                            $('html, body').scrollTop( $(document).height() );
+
+                        },500);
+
+                    }
+
+                    //////////////////
+                    ////////////////// G = RECEPTION OF : MEMBER IN THE GROUP DELETED (local + global)
+                    //////////////////
+
+                    else if(
+                        webSocketReception['signal'] == 'GPMD'
+                    ){
+
+                        /////////////////////
+                        ///////////////////// AJOUT AU DISPLAY
+                        /////////////////////
+
+                        jQuery('ul.messenger #the_last_item').before('<li class="date rm">'+webSocketReception['pack']['message_to_show']+'</li>');
+
+                        /////////////////////
+                        ///////////////////// REQUETE DE RECUPERATION DES PARTICIPANTS
+                        /////////////////////
+
+                        var _request_input              = [];
+                        _request_input['async_execution']= AfterExecution_Function_InitConversation;
+                        _request_input['async_params']  = {};
+
+                        RequestsMaker(
+                            'POST',
+                            true,
+                            start_endpoint,
+                            {
+                                id_user:                start_id_user,
+                                id_conv:                start_id_conv,
+                                load:                   start_load
+                            },
+                            _request_input,
+                            false,
+                            false
+                        );
+
+                        /////////////////////
+                        ///////////////////// RETOUR A APPCELERATOR/TITANIUM SUR LE FAIT QU'IL EST EN TRAIN DE TAPER
+                        /////////////////////
+
+                        if(typeof Ti != 'undefined')Ti.App.fireEvent(
+                            'app:fromWebView',
+                            {
+                                return_commande:        'group_member_deleted',
+                                from_id_sender:         webSocketReception['pack']['id_sender'],
+                                row_to_remove:          webSocketReception['pack']['user_to_remove']
+                            }
+                        );
+
+                        setTimeout(function(){
+                            
+                            $('html, body').scrollTop( $(document).height() );
+
+                        },500);
+
+                    }
+
+                    //////////////////
+                    ////////////////// H = RECEPTION OF : GROUP RENAME (local + global)
+                    //////////////////
+
+                    else if(
+                        webSocketReception['signal'] == 'GPNC'
+                    ){
+
+                        /////////////////////
+                        ///////////////////// AJOUT AU DISPLAY
+                        /////////////////////
+
+                        jQuery('ul.messenger #the_last_item').before('<li class="date rm">'+webSocketReception['pack']['message_to_show']+'</li>');
+
+                        /////////////////////
+                        ///////////////////// RETOUR A APPCELERATOR/TITANIUM SUR LE FAIT QU'IL EST EN TRAIN DE TAPER
+                        /////////////////////
+
+                        if(typeof Ti != 'undefined')Ti.App.fireEvent(
+                            'app:fromWebView',
+                            {
+                                return_commande:        'new_group_name',
+                                from_id_sender:         webSocketReception['pack']['id_sender'],
+                                new_group_name:         webSocketReception['pack']['name_to_return']
+                            }
+                        );
+
+                        setTimeout(function(){
+                            
+                            $('html, body').scrollTop( $(document).height() );
+
+                        },500);
+
+                    }
+
+                    //////////////////
+                    ////////////////// I = RECEPTION OF : GROUP NEW PICTURE (local + global)
+                    //////////////////
+
+                    else if(
+                        webSocketReception['signal'] == 'GPNP'
+                    ){
+
+                        /////////////////////
+                        ///////////////////// AJOUT AU DISPLAY
+                        /////////////////////
+
+                        jQuery('ul.messenger #the_last_item').before('<li class="date rm">'+webSocketReception['pack']['message_to_show']+'</li>');
+
+                        /////////////////////
+                        ///////////////////// RETOUR A APPCELERATOR/TITANIUM SUR LE FAIT QU'IL EST EN TRAIN DE TAPER
+                        /////////////////////
+
+                        if(typeof Ti != 'undefined')Ti.App.fireEvent(
+                            'app:fromWebView',
+                            {
+                                return_commande:        'new_group_photo',
+                                from_id_sender:         webSocketReception['pack']['id_sender'],
+                                new_group_image:        webSocketReception['pack']['image_to_show']
+                            }
+                        );
+
+                        setTimeout(function(){
+                            
+                            $('html, body').scrollTop( $(document).height() );
+
+                        },500);
+
+                    }
+
+                }
+
+            };
+
+            websocket.onerror                           = function(websocketEvent){
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : WEBSOCKET Error occrred!');
+                else console.log('+++++++ INSIDE WEBVIEW : WEBSOCKET Error occrred!');
+
+                if(re_connexions_attemps > max_connexions_attemps ){
+
+                    websocket.close();
+                    return;
+
+                }
+                
+            }; 
+
+            websocket.onclose                           = function(websocketEvent){
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : WEBSOCKET Connection Closed > Retry every 2.5 second !');
+                else console.log('+++++++ INSIDE WEBVIEW : WEBSOCKET Connection Closed > Retry every 2.5 second !');
+
+                jQuery('ul.messenger li.writing').remove();
+
+                if(
+                    websocket.readyState != websocket.OPEN &&
+                    re_connexions_attemps < max_connexions_attemps
+                ){
+
+                    re_connexions_attemps++;
+
+                    setTimeout(function() {
+                        AfterExecution_Function_InitWEBSOCKET();
+                    }, 2500);
+
+                }
+                else{
+
+                    if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : WEBSOCKET Connection Retrieved WOUH HOU!!!');
+                    else console.log('+++++++ INSIDE WEBVIEW : WEBSOCKET Connection Retrieved WOUH HOU!!!');
+
+                }
+
+            };
+
+        };
+
+        /* ******************************************************** */
+        /* ******************** TOOL FUNCTIONS ******************** */
+        /* ******************************************************** */
+
+        function preventDoubleClick(button){
+            
+            if(typeof Ti != 'undefined')Ti.API.info('@@@@@ LOCK BUTTON INSIDE WEBVIEW @@@@@');
+            
+            $(button).addClass('disabled');
+            
+            setTimeout(function(){
+                        
+                $(button).removeClass('disabled');
+                    
+            },4900);
+
+        };
+
+        /*
+        send_message_to_the_websocket_PRE_PILE({commande:'send_message_to_the_websocket',id_conversation:13,id_sender:39,message_type:'text',message_to_send:'Hey Hey les connards comment ça va ???',datas_for_websocket:{id_message:440,date_message:1484752398,date_message_clear:'2017-01-18 14:20:00',id_conversation:13,conversation_type:'group',id_user_author:39,type:'text',le_message:'Hey Hey les connards comment ça va ???',user_title:'Samuel',user_image:"{\"current\":\"http://api.randomuser.me/portraits/men/12.jpg\"}"}});
+        */
+
+        function send_message_to_the_websocket_PRE_PILE(input_object){
+
+            /*if(is_sending_the_pile == true)return;
+
+            /////////////////////
+            ///////////////////// 1 = CHARGEMENT DU DISPLAY
+            /////////////////////
+
+            if ( input_object == 'load' ){
+
+                var cookies_test_array                                  = $.cookie('not_sent_messages_array_CONV_'+start_id_conv);
+                cookies_test_array                                      = (typeof cookies_test_array == 'undefined') ? {} : JSON.parse(cookies_test_array);
+
+                if ( 
+                    Object.keys(cookies_test_array).length > 0 
+                ){
+
+                    jQuery.each(cookies_test_array,function(i,e_object){
+
+                        send_message_to_the_websocket_PRE_PILE(e_object);
+
+                    });
+
+                }
+                else{
+
+                    if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (NO MESSAGE TO SEND BACK FROM COOKIES)...');
+                    else console.log('+++++++ INSIDE WEBVIEW (NO MESSAGE TO SEND BACK FROM COOKIES)...');
+
+                }
+
+            }
+
+            /////////////////////
+            ///////////////////// 2 = MODIFICATON DU DISPLAY
+            /////////////////////
+
+            if( 
+                typeof input_object != 'undefined' && 
+                typeof input_object != 'string'
+            ){*/
+
+                jQuery('ul.messenger li.last_message').removeClass('last_message');
+
+                /////////////////////
+                ///////////////////// 1-a = MISE EN MEMOIRE DU MESSAGE
+                /////////////////////
+
+                not_sent_messages_array[input_object.datas_for_websocket['id_message']]= input_object;
+
+                $.cookie.json                                           = true;
+                $.cookie('not_sent_messages_array_CONV_'+start_id_conv, not_sent_messages_array, { expires: 31, path: '/' });
+
+                /////////////////////
+                ///////////////////// 1-b = INCREMENTATION DU DISPLAY
+                /////////////////////
+
+                var add_it                                              = true;
+
+                for(d=deja_dit.length-10; d<deja_dit.length; d++){
+                    if( typeof deja_dit[d] != 'undefined') {
+                        if( deja_dit[d] == input_object.message_to_send && input_object.message_type == 'text')add_it = false;
+                        if( input_object.message_type == 'image' && typeof input_object.image_to_send != 'undefined' && input_object.image_to_send.indexOf(deja_dit[d]) > -1 )add_it = false;
+                    }
+                }
+
+                var websocket_code                                      = 'MSGT';
+                var each_message_class                                  = 'first';
+                if(local_count_new_messages == 0)each_message_class+= ' groupped s_first';
+                if(local_count_new_messages > 0)each_message_class+=' s_middle';
+
+                if( add_it == true && input_object.message_type == 'text' ){
+
+                    jQuery('ul.messenger #the_last_item').before('<li class="right_message true_message rm stepped last_message">'
+                        +'<p id="m'+input_object.datas_for_websocket['id_message']+'" data-by="'+input_object.datas_for_websocket['id_user_author']+'" data-time="'+input_object.datas_for_websocket['date_message']+'" class="'+each_message_class+' step1">'
+                            +nl2br(input_object.message_to_send)
+                        +'</p>'
+                    +'</li>');
+
+                    local_count_new_messages++;
+                    
+                }
+                else if( add_it == true && input_object.message_type == 'image' ){
+
+                    jQuery('<img/>').load(function(){
+                        jQuery('ul.messenger #the_last_item').before('<li class="right_message true_message rm stepped last_message">'
+                            +'<p id="m'+input_object.datas_for_websocket['id_message']+'" data-by="'+input_object.datas_for_websocket['id_user_author']+'" data-time="'+input_object.datas_for_websocket['date_message']+'" class="share '+each_message_class+' step1">'
+                                +'<a href="'+input_object.image_to_send+'"><img src="'+input_object.image_to_send+'" class="imgZoomable" alt="" /></a>'
+                            +'</p>'
+                        +'</li>');
+                    }).attr('src',input_object.image_to_send);
+
+                    websocket_code                                      = 'MSGI';
+                    local_count_new_messages++;
+                    
+                }
+
+                /////////////////////
+                ///////////////////// 1-c = RELOAD DU DISPLAY APRES UPDATE DES TABLEAUX LOCAUX
+                /////////////////////
+
+                start_messages_array.push(input_object.datas_for_websocket);
+
+            /*}
+
+            /////////////////////
+            ///////////////////// 3 = CHECK DE LA PILE EN MEMOIRE
+            /////////////////////
+
+            if( 
+                typeof recheck_for_6_message_to_send != null
+            ){
+
+                clearInterval(recheck_for_6_message_to_send);
+
+            }
+
+            if( 
+                Object.keys(not_sent_messages_array).length < 6 &&
+                max_rechecks_for_6_message_to_send > 0
+            ){
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : ON ATTENDS TOUJOURS 6 MESSAGES, ON TENTE ENCORE '+max_rechecks_for_6_message_to_send+' FOIS !');
+                else console.log('+++++++ INSIDE WEBVIEW : ON ATTENDS TOUJOURS 6 MESSAGES, ON TENTE ENCORE '+max_rechecks_for_6_message_to_send+' FOIS !');
+
+                waiting_for_6_message_to_send                           = true;
+                max_rechecks_for_6_message_to_send--;
+
+                recheck_for_6_message_to_send                           = setInterval(function(){
+
+                    send_message_to_the_websocket_PRE_PILE('just_recheck');
+
+                },500);
+
+            }
+            else if( 
+                Object.keys(not_sent_messages_array).length < 6 &&
+                max_rechecks_for_6_message_to_send == 0
+            ){
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : 6 MESSAGES MINIMUM NON REçUS DONC ON ENVOI !');
+                else console.log('+++++++ INSIDE WEBVIEW : 6 MESSAGES MINIMUM NON REçUS DONC ON ENVOI !');
+                if(typeof Ti != 'undefined')Ti.API.info(not_sent_messages_array);
+                else console.log(not_sent_messages_array);
+
+                waiting_for_6_message_to_send                           = false;
+                max_rechecks_for_6_message_to_send                      = 3;
+
+            }
+
+            /////////////////////
+            ///////////////////// 4 = TRAITEMENT DE LA PILE EN ENVOI(S) A WEBSOCKET
+            /////////////////////
+
+            if(
+                websocket != null &&
+                websocket.readyState === websocket.OPEN &&
+                waiting_for_6_message_to_send == false &&
+                is_sending_the_pile == false &&
+                Object.keys(not_sent_messages_array).length > 0
+            ){
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW : LA PILE DOIT QUAND MEME ETRE ENVOYEE AU WEBSOCKET');
+                else console.log('+++++++ INSIDE WEBVIEW : LA PILE DOIT QUAND MEME ETRE ENVOYEE AU WEBSOCKET');
+
+                is_sending_the_pile                                     = true;*/
+
+                jQuery.each(not_sent_messages_array,function(i,looped_object){
+
+                    var websocket_code                                  = ( looped_object.message_type == 'text' ) ? 'MSGT' : 'MSGI';
+                    var send_it                                         = true;
+
+                    /*for(d=deja_dit.length-10; d<deja_dit.length; d++){
+                        if( typeof deja_dit[d] != 'undefined') {
+                            if( deja_dit[d] == looped_object.datas_for_websocket['le_message'] && looped_object.datas_for_websocket['type'] == 'text')send_it = false;
+                            if( looped_object.datas_for_websocket['le_message'].indexOf(deja_dit[d]) > -1 && looped_object.datas_for_websocket['type'] == 'image')send_it = false;
+                        }
+                    }*/
+
+                    if(send_it){
+
+                        websocket.send(
+                            JSON.stringify(
+                                {
+                                    'context_id':           looped_object.datas_for_websocket['id_conversation'],
+                                    'time':                 Math.round(new Date().getTime()/1000),
+                                    'signal':               String(websocket_code),
+                                    'type':                 String('global'),
+                                    'by':                   start_id_user,
+                                    'value':                String('Nouveau message de id_user = '+start_id_user),
+                                    'pack':                     {
+                                        'id_message':               looped_object.datas_for_websocket['id_message'],
+                                        'date_message':             looped_object.datas_for_websocket['date_message'],
+                                        'date_message_clear':       String(looped_object.datas_for_websocket['date_message_clear']),
+                                        'id_conversation':          looped_object.datas_for_websocket['id_conversation'],
+                                        'conversation_type':        String(looped_object.datas_for_websocket['conversation_type']),
+                                        'id_user_author':           looped_object.datas_for_websocket['id_user_author'],
+                                        'type':                     String(looped_object.datas_for_websocket['type']),
+                                        'le_message':               String(looped_object.datas_for_websocket['le_message']),
+                                        'user_title':               String(looped_object.datas_for_websocket['user_title']),
+                                        'user_image':               String(looped_object.datas_for_websocket['user_image'])
+                                    }
+                                }
+                            )
+                        );
+
+                        delete not_sent_messages_array[i];
+
+                        start_total_messages++;
+
+                    }
+                
+                });/*
+
+                is_sending_the_pile                                     = false;
+                waiting_for_6_message_to_send                           = false;
+
+                $.cookie.json                                           = true;
+                $.cookie('not_sent_messages_array_CONV_'+start_id_conv, not_sent_messages_array, { expires: 31, path: '/' });
+
+                UpdateConversationMessages(start_participants,start_total_messages);
+
+            }
+            else{
+
+                if(typeof Ti != 'undefined')Ti.API.info('+++++++ INSIDE WEBVIEW (NO SENDING CAUSE NOT ENOUGHT MESSAGE)...');
+                else console.log('+++++++ INSIDE WEBVIEW (NO SENDING CAUSE NOT ENOUGHT MESSAGE)...');
+
+            }
+            */
+
+        };
+
+        function GroupSucessiveMessagesOfOneUser(input_array){
+
+            var output_array                                            = [];
+            var input_array_author_remember                             = {};
+
+            jQuery.each(input_array,function(num,values){
+
+                if(values['type'] == 'timeago' || values['type'] == 'event'){
+
+                    output_array.push(values);
+
+                }
+                else{
+
+                    var current_author                                  = values['id_user_author'];
+                    var next_author                                     = typeof input_array[num+1] != 'undefined' ? parseInt(input_array[num+1]['id_user_author']) : -1;
+                    var next_message                                    = typeof input_array[num+1] != 'undefined' && ( input_array[num+1]['type'] == 'text' || input_array[num+1]['type'] == 'image' ) ? input_array[num+1]['le_message'] : "";
+
+                    ///////// USER MESSAGE SAVING IF NOT EXISTS
+
+                    if( typeof input_array_author_remember[values['id_user_author']] == 'undefined'){
+                        input_array_author_remember[values['id_user_author']]= [];
+                        input_array_author_remember[values['id_user_author']].push(values);
+                    }
+
+                    ///////// USER MESSAGE PRE INCREMENTATION
+
+                    if( current_author == next_author && next_message != ""){
+
+                        //console.log(current_author+' _______ '+next_message);
+                        input_array_author_remember[values['id_user_author']].push(input_array[num+1]);
+
+                    }
+                    else{
+
+                        //console.log(current_author+' FIN DE SUITE ! ');
+                        values['groupped_content']                      = input_array_author_remember[values['id_user_author']];
+
+                        output_array.push(values);
+
+                        delete input_array_author_remember[values['id_user_author']];
+
+                    }
+
+                }
+
+            });
+
+            return output_array;
+
+        };
+
+        function UpdateConversationParticipantsPastilles(participants_array,messages_array,mode){
+
+            if(UpdateConversationParticipantsPastillesTimer != null)clearTimeout(UpdateConversationParticipantsPastillesTimer);
+            
+            jQuery('ul.messenger li.right_message p','body').off('click').on('click',function(e){
+
+                e.preventDefault();
+
+                $(this).toggleClass('overclick');
+
+            });
+
+            setTimeout(function(){
+                
+                jQuery('ul.messenger').removeClass('rm').addClass('on');
+                jQuery('ul.messenger #the_last_item').removeClass('un_loaded');
+
+                $('html, body').scrollTop( $(document).height() );
+
+            },450);
+
+            return;
+
+            /**************** FONCTION ANNULEE LE 09/03/2017 POUR NE PAS PRENDRE DE RISQUES AVANT LA SORTIE DE L'APP. ****************/
+
+            var final_relative_position_right                           = -21;
+
+            jQuery('img.floating_pastille','ul.messenger').css(
+                {
+                    right:                                              final_relative_position_right,
+                    opacity:                                            0
+                }
+            );
+
+            if(UpdateConversationParticipantsPastillesTimer != null)clearTimeout(UpdateConversationParticipantsPastillesTimer);
+
+            var stored_right_pastille_positions_right                   = {};
+            var stored_right_pastille_positions_top                     = {};
+            var decalage_pastille_positions_right                       = 22;
+            var decalage_pastille_positions_top                         = 22;
+            UpdateConversationParticipantsPastillesTimer                = setTimeout(function(){
+
+                var last_message_of_the_conversation                    = jQuery('ul.messenger li.true_message','body').last();
+                var last_message_of_the_current_user_in_conversation    = jQuery('ul.messenger li.right_message','body').last();
+                var last_message_of_the_conversation_time               = last_message_of_the_conversation.find('p');
+                var last_message_by_current_user_time                   = PositioningTheCurrentUserPastille(false);
+
+                jQuery.each(participants_array,function(num,values){
+
+                    var user_id                                         = values['user_id'];
+                    var user_img                                        = JSON.parse(values['user_image']);
+                    var user_pastille                                   = jQuery('ul.messenger img#usr_'+user_id,'body');
+                    var user_last_reading                               = parseInt(values['user_last_seen_message']);
+
+                    /////////// PASTILLE CREATION
+
+                    if(user_pastille.length < 1){
+                        user_pastille                                   = jQuery('<img id="usr_'+user_id+'" alt="'+values['user_name']+'" src="'+user_img.current+'" class="over animable floating_pastille" />');
+                        jQuery('ul.messenger #the_last_item').before(user_pastille);
+                    }
+
+                    /////////// PASTILLE POSITION
+
+                    var last_time_message_user_can_have_seen            = start_id_user != user_id ? 'm'+DetermineTheLastMessageSeenByTheUSER(messages_array,user_last_reading) : last_message_of_the_conversation_time.attr('id');
+                    var last_message_user_can_have_seen_p               = jQuery('ul.messenger li p#'+last_time_message_user_can_have_seen,'body');
+                        //var last_message_user_can_have_seen_height_p        = last_message_user_can_have_seen_p.outerHeight(true);
+                        //var last_message_user_can_have_seen_pos_p           = last_message_user_can_have_seen_p.position();
+                    var last_message_user_can_have_seen                 = last_message_user_can_have_seen_p.parent();
+                    var last_message_user_can_have_seen_height          = last_message_user_can_have_seen.outerHeight(true);
+                    var last_message_user_can_have_seen_pos             = last_message_user_can_have_seen.position();
+                    
+                    if( 
+                        last_message_user_can_have_seen.length > 0
+                    ){
+
+                        ////////// THE TOP + ZINDEX IF 'duo'
+
+                        var final_relative_position_top                 = ( last_message_user_can_have_seen_pos.top - 6 ) + ( last_message_user_can_have_seen_height - (2 * 12) );
+                        if( typeof stored_right_pastille_positions_right[last_time_message_user_can_have_seen] == 'undefined' )stored_right_pastille_positions_right[last_time_message_user_can_have_seen]= final_relative_position_right;
+                        if( typeof stored_right_pastille_positions_top[last_time_message_user_can_have_seen] == 'undefined' )stored_right_pastille_positions_top[last_time_message_user_can_have_seen]= final_relative_position_top;
+
+                        var final_position_obj                          = {
+                            top:                                        final_relative_position_top+'px'
+                        };
+
+                        ////////// THE TOP + RIGHT IF 'group' CONVERSATION
+
+                        if( jQuery('ul.messenger').hasClass('is_group') ){
+
+                            //////////
+                            ////////// THE TOP 
+                            //////////
+
+                            final_relative_position_top                 = ( last_message_user_can_have_seen_pos.top + 16 ) + ( last_message_user_can_have_seen_height - (2 * 12) );
+                            if(last_message_user_can_have_seen.hasClass('last_message') || last_message_user_can_have_seen.hasClass('right_message'))final_relative_position_top-= 20;
+
+                            final_position_obj.top                      = last_message_user_can_have_seen.hasClass('right_message') ? final_relative_position_top+'px' : stored_right_pastille_positions_top[last_time_message_user_can_have_seen]+'px';
+
+                            stored_right_pastille_positions_top[last_time_message_user_can_have_seen]-= decalage_pastille_positions_top;
+
+                            //////////
+                            ////////// THE RIGHT 
+                            //////////
+
+                            final_position_obj.right                    = last_message_user_can_have_seen.hasClass('right_message') ? stored_right_pastille_positions_right[last_time_message_user_can_have_seen]+'px' : final_relative_position_right+'px';
+
+                            stored_right_pastille_positions_right[last_time_message_user_can_have_seen]+= decalage_pastille_positions_right;
+
+                        }
+
+                        ////////// CONSEQUENCES ON DOM
+
+                        final_position_obj.opacity                      = 1;
+                        user_pastille.css(final_position_obj);
+
+                    }
+                    else{
+
+                        ////////// IF THE USER HAVE NOT TALKED YET...
+
+                        user_pastille.hide();
+
+                    }
+
+                });
+
+                jQuery('ul.messenger li.right_message p','body').off('click').on('click',function(e){
+
+                    e.preventDefault();
+
+                    $(this).toggleClass('overclick');
+
+                });
+
+                setTimeout(function(){
+                    
+                    jQuery('ul.messenger').removeClass('rm').addClass('on');
+                    jQuery('ul.messenger #the_last_item').removeClass('un_loaded');
+
+                    $('html, body').scrollTop( $(document).height() );
+
+                },450);
+
+            },500);
+
+        };
+
+        function PositioningTheCurrentUserPastille(local_mode){
+
+            var last_message_of_the_current_user_in_conversation        = jQuery('ul.messenger li.right_message','body').last();
+
+            return last_message_of_the_current_user_in_conversation.find('p').last().attr('data-time');
+
+        };
+
+        function DetermineTheLastMessageSeenByTheUSER(messages_array,target_user_id_time){
+
+            var the_correct_message_author_time                         = -1;
+
+            jQuery.each(messages_array,function(num,values){
+
+                var message_current_time                                = values['date_message'];
+                var message_type                                        = values['type'];
+
+                /***** MARK ALL LAST MESSAGE READ (step3) *****/
+
+                jQuery('ul.messenger li p','body').removeClass('step1 step2').addClass('step3');
+                jQuery('ul.messenger li.stepped','body').removeClass('stepped');
+
+                /***** DETERMINE THE LAST *****/
+                if(
+                    message_type != 'timeago' &&
+                    message_type != 'event' &&
+                    message_current_time != null && 
+                    target_user_id_time >= message_current_time
+                ){
+
+                    the_correct_message_author_time                     = values['id_message'];
+
+                }
+
+            });
+
+            return the_correct_message_author_time;
+
+        };
+
+        function UpdateConversationMessages(a,b){
+
+            var display_item                                            = jQuery('ul.messenger li.date button.gestion','body');
+            var current_a                                               = parseInt(display_item.attr('data-participants'));
+            var current_b                                               = parseInt(display_item.attr('data-messages'));
+
+            if( current_a != a)display_item.attr('data-participants',a);
+            if( current_b != b)display_item.attr('data-messages',b);
+
+            a_pluriel                                                   = parseInt(display_item.attr('data-participants')) > 1 ? 's' : '';
+            b_pluriel                                                   = parseInt(display_item.attr('data-messages')) > 1 ? 's' : '';
+
+            local_count_new_messages                                    = b;
+
+            display_item.html(display_item.attr('data-participants')+' participant'+a_pluriel+', '+display_item.attr('data-messages')+' message'+b_pluriel);
+
+        };
+
+        function nl2br (str, is_xhtml) {
+
+            var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+
+            return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+
+        }
+    </script>
+    
+</body>
+</html>

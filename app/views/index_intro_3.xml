@@ -1,0 +1,19 @@
+<Alloy>
+	<Window class="container" id="window" navBarHidden="true" statusBarStyle="Ti.UI.iOS.StatusBar.LIGHT_CONTENT">
+		
+		<ImageView class="containerBackground" id="bg" image="/images/bg_intro_4.jpg" />
+
+		<View class="view-banner">
+			<Label class="next" id="nextButton">Passer</Label>
+		</View>
+			
+		<Label class="text" id="text">Rencontre un étudiant de ton université et crée des liens entre les différentes promotions !</Label>
+			
+		<View class="view-buttons">
+			<Button class="button off first" id="one"></Button>
+			<Button class="button off" id="two"></Button>
+			<Button class="button on" id="three"></Button>
+		</View>
+		
+	</Window>
+</Alloy>

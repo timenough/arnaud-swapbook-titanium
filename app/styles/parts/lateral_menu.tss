@@ -1,0 +1,135 @@
+".menuMask": {
+	left: 0,
+	opacity: 0,
+	backgroundColor: "#6000",
+	zIndex: 2000,
+	height:Titanium.UI.SIZE,
+	visible: false
+},	
+	
+	".menuClose": {
+		left: "281dp",
+		width: "100%",
+		height: "100%",
+		layout:'vertical',
+		borderRadius: 0,
+	},
+	
+	".menuOuter": {
+		left: "-280dp",
+		width: "280dp",
+		height: "100%",
+		layout:'vertical',
+		backgroundColor:"#ffffff",
+		borderRadius: 0,
+	},
+		
+		"#banner": {
+			top: 0,
+			left: 0,
+			width: Alloy.Globals.backdropImageWidth,
+			height:"280dp",
+		},
+			
+			"#banner_img":{
+				top:0,
+				width: "280dp",
+				height:"280dp",
+				zIndex: 2
+			},
+
+			".banner_overlay":{
+				top: 0, 
+				height:'100%',
+				width:'100%',
+				visible: false,
+				zIndex: 3,
+			},
+
+			".fille":{
+				backgroundGradient: {
+			        type: 'linear',
+			        startPoint: { x: '0%', y: '0%' },
+			        endPoint: { x: '0%', y: '100%' },
+			        colors: [ 
+			        	{ color: '#f2e893b6', offset: 0 },
+			      		{ color: '#1ae893b6', offset: 1 } 
+			       	],
+			    }
+			},
+
+			".garcon":{
+				backgroundGradient: {
+			        type: 'linear',
+			        startPoint: { x: '0%', y: '0%' },
+			        endPoint: { x: '0%', y: '100%' },
+			        colors: [ 
+			        	{ color: '#f21f67ab', offset: 0 },
+			      		{ color: '#1a1f67ab', offset: 1 } 
+			       	],
+			    }
+			},
+			
+			"#banner_img_user":{
+				top: 34,
+				width: 180,
+				height:180,
+				borderRadius: 88,
+				zIndex: 20,
+				opacity: 0.7
+			},
+			
+			"#banner_uname":{
+				top:230,
+				width:'85%',
+				height: 34,
+			  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+				color:"#fff",
+				zIndex: 4,
+				wordWrap: false,
+				font:{
+					fontSize: 38,
+					fontFamily:"Wask_New_Bold"
+				}
+			},
+			"#banner_uname[platform=ios]":{
+				font:{
+					fontSize: 34,
+					fontFamily:"WaskNew-Bold"
+				}
+			},
+		
+		".link": {
+			top:0,
+			left: 0,
+			height:60,
+			width:'100%',
+			layout:'horizontal',
+			backgroundColor:"#ffffff",
+		},
+		
+		".link_first": {
+			top:'14dp',
+		},
+		
+			".link_picto": {
+				left:'38dp',
+				width:24,
+				height:24,
+			},
+		
+			".link_text": {
+				left:'20dp',
+				height: '100%',
+				verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+				font:{
+					fontSize: 24,
+					fontFamily:"Wask_New"
+				}
+			},
+			".link_text[platform=ios]": {
+				font:{
+					fontSize: 20,
+					fontFamily:"WaskNew"
+				}
+			},

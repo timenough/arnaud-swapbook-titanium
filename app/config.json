@@ -1,0 +1,30 @@
+{
+    "global": {
+    	"the_base_endpoint": 								"https://swapbook.daworld.co/api/__endpoints-Get",
+    	"the_itunes_store_page": 							"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1172301216&onlyLatestVersion=true&pageNumber=0&sortOrdering=1",
+    	"the_googleplay_store_page": 				"market://details?id=APPID",
+    	"the_windows_store_page": 					"",
+    	"google_analytics_tracking_id": 				"UA-85894478-3",
+    	"facebook_app_id":									"190774858042725",
+    	"the_start_controller":								"page_1_a_1_home",
+    	"the_main_app_color1":							"#4486c5",
+    	"the_main_app_color2":							"#9fc1e1",
+    	"the_main_app_color3":							"#276eb3",
+    	"log_debug": 												false
+    },
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:ios": {},
+    "os:android": {},
+    "autoStyle": true,
+    "dependencies": {
+        "com.alcoapps.socialshare": 					"1.01",
+        "nl.fokkezb.cachedImageView": 				"1.4.1",
+        "nl.fokkezb.form": 									"1.10.0",
+        "nl.fokkezb.loading": 								"1.8.4",
+        "nl.fokkezb.browserView": 						"1.0",
+        "nl.fokkezb.infiniteScroll":						"2.0.1",
+        "nl.fokkezb.pullToRefresh":						"3.0.0"
+    }
+}

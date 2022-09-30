@@ -1,0 +1,48 @@
+".templateCell":{
+	height: 60,
+	width: Ti.UI.FILL,
+	borderRadius: 0,
+	touchEnabled:true
+},
+
+".template_container":{
+	layout: 'horizontal',
+	left: 0,
+},
+	
+	".list_img_row_container":{
+		left: 0,
+		top: 0,
+		height: 60,
+		width: 60,
+		layout: 'horizontal',
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		borderRadius: 0
+	},
+	
+		".list_img_row":{
+			height: '100%',
+		},
+	
+	".row_title":{
+		left:14,
+		height: '70%',
+		color:'#fff',
+		wordWrap: false,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+		touchEnabled:true,
+		font:{
+			fontSize: 10,
+			fontFamily:"sans-serif",
+			fontWeight: 'bold',
+		},
+	},
+	".row_title[platform=ios]":{
+		font:{
+			fontSize: 14,
+			fontFamily:"sans-serif",
+			fontWeight: 'bold',
+		},
+	},
+	

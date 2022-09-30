@@ -1,0 +1,16 @@
+<Alloy>
+	<TableViewRow class="templateCell">
+		<View class="template_container">
+			<View class="list_img_book_container">
+				<ImageView id="bookPhoto" bindId="bookPhoto" class="list_img_book" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-book-swapbook.png" />
+			</View>
+			<Label id="bookTitle" bindId="bookTitle" class="labl book_title" text="Principes de Finance moderne" />
+			<Label id="bookAuthor" bindId="bookAuthor" class="labl book_author" text="Robert Goffin" />
+			<Label id="bookEdition" bindId="bookEdition" class="labl book_edition" text="6ème édition - 2012" />
+			<Label id="bookPrice" bindId="bookPrice" class="labl book_price" text="14€ - Vendu le 01/09/2016" />
+			<Label id="saleStatut" bindId="saleStatut" class="labl book_sale_statut" text="Vente non confirmée" />
+			<Label id="codeStatut" bindId="codeStatut" class="labl code_statut" onClick="CodeClick" text="  En Attente du code de confirmation  " />
+			<View id="separator" />
+		</View>
+	</TableViewRow>
+</Alloy>

@@ -1,0 +1,148 @@
+"#topbar": {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 82
+},
+"#topbar[platform=android]":{
+	height: 70,
+},
+
+".navBar":{
+	borderWidth:1,
+	left:-5,
+	right:-5,
+	top:-2,
+    zIndex:10,
+    height: 82,
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+	borderColor:Alloy.Globals.BLUE_COLOR
+},
+".navBar[platform=android]":{
+	height: 70,
+},
+
+"#menubutton":{
+	top: 38,
+	left: '6%',
+	width: 22,
+	height: 22,
+	backgroundColor: 'transparent',
+	touchEnabled:true,
+	selectedColor: '#fff',
+	tintColor: '#fff',
+},
+
+"#menubutton[platform=ios]":{
+	image: '/images/hamburger.png',
+},
+"#menubutton[platform=android]":{
+	top: 20,
+	left: '7%',
+	width: 34,
+	height: 34,
+	backgroundImage: '/images/hamburger.png',
+},
+
+"#backbutton":{
+	top: 36,
+	left: '5%',
+	width: 26,
+	height: 26,
+	backgroundColor: 'transparent',
+	touchEnabled:true,
+	selectedColor: '#fff',
+	tintColor: '#fff',
+},
+"#backbutton[platform=ios]":{
+	image: '/images/back.png',
+},
+"#backbutton[platform=android]":{
+	top: 20,
+	left: '7%',
+	width: 34,
+	height: 34,
+	backgroundImage: '/images/back.png',
+},
+
+"#searchbutton": {
+	top: 38,
+	right: '5%',
+	width: 24,
+	height: 24,
+	backgroundColor: 'transparent',
+	tintColor: '#ffffff'
+},
+"#searchbutton[platform=ios]":{
+	image: '/images/loupe.png',
+},
+"#searchbutton[platform=android]":{
+	top: 20,
+	width: 34,
+	height: 34,
+	backgroundImage: '/images/loupe.png',
+},
+
+".label-text": {
+	top: 20,
+	viewShadowRadius: 5,
+	color: '#ffffff',
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 24,
+		fontFamily: 'Wask_New_Bold'
+	},
+},
+".label-text[platform=ios]": {
+	font: {
+		fontSize: 24,
+		fontFamily: 'WaskNew-Bold'
+	}
+},
+
+"#centerButtons": {
+	top: 49,
+	height: 24,
+	width: '180dp',
+	backgroundColor:"transparent",
+	borderColor:"#ffffff",
+	borderWidth: 2,
+	borderRadius: 5,
+	viewShadowRadius: 5
+},
+	
+	".label-button": {
+		height: Ti.UI.FILL,
+		width: '50%',
+	  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		color:"#fff",
+		font: {
+			fontSize: 15,
+			fontFamily: 'Wask_New_Bold'
+		}
+	},
+	".label-button[platform=ios]": {
+		font: {
+			fontSize: 15,
+			fontFamily: 'WaskNew-Bold'
+		}
+	},
+	
+	".active-button": {
+		color:Alloy.Globals.BLUE_COLOR,
+		backgroundColor:"#fff"
+	},
+	
+	".separator": {
+		height: Ti.UI.FILL,
+		width: 2,
+		backgroundColor:"#fff",
+	},
+	
+	"#buybutton": {
+		left: 0
+	},
+	
+	"#sellbutton": {
+		right: 0
+	},

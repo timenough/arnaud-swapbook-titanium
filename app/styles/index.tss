@@ -1,0 +1,148 @@
+".containerBackground":{
+	top:0,
+	left:Alloy.Globals.backdropImageLeft,
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	preventDefaultImage: true
+},
+
+".logo-swapbook":{
+	top:'10%',
+	width: '100dp',
+	height: '100dp',
+},
+
+".label-swapbook":{
+	top:'20%',
+	font:{
+		fontSize:68,
+		fontFamily:"Quicksand_Bold"
+	},
+	height: 86,
+	color:"#fff",
+	zIndex: 3
+},
+
+	".label-swapbook[platform=ios]":{
+		font:{
+			fontSize:72,
+			fontFamily:"Quicksand-Bold"
+		},
+	},
+	
+	".label-swapbook[if=Alloy.Globals.iPhoneShortWidth]":{
+		top:'24%',
+		font:{
+			fontSize:50,
+			fontFamily:"Quicksand-Bold"
+		},
+	},
+	
+".container[platform=ios]":{
+	statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT
+},
+
+".field-username":{
+	color:'#ffffff',
+	top:'46%',
+	width:'85%',
+	height:40,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:"transparent",
+    backgroundFocusedColor:"transparent",
+	backgroundImage: '/images/textfield.png',
+	maxLength: 200,
+	keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+	returnKeyType:Ti.UI.RETURNKEY_NEXT,
+	borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+	font:{
+		fontSize:26,
+		fontFamily:"Wask_New"
+	},
+	zIndex: 3,
+},
+
+	".field-username[platform=ios]":{
+		font:{
+			fontSize:26,
+			fontFamily:"WaskNew"
+		},
+	},
+
+".field-password":{
+	color:'#ffffff',
+	top:'58%',
+	width:'85%',
+	height:40,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:"transparent",
+    backgroundFocusedColor:"transparent",
+	backgroundImage: '/images/textfield.png',
+	maxLength: 255,
+	passwordMask:true,
+	keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+	returnKeyType:Ti.UI.RETURNKEY_DONE,
+	borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+	font:{
+		fontSize:26,
+		fontFamily:"Wask_New"
+	},
+	zIndex: 3,
+},
+	
+	".field-password[platform=ios]":{
+		font:{
+			fontSize:26,
+			fontFamily:"WaskNew"
+		},
+	},
+
+".button-sign":{
+	width:'85%',
+	height:40,
+	color:'#fff',
+	backgroundColor: '#ee5c5f',
+	borderRadius:4,
+	font:{
+		fontSize:21,
+		fontWeight:'bold',
+		fontFamily:"Wask_New_Bold"
+	},
+	zIndex: 3,
+},
+".button-sign[platform=ios]":{
+	font:{
+		fontSize:25,
+		fontWeight:'bold',
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".signin":{
+	top:'68%',
+},
+
+".signup":{
+	top:'78%',
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+},
+
+".passloss":{
+	top:'86%',
+	opacity: 0.8,
+	backgroundColor:'transparent',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font:{
+		fontSize:18,
+		fontWeight:'bold',
+		fontFamily:"Wask_New_Now"
+	},
+},
+".passloss[platform=ios]":{
+	backgroundColor:'transparent',
+	font:{
+		fontSize:20,
+		fontWeight:'bold',
+		fontFamily:"WaskNew-Bold"
+	},
+}

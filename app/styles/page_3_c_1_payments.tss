@@ -1,0 +1,323 @@
+".window":{
+	backgroundColor:"white",
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+
+".container": {
+	top: 80,
+	left: Alloy.Globals.backdropImageLeft,
+	backgroundColor: "#ffffff",
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+},
+
+"#tabBarTop": {
+	top: 0,
+	width:'100%',
+	backgroundColor: Alloy.Globals.BLUE_COLOR,
+	height: 41,
+	layout: 'horizontal'
+},
+
+	".button":{
+		left: 0,
+		height: 40,
+		width:"50%",
+		borderRadius: 0,
+		color:Alloy.Globals.BLUE_COLOR_v2,
+		backgroundColor: "#ffffff",
+		borderRadius: 0,
+		borderWidth:0,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		font:{
+			fontSize: 26,
+			fontFamily:"Wask_New"
+		},
+	},
+	".button[platform=ios]":{
+		font:{
+			fontSize: 22,
+			fontFamily:"WaskNew"
+		},
+	},
+	
+	".selected":{
+		color:"#ffffff",
+		backgroundColor: Alloy.Globals.BLUE_COLOR,
+	},
+
+	".tabSeparator": {
+		top: 0,
+		height: 0.5,
+		width: '100%',
+		backgroundColor: Alloy.Globals.BLUE_COLOR_v2
+	},
+
+".content":{
+	top: 0,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: false,
+},
+
+".card":{
+	layout: 'vertical',
+	width: '100%',
+	top: 16,
+	height: 340,
+},
+		
+".iban":{
+	layout: 'vertical',
+	width: '100%',
+	top: 12,
+	height: 500,
+},
+
+".row":{
+	layout: 'vertical',
+	width: '100%',
+	height: 40,
+	top: 12
+},
+
+".top_bigger":{
+	top: 38
+},
+
+".separator":{
+	height: 1,
+	width:'35%',
+	backgroundColor: '#e0e0e0'
+},
+
+".view-field-c-simple":{
+	top: '16dp',
+	width:'85%',
+	height:70,
+	layout: 'vertical',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+},
+
+".view-field-c-double":{
+	width:'85%',
+	height:86,
+	layout: 'horizontal',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+},
+
+".view-field":{
+	top:0,
+	width:'100%',
+	height:40,
+	layout: 'horizontal',
+	borderColor:'#ababab',
+	borderWidth:1,
+	borderRadius:6,
+	backgroundColor:'#ffffff',
+    backgroundSelectedColor:'#ffffff',
+    backgroundFocusedColor:'#ffffff',
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+},
+
+".row-container-for-center": {
+	width: 242,
+},
+
+".photo":{
+	width:'100%',
+},
+
+".picto": {
+	left: 12,
+	width:26,
+	height:26,
+},
+
+".view-field-exp":{
+	left: 0,
+	width:'50%',
+},
+
+".view-field-ccv":{
+	left: '4%',
+	width:'45%',
+},
+
+".view-field-cp":{
+	left: 0,
+	width:'40%',
+},
+
+".view-field-ville":{
+	left: '4%',
+	width:'55%',
+},
+
+".field":{
+	color:'#000',
+	width:'100%',
+	left:12,
+	height:'100%',
+	borderRadius:6,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:'transparent',
+    backgroundFocusedColor:'transparent',
+	keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+	returnKeyType:Ti.UI.RETURNKEY_DEFAULT,
+	borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+	font:{
+		fontSize:26,
+		fontFamily:"Wask_New"
+	},
+	zIndex: 3,
+},
+".field[platform=ios]":{
+	font:{
+		fontSize:26,
+		fontFamily:"WaskNew"
+	},
+},
+
+"#CardNumber":{
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#CardExp1":{
+	width:36,
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#CardExp2":{
+	width:40	,
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#CardCCV":{
+	passwordMask:true,
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
+	returnKeyType: Ti.UI.RETURNKEY_DONE
+},
+
+"#IbanName":{
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#IbanAddr":{
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#IbanVille":{
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#IbanIban":{
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBERS_PUNCTUATION,
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#IbanBic":{
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBERS_PUNCTUATION,
+	returnKeyType: Ti.UI.RETURNKEY_DONE
+},
+	
+".labl":{
+	top:0,
+	left: 0,
+	height: 30,
+	color:'#868686',
+	wordWrap: false,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 10,
+		fontFamily:"sans-serif",
+		fontWeight: "bold"
+	},
+},
+".labl[platform=ios]":{
+	font:{
+		fontSize: 14,
+		fontFamily:"sans-serif",
+		fontWeight: "bold"
+	},
+},
+
+".field-space":{
+	left: 6,
+},
+	
+".labl-h100p":{
+	height: '100%',
+	font:{
+		fontSize: 11,
+		fontFamily:"sans-serif",
+		fontWeight: "normal"
+	},
+},
+".labl-h100p[platform=ios]":{
+	font:{
+		fontSize: 15,
+		fontFamily:"sans-serif",
+		fontWeight: "normal"
+	},
+},
+
+".bold":{
+	width: '100%',
+	color: Alloy.Globals.BLUE_COLOR,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 24,
+		fontFamily:"Wask_New_Bold",
+	},
+},
+".bold[platform=ios]":{
+	font:{
+		fontSize: 26,
+		fontFamily:"WaskNew-Bold",
+	},
+},
+
+".Vbutton":{
+	height: '100%',
+	width:"160dp",
+	color:"#ffffff",
+	borderRadius: 5,
+	backgroundColor:"#ee5c5f",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	wordWrap: false,
+	font:{
+		fontSize: 19,
+		fontFamily:"Wask_New_Bold"
+	},
+},
+".Vbutton[platform=ios]":{
+	font:{
+		fontSize: 23,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".text-onright": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+},
+
+".field-onright": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	left:-12
+},

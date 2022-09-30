@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>fr.swapbook.app</id>
+    <name>Swapbook</name>
+    <version>1.0.0.1</version>
+    <publisher>Da Relative Company SAS</publisher>
+    <url>http://www.swapbook.fr</url>
+    <description>The Swapbook App by Da Relative Company SAS</description>
+    <copyright>2017 by Da Relative Company SAS</copyright>
+    <icon>DefaultIcon.png</icon>
+    <fullscreen>true</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>5c04d0a8-4a82-498f-9fff-8b665630173d</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+        <plist>
+            <dict>
+                <key>UIBackgroundModes</key>
+                <array>
+                    <string>remote-notification</string>
+                </array>
+                <key>NSContactsUsageDescription</key>
+                <string>Afin de découvrir et matcher par le numéro de téléphone ou le mail qui utilise l'application Swapbook</string>
+                <key>NSCameraUsageDescription</key>
+                <string>Afin d'ajouter et mettre à jour les premières de couverture des livres, changer ta photo de profil et envoyer des photos dans le chat-messenger</string>
+                <key>NSPhotoLibraryUsageDescription</key>
+                <string>Afin d'ajouter et mettre à jour les premières de couverture des livres, changer ta photo de profil et envoyer des photos dans le chat-messenger</string>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>NSLocationWhenInUseUsageDescription</key>
+                <string>Swapbook</string>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>Swapbook</string>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+                <key>keychain-access-groups</key>
+                <array>
+                    <string>190774858042725</string>
+                </array>
+                <key>FacebookAppID</key>
+                <string>190774858042725</string>
+                <key>FacebookDisplayName</key>
+                <string>Swap-B-ook</string>
+                <key>CFBundleURLTypes</key>
+                <array>
+                    <dict>
+                        <key>CFBundleURLName</key>
+                        <string>com.facebook.swapbook</string>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                            <string>fb190774858042725</string>
+                        </array>
+                    </dict>
+                </array>
+                <key>LSApplicationQueriesSchemes</key>
+                <array>
+                    <string>fbapi</string>
+                    <string>fb-messenger-api</string>
+                    <string>fbauth2</string>
+                    <string>fbshareextension</string>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="android">ti.cloudpush</module>
+        <module platform="android">ti.imagefactory</module>
+        <module platform="android">facebook</module>
+        <module platform="android">com.rkam.swiperefreshlayout</module>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="iphone">facebook</module>
+        <module platform="iphone">ti.imagefactory</module>
+        <module platform="iphone">dk.napp.social</module>
+        <module platform="iphone">ti.barcode</module>
+        <module platform="android">ti.barcode</module>
+        <module platform="iphone">com.likelysoft.cardio</module>
+        <module platform="iphone">analytics.google</module>
+    </modules>
+    <deployment-targets>
+        <target device="iphone">true</target>
+        <target device="ipad">true</target>
+        <target device="android">false</target>
+        <target device="mobileweb">false</target>
+        <target device="windows">false</target>
+    </deployment-targets>
+    <sdk-version>6.0.2.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">578574653a940e3869983156</property>
+    <property name="appc-org-id" type="string">100114579</property>
+    <property name="appc-creator-user-id" type="string">c1ae53d4-8bd4-48e5-a062-05a67c073760</property>
+    <property name="acs-push-type-development" type="string">gcm</property>
+    <property name="acs-push-type-production" type="string">gcm</property>
+    <property name="acs-push-type" type="string">gcm</property>
+    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-development" type="string">TbvSIDCts8gYLgmQpyA2UYfPszPCYVTd</property>
+    <property name="acs-oauth-key-development" type="string">a3nyDBYxwBeC7fctlRqhmcH4l2UlSqU8</property>
+    <property name="acs-api-key-development" type="string">inzjDGEWw3R9AmEpomTFKFpfC5r8s30Z</property>
+    <property name="acs-username-development" type="string">appc_app_user_dev</property>
+    <property name="acs-password-development" type="string">vpkDmCm2xyf1LiS1bd</property>
+    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-production" type="string">pcA3IJLn1a0Mx0CNP2mVxZuKz47Pnths</property>
+    <property name="acs-oauth-key-production" type="string">CcvomIUsRRIEy8F2se2zywCflqPFZseJ</property>
+    <property name="acs-api-key-production" type="string">lyX20bnTVGfzl7tevwCLKHktKelhDFor</property>
+    <property name="acs-username-production" type="string">appc_app_user</property>
+    <property name="acs-password-production" type="string">VgGbrSpFKcXHAV6EMb</property>
+</ti:app>

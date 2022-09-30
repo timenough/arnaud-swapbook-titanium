@@ -1,0 +1,43 @@
+<Alloy>
+	<View id="menuMask" class="menuMask">
+		<View id="menuClose" class="menuClose" touchEnabled="true" />
+		<ScrollView id="menuOuter" class="menuOuter" disableBounce="true">
+		
+			<View id="banner">
+				<ImageView id="banner_img" image="https://unsplash.it/640/640" />
+				<View id="banner_overlay_fille" class="banner_overlay fille" />
+				<View id="banner_overlay_garcon" class="banner_overlay garcon" />
+				<ImageView id="banner_img_user" image="https://unsplash.it/640/640" />
+				<Label id="banner_uname">Laure</Label>
+			</View>
+			
+			<View class="link link_first" touchEnabled="true">
+				<ImageView class="link_picto" image="/images/lateralPictoUser.png" touchEnabled="true" bubbleParent="true" />
+				<Label class="link_text" id="goto_informations" touchEnabled="true" bubbleParent="true">Mes informations</Label>
+			</View>
+			
+			<View class="link" touchEnabled="true">
+				<ImageView class="link_picto" image="/images/lateralPictoTransactions.png" touchEnabled="true" bubbleParent="true" />
+				<Label class="link_text" id="goto_transactions" touchEnabled="true" bubbleParent="true">Mes transactions</Label>
+			</View>
+			
+			<View class="link" touchEnabled="true">
+				<ImageView class="link_picto" image="/images/lateralPictoPayments.png" touchEnabled="true" bubbleParent="true" />
+				<Label class="link_text" id="goto_payment_infos" touchEnabled="true" bubbleParent="true">Mes infos de paiement</Label>
+			</View>
+			
+			<View class="link" touchEnabled="true">
+				<ImageView class="link_picto" image="/images/lateralPictoSettings.png" touchEnabled="true" bubbleParent="true" />
+				<Label class="link_text" id="goto_params" touchEnabled="true" bubbleParent="true">Paramètres</Label>
+			</View>
+			
+			<View class="link" touchEnabled="true">
+				<ImageView class="link_picto" image="/images/lateralPictoContact.png" touchEnabled="true" bubbleParent="true" />
+				<Label class="link_text" id="goto_contact" touchEnabled="true" bubbleParent="true">Nous contacter</Label>
+			</View>
+			
+			<View class="link" />
+		
+		</ScrollView>
+	</View>
+</Alloy>

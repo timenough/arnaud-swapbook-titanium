@@ -1,0 +1,11 @@
+<Alloy>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_blank" id="navBar" customparameter="question" />
+		
+		<WebView class="content" id="the_scroll_view" />
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

@@ -1,0 +1,17 @@
+<Alloy>
+	<TableViewRow class="templateCell">
+		<View id="rowContainer" bindId="rowContainer" class="template_container">
+			<View id="photoContainer" bindId="photoContainer" class="user_photo_container">
+				<ImageView id="convPhoto" bindId="convPhoto" class="user_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" />
+			</View>
+			<ImageView id="convSeen" image="/images/validateBlue.png" />
+			<Label id="userName" bindId="userName" class="labl user_name" text="Laure" />
+			<Label id="userFriends" bindId="userFriends" class="labl user_friends" text="8 amis en commun" />
+			<Label id="userMess" bindId="userMess" class="labl user_last_message" text="Parfait, on se retrouve samedi matin devant!" />
+			<Label id="userMessDate" bindId="userMessDate" class="labl user_last_message_date" text="Aujourd'hui à 20h31" />
+			<ImageView id="isParrainRelation" bindId="isParrainRelation" class="is_spe_relation" image="/images/parrainRelation.png" />
+			<ImageView id="goToConv" bindId="goToConv" class="goto_button" image="/images/arrowRightBlue.png" />
+			<View id="separator" bindId="separator" />
+		</View>
+	</TableViewRow>
+</Alloy>

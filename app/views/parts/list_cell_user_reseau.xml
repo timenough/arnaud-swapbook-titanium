@@ -1,0 +1,17 @@
+<Alloy>
+	<ItemTemplate name="UserReseauRow" id="UserReseauRow" class="templateCell">
+		<View class="template_container">
+   
+			<View class="user_photo_container">
+				<ImageView id="userPhoto" bindId="userPhoto" class="user_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" user_id="0" onClick="seeProfile" touchEnabled="true" />
+			</View>
+			<Label id="userName" bindId="userName" class="labl user_name" text="Laure" />
+			<Label id="userFriends" bindId="userFriends" class="labl user_friends" text="3 amis en commun" />
+			<Label id="userUniv" bindId="userUniv" class="labl user_univ" text="Dauphine" />
+			<Label id="userDiplome" bindId="userDiplome" class="labl user_diplome" text="Master 2 Finance d'Entreprise" />
+			<ImageView id="userChat" bindId="userChat" user_id="0" base_user_id="0" class="btn" image="/images/addChat.png" onClick="gotoChat" />
+			<View class="user_separator" />
+			
+		</View>
+	</ItemTemplate>
+</Alloy>

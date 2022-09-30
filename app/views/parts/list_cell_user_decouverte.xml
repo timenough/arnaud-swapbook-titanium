@@ -1,0 +1,43 @@
+<Alloy>
+	<ItemTemplate name="UserDecouverteRow" id="UserDecouverteRow" class="templateCell">
+		<View class="template_container">
+   
+   			<View class="part part1" id="part1">
+   				<View class="subview">
+					<ImageView id="userPhoto" bindId="userPhoto" class="user_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" user_id="0" onClick="seeProfile" touchEnabled="true" />
+					<Label id="userName" bindId="userName" class="labl user_name" text="Laure" />
+					<Label id="userFriends" bindId="userFriends" class="labl user_friends" text="3 amis en commun" />
+					<Label id="userUniv" bindId="userUniv" class="labl user_univ" text="Dauphine" />
+					<Label id="userDiplome" bindId="userDiplome" class="labl user_diplome" text="Master 2 Finance d'Entreprise" />
+   				</View>
+   				<View class="subview_buttons">
+					<View id="friendButton" bindId="friendButton" user_id="0" base_user_id="0" class="labl friend_button" onClick="addFriend" touchEnabled="true">
+						<ImageView id="friendButtonP" bindId="friendButtonP" user_id="0" base_user_id="0" class="button_picto" image="/images/addFriend.png" touchEnabled="false" />
+					</View>
+					<View id="godfatherButton" bindId="godfatherButton" user_id="0" base_user_id="0" class="labl godfather_button" onClick="addGodfather" touchEnabled="true">
+						<ImageView id="godfatherButtonP" bindId="godfatherButtonP" user_id="0" base_user_id="0" class="button_picto_b" image="/images/addGodfather.png" touchEnabled="false" />
+					</View>
+   				</View>
+   			</View>
+			
+   			<View class="part part2" id="part2" bindId="part2">
+   				<View class="subview">
+					<ImageView id="userPhoto2" bindId="userPhoto2" class="user_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" user_id="0" onClick="seeProfile" touchEnabled="true" />
+					<Label id="userName2" bindId="userName2" class="labl user_name" text="Laure" />
+					<Label id="userFriends2" bindId="userFriends2" class="labl user_friends" text="3 amis en commun" />
+					<Label id="userUniv2" bindId="userUniv2" class="labl user_univ" text="Dauphine" />
+					<Label id="userDiplome2" bindId="userDiplome2" class="labl user_diplome" text="Master 2 Finance d'Entreprise" />
+   				</View>
+   				<View class="subview_buttons">
+					<View id="friendButton2" bindId="friendButton2" user_id="0" base_user_id="0" class="labl friend_button" onClick="addFriend" touchEnabled="true">
+						<ImageView id="friendButtonP2" bindId="friendButtonP2" user_id="0" base_user_id="0" class="button_picto" image="/images/addFriend.png" touchEnabled="false" />
+					</View>
+					<View id="godfatherButton2" bindId="godfatherButton2" user_id="0" base_user_id="0" class="labl godfather_button" onClick="addGodfather" touchEnabled="true">
+						<ImageView id="godfatherButtonP2" bindId="godfatherButtonP2" user_id="0" base_user_id="0" class="button_picto_b" image="/images/addGodfather.png" touchEnabled="false" />
+					</View>
+   				</View>
+   			</View>
+			
+		</View>
+	</ItemTemplate>
+</Alloy>

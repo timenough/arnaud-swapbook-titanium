@@ -1,0 +1,118 @@
+<Alloy>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_no_search" id="navBar" />
+	
+	    <View class="container">
+	    		
+	    	<View id="tabBarTop">
+				<View class="tabSeparator" />
+				<Button class="button selected" id="gotoCard" fortab="CARD">Carte de crédit</Button>
+				<Button class="button" id="gotoIban" fortab="IBAN">IBAN</Button>
+				<View class="tabSeparator" />
+			</View>
+			
+			<ScrollView class="content" id="the_scroll_view">
+	
+		    	<View class="card" id="cardDiv">
+		    		
+		    		<View class="row">
+						<Label class="labl bold">MA CARTE DE CRÉDIT</Label>
+		    		</View>
+		    		
+		    		<View class="row">
+			    		<View class="row-container-for-center">
+							<View class="view-field photo" touchEnabled="true" id="ScanCard">
+								<ImageView class="picto" image="/images/camera.png" />
+								<Label class="labl field-space labl-h100p">Scannes ta carte bancaire</Label>
+							</View>
+						</View>
+		    		</View>
+					<View class="row separator top_bigger" />
+					<View class="view-field-c-simple top_bigger">
+						<Label class="labl">Numéro de carte</Label>
+						<View class="view-field">
+							<TextField class="field" id="CardNumber" hintText="N° de carte" maxLength="20" />
+						</View>
+		    		</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-exp">
+							<Label class="labl">Date d'expiration</Label>
+							<View class="view-field">
+								<TextField class="field" id="CardExp1" hintText="MM" maxLength="2" />
+								<Label class="labl field-space labl-h100p">/</Label>
+								<TextField class="field field-space" id="CardExp2" hintText="AA" maxLength="2" />
+							</View>
+						</View>
+						<View class="view-field-c-simple view-field-ccv">
+							<Label class="labl text-onright">CCV</Label>
+							<View class="view-field">
+								<TextField class="field field-onright" id="CardCCV" hintText="CCV" maxLength="3" />
+							</View>
+						</View>
+					</View>
+					
+				</View>
+	
+		    	<View class="iban" visible="false" height="0" id="ibanDiv">
+		    		
+		    		<View class="row">
+						<Label class="labl bold">MON IBAN</Label>
+		    		</View>
+		    		
+					<View class="view-field-c-simple top_bigger">
+						<Label class="labl">Nom</Label>
+						<View class="view-field">
+							<TextField class="field" id="IbanName" hintText="Nom et Prénom(s)" maxLength="160" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl">Adresse</Label>
+						<View class="view-field">
+							<TextField class="field" id="IbanAddr" hintText="Adresse du titulaire du compte" maxLength="200" />
+						</View>
+		    		</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-cp">
+							<Label class="labl">Code Postal</Label>
+							<View class="view-field">
+								<TextField class="field" id="IbanCP" hintText="XXXXX" maxLength="5" />
+							</View>
+						</View>
+						<View class="view-field-c-simple view-field-ville">
+							<Label class="labl text-onright">Ville</Label>
+							<View class="view-field">
+								<TextField class="field field-onright" id="IbanVille" hintText="Ville" maxLength="160" />
+							</View>
+						</View>
+					</View>
+					<View class="view-field-c-simple">
+						<Label class="labl">Numéro d'IBAN</Label>
+						<View class="view-field">
+							<TextField class="field" id="IbanIban" hintText="N° d'IBAN sans espaces" maxLength="27" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl">Numéro BIC</Label>
+						<View class="view-field">
+							<TextField class="field" id="IbanBic" hintText="N° BIC" maxLength="11" />
+						</View>
+		    		</View>
+		    		
+				</View>
+				
+		    	<View class="row top_bigger">
+					<Button class="Vbutton" id="Save">ENREGISTRER</Button>
+				</View>
+				
+		    	<View class="row"/>
+		    	<View class="row"/>
+				
+			</ScrollView>
+			
+		</View>
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

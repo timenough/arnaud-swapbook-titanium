@@ -1,0 +1,17 @@
+<Alloy>
+	<TableViewRow class="templateCell">
+		<View class="template_container">
+			<View class="list_img_book_container">
+				<ImageView id="bookPhoto" bindId="bookPhoto" class="list_img_book" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-book-swapbook.png" />
+			</View>
+			<Label id="bookIsReco" bindId="bookIsReco" class="labl book_reco" text="Recommandé par ton BDE !" />
+			<Label id="bookTitle" bindId="bookTitle" class="labl book_title" text="Principes de Finance moderne" />
+			<Label id="bookAuthor" bindId="bookAuthor" class="labl book_author" text="Robert Goffin" />
+			<Label id="bookEdition" bindId="bookEdition" class="labl book_edition" text="6ème édition - 2012" />
+			<Label id="bookDescription" bindId="bookDescription" class="labl book_desc" text="Description Lorem Ipsum" />
+			<Label id="bookPrices" bindId="bookPrices" class="labl book_prices" text="12-14€" />
+			<Label id="bookSellers" bindId="bookSellers" class="labl book_sellers" text="12 swappeurs vendent ce livre" />
+			<View id="separator" />
+		</View>
+	</TableViewRow>
+</Alloy>

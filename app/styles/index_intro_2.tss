@@ -1,0 +1,97 @@
+".containerBackground":{
+	top:0,
+	left:Alloy.Globals.backdropImageLeft,
+	height: Alloy.Globals.backdropImageHeight,
+	width: Alloy.Globals.backdropImageWidth,
+	preventDefaultImage: true
+},
+
+".view-banner":{
+	top:0,
+	width:'100%',
+	height:120,
+	backgroundColor:'#40000000'
+},
+
+".view-banner[if=Alloy.Globals.iPhoneShortWidth]":{
+	height:90,
+},
+
+".next":{
+	color:'#fff',
+	right:'12%',
+	backgroundColor:'transparent',
+    backgroundSelectedColor:'transparent',
+    backgroundFocusedColor:'transparent',
+	font:{
+		fontSize:36,
+		fontWeight:'bold',
+		fontFamily:"Wask_New_Bold"
+	},
+},
+
+	".next[platform=ios]":{
+		font:{
+			fontSize:26,
+			fontWeight:'bold',
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+	".next[if=Alloy.Globals.iPhoneShortWidth]":{
+		fontSize:18,
+		fontFamily:"WaskNew"
+	},
+
+".text":{
+	top:'32%',
+	width:'70%',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font:{
+		fontSize:40,
+		fontFamily:"Wask_New"
+	},
+	color:"#fff",
+	zIndex: 3
+},
+
+	".text[platform=ios]":{
+		font:{
+			fontSize:38,
+			fontFamily:"WaskNew"
+		},
+	},
+	
+	"#text[if=Alloy.Globals.iPhoneShortWidth]":{
+		font:{
+			fontSize:28,
+			fontFamily:"WaskNew"
+		},
+	},
+
+".view-buttons":{
+	bottom:'6%',
+	width:Ti.UI.SIZE,
+	height:40,
+	layout: 'horizontal',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+
+".button":{
+	left:30,
+	width:20,
+	height:20,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:"transparent",
+    backgroundFocusedColor:"transparent",
+	backgroundImage: '/images/dotOff.png',
+	zIndex: 3,
+},
+
+".on":{
+	backgroundImage: '/images/dotOn.png',
+},
+
+".first":{
+	left:0,
+},

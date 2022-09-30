@@ -1,0 +1,589 @@
+".window":{
+	backgroundColor:"white",
+	orientationModes: [
+		Ti.UI.PORTRAIT,
+        Ti.UI.UPSIDE_PORTRAIT
+	]
+},
+
+".container": {
+	top: 80,
+	left: Alloy.Globals.backdropImageLeft,
+	backgroundColor: "#ffffff",
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+},
+	
+".labl":{
+	height: 80,
+	color:'#868686',
+	wordWrap: false,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 11,
+		fontFamily:"sans-serif",
+	},
+},
+".labl[platform=ios]":{
+	font:{
+		fontSize: 15,
+		fontFamily:"sans-serif",
+	},
+},
+
+".field-space":{
+	left: 6,
+},
+
+"#tabBarTop": {
+	top: 0,
+	width:'100%',
+	height: 56,
+	layout: 'horizontal'
+},
+
+	".button":{
+		left: 0,
+		height: 52,
+		width:"33.3%",
+		layout: 'vertical',
+		borderRadius: 0,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	},
+
+	".button[if=Alloy.Globals.iPhoneShortWidth]":{
+		width:"33.2%",
+	},
+
+	".tabSeparator": {
+		top: 0,
+		height: 4,
+		width: '100%',
+		backgroundColor: '#ffffff'
+	},
+	
+	".labl-btn-step":{
+		top: 0,
+		width: '100%',
+		height:26,
+		color:"#ffffff",
+		borderWidth: 1,
+		borderColor:"#ffffff",
+		backgroundColor: "silver",
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		font:{
+			fontSize: 16,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".labl-btn-step[platform=ios]":{
+		font:{
+			fontSize: 20,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+	".current-step":{
+		backgroundColor: Alloy.Globals.BLUE_COLOR,
+	},
+	
+	".labl-btn-view":{
+		top: 0,
+		height: 26,
+		width:"100%"
+	},
+	
+	".labl-btn":{
+		left: 0,
+		top: 0,
+		width:'100%',
+		height:'100%',
+		color:Alloy.Globals.BLUE_COLOR_v3,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		font:{
+			fontSize: 12,
+			fontFamily:"Wask_New"
+		},
+	},
+	".labl-btn[platform=ios]":{
+		font:{
+			fontSize: 16,
+			fontFamily:"WaskNew"
+		},
+	},
+	
+	".picto": {
+		right:6,
+		top: 3,
+		width:20,
+		height:20,
+	},
+
+".content":{
+	top: 0,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: false,
+},
+	
+".step":{
+	layout: 'vertical',
+	width: '100%',
+	top: -68,
+},
+	
+".step0":{
+	layout: 'vertical',
+	width: '100%',
+	top: 68,
+},
+
+".row":{
+	layout: 'vertical',
+	width: '100%',
+	height: 40,
+	top: 12,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+},
+
+".top_shorter":{
+	top: 6,
+	height: 26,
+},
+
+".top_bigger":{
+	top: 30
+},
+
+".top_bigger_little":{
+	top: 20
+},
+
+".separator":{
+	height: 1,
+	width:'35%',
+	backgroundColor: '#e0e0e0'
+},
+
+".view-field-c-simple":{
+	top: '16dp',
+	width:'85%',
+	height:70,
+	layout: 'vertical',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+},
+
+".view-field-c-simple-first":{
+	top: '2dp',
+},
+
+".view-field-c-double":{
+	width:'85%',
+	height:86,
+	layout: 'horizontal',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+},
+
+".view-field":{
+	top:0,
+	width:'100%',
+	height:40,
+	layout: 'horizontal',
+	borderColor:'#ababab',
+	borderWidth:1,
+	borderRadius:6,
+	backgroundColor:'#ffffff',
+    backgroundSelectedColor:'#ffffff',
+    backgroundFocusedColor:'#ffffff',
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+},
+
+".view-field-done":{
+	borderColor:'#ffffff',
+},
+
+".view-field-state":{
+	left: 0,
+	width:'55%',
+},
+
+".view-field-price":{
+	left: '4%',
+	width:'40%',
+},
+
+".view-field-price-port":{
+	left: 0,
+},
+
+".view-field-port":{
+	width:'40%',
+},
+
+".view-field-c-simple-description":{
+	height:140,
+},
+
+".view-field-description":{
+	height:110,
+},
+
+".view-field-tags":{
+	height:40,
+},
+
+".view-field-tag":{
+	left: 14,
+	width:'41%',
+	borderColor:Alloy.Globals.BLUE_COLOR,
+	borderRadius:18,
+},
+
+".view-field-tag-first":{
+	left: 0,
+},
+
+".plus":{
+	left: 14,
+	height:22,
+},
+
+".plus[if=Alloy.Globals.iPhoneShortWidth]":{
+	left: 3,
+},
+
+".row-container-for-center": {
+	width: 296,
+},
+
+".scan":{
+	width:'100%',
+	borderColor:'#ee5c5f',
+},
+
+".scan-picto": {
+	left:11,
+	width:26,
+	height:26,
+},
+
+".labl-red":{
+	color:"#ee5c5f",
+	height: '100%',
+	font:{
+		fontSize: 11,
+		fontFamily:"sans-serif",
+		fontWeight: "normal"
+	},
+},
+".labl-red[platform=ios]":{
+	font:{
+		fontSize: 15,
+		fontFamily:"sans-serif",
+		fontWeight: "normal"
+	},
+},
+
+".labl-field":{
+	top:0,
+	left: 0,
+	height: 30,
+	color:'#868686',
+	wordWrap: false,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 10,
+		fontFamily:"sans-serif",
+		fontWeight: "bold"
+	},
+},
+".labl-field[platform=ios]":{
+	font:{
+		fontSize: 14,
+		fontFamily:"sans-serif",
+		fontWeight: "bold"
+	},
+},
+
+".labl-field-help":{
+	left: 8,
+	width: '56%',
+	height: '100%',
+	font:{
+		fontSize: 8,
+		fontFamily:"sans-serif",
+		fontWeight: "normal"
+	},
+},
+".labl-field-help[platform=ios]":{
+	font:{
+		fontSize: 12,
+		fontFamily:"sans-serif",
+		fontWeight: "normal"
+	},
+},
+
+".bold":{
+	height: '100%',
+	width: '100%',
+	color: Alloy.Globals.BLUE_COLOR,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 20,
+		fontFamily:"Wask_New_Bold",
+	},
+},
+".bold[platform=ios]":{
+	font:{
+		fontSize: 24,
+		fontFamily:"WaskNew-Bold",
+	},
+},
+
+".bold-bigger":{
+	font:{
+		fontSize: 23,
+		fontFamily:"Wask_New_Bold",
+	},
+},
+".bold-bigger[platform=ios]":{
+	font:{
+		fontSize: 27,
+		fontFamily:"WaskNew-Bold",
+	},
+},
+
+".bold-black":{
+	color:"black"
+},
+
+".super-bold":{
+	color:"white",
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+	borderColor:"#ffffff",
+	width: 68,
+	height: 68,
+	borderRadius: 34,
+	wordWrap: true,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+},
+	
+".super-bold-price":{
+	width: 75,
+	height: 75,
+	borderRadius: 37,
+	backgroundColor:"#ee5c5f",
+	font:{
+		fontSize: 25,
+		fontFamily:"Wask_New_Bold",
+	},
+},
+
+".super-bold-price[platform=ios]":{
+	font:{
+		fontSize: 29,
+		fontFamily:"WaskNew-Bold",
+	},
+},
+
+".field":{
+	color:'#000',
+	width:'100%',
+	left:12,
+	height:'100%',
+	borderRadius:6,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:'transparent',
+    backgroundFocusedColor:'transparent',
+	keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+	returnKeyType:Ti.UI.RETURNKEY_DEFAULT,
+	borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+	zIndex: 3,
+	font:{
+		fontSize:22,
+		fontFamily:"Wask_New"
+	},
+},
+".field[platform=ios]":{
+	font:{
+		fontSize:26,
+		fontFamily:"WaskNew"
+	},
+},
+
+".field-description":{
+	left: 5,
+	wordWrap: false,
+	suppressReturn: false,
+	textAlign: 'left',
+	verticalAlign: 'top',
+	keyboardType: Ti.UI.KEYBOARD_TYPE_DEFAULT,
+  	returnKeyType: Ti.UI.RETURNKEY_DEFAULT,
+	font:{
+		fontSize:18,
+		fontFamily:"Wask_New"
+	},
+},
+".field-description[platform=ios]":{
+	font:{
+		fontSize:22,
+		fontFamily:"WaskNew"
+	},
+},
+
+".field-tag":{
+	top:1,
+	left: 13,
+	color: Alloy.Globals.BLUE_COLOR,
+},
+
+"#ISBN":{
+	left:0,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
+	returnKeyType:Ti.UI.RETURNKEY_DEFAULT
+},
+	
+".Rbutton":{
+	height: '100%',
+	width:"160dp",
+	color:"#ffffff",
+	borderRadius: 5,
+	backgroundColor:"#ee5c5f",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	wordWrap: false,
+	font:{
+		fontSize: 19,
+		fontFamily:"Wask_New_Bold"
+	},
+},
+".Rbutton[platform=ios]":{
+	font:{
+		fontSize: 23,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".Vbutton":{
+	backgroundColor:"#33c691",
+},
+
+".Bbutton":{
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+},
+	
+".button-smaller":{
+	height: 32,
+},
+	
+".button-longer":{
+	width:"210dp",
+},
+
+".reseller_price":{
+	left: 25,
+	height:'100%',
+	color:"black",
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 16,
+		fontFamily:"Wask_New_Bold"
+	}
+},
+".reseller_price[platform=ios]":{
+	font:{
+		fontSize: 20,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".reseller_img":{
+	width:'80dp',
+	left: '16%'
+},
+
+".list_img_book_container":{
+	width: 154,
+	height: 180,
+	borderRadius: 0
+},
+
+	".book_img":{
+		top:0,
+		height: '100%',
+		zIndex:2,
+		borderWidth:'3dp',
+		borderColor:"#fff",
+	},
+	".book_img[platform=ios]":{
+		borderColor:"transparent",
+	},
+	
+	".book_photo":{
+		width: 55,
+		height: 55,
+		zIndex:4,
+	},
+							
+	".labl-photo":{
+		width: '100%',
+		height: '100%',
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		color:Alloy.Globals.BLUE_COLOR,
+		font:{
+			fontSize: 10,
+		},
+	},
+	".labl-photo[platform=ios]":{
+		font:{
+			fontSize: 14,
+		},
+	},
+
+".text-onright": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+},
+
+".field-onright": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	left:-12
+},
+
+"#tabBar": {
+	backgroundColor: "transparent",
+	zindex: 1000
+},
+
+".modal_search_photo":{
+	left:8,
+	top: 7,
+},
+
+".modal_search_close":{
+	right:9,
+	top: 7,
+},
+
+"#bookPrice":{
+	keyboardType: Ti.UI.KEYBOARD_TYPE_DECIMAL_PAD,
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#bookPricePort":{
+	keyboardType: Ti.UI.KEYBOARD_TYPE_DECIMAL_PAD,
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},

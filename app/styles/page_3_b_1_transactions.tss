@@ -1,0 +1,234 @@
+".window":{
+	backgroundColor:"white",
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+
+".container": {
+	top: 80,
+	left: Alloy.Globals.backdropImageLeft,
+	backgroundColor: "#ffffff",
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+},
+	
+".labl":{
+	top:0,
+	height: 80,
+	color:'#868686',
+	wordWrap: false,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 11,
+		fontFamily:"sans-serif",
+	},
+},
+".labl[platform=ios]":{
+	font:{
+		fontSize: 15,
+		fontFamily:"sans-serif",
+	},
+},
+
+"#tabBarTop": {
+	top: 0,
+	width:'100%',
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+	height: 41,
+	layout: 'horizontal'
+},
+
+	".button":{
+		left: 0,
+		height: 40,
+		width:"33.3%",
+		layout: 'horizontal',
+		borderRadius: 0,
+		backgroundColor: "#ffffff",
+		borderRadius: 0,
+		borderWidth:1,
+		borderColor:Alloy.Globals.BLUE_COLOR,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	},
+
+	".button[if=Alloy.Globals.iPhoneShortWidth]":{
+		width:"33.2%",
+	},
+	
+	".selected":{
+		backgroundColor: Alloy.Globals.BLUE_COLOR,
+	},
+	
+	".picto": {
+		left:'16%',
+		width:22,
+		height:22,
+	},
+
+	".picto[if=Alloy.Globals.iPhoneShortWidth]":{
+		left:6,
+		width:18,
+		height:18,
+	},
+	
+	".labl-btn":{
+		left: 6,
+		color:Alloy.Globals.BLUE_COLOR_v2,
+		height: '100%',
+		font:{
+			fontSize: 26,
+			fontFamily:"Wask_New"
+		},
+	},
+	".labl-btn[platform=ios]":{
+		font:{
+			fontSize: 22,
+			fontFamily:"WaskNew"
+		},
+	},
+	".labl-btn-selected":{
+		color:"#ffffff",
+	},
+
+	".labl-btn[if=Alloy.Globals.iPhoneShortWidth]":{
+		left:4,
+	},
+
+	".tabSeparator": {
+		top: 0,
+		height: 1,
+		width: '100%',
+		backgroundColor: Alloy.Globals.BLUE_COLOR_v2
+	},
+
+".content":{
+	top: 0,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: false,
+},
+
+".under-content":{
+	height: '100%',
+	backgroundColor:"#ffffff",
+	pullBackgroundColor: '#ffffff',
+	showVerticalScrollIndicator: false,
+	separatorColor:'#ffffff',
+	separatorHeight:'1dp'
+},
+".under-content[platform=ios]": {
+	tableSeparatorInsets: {
+		left: 0,
+		right: 0,
+		top: 0,
+		bottom: 0
+	},
+	separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_SINGLE_LINE,
+	selectionStyle : Ti.UI.iOS.TableViewCellSelectionStyle.NONE,
+	separatorHeight:'2dp'
+},
+	
+	".the_table_view_header":{
+		layout: 'vertical',
+		width: '100%',
+		top: 0,
+	},
+	
+	".row":{
+		layout: 'vertical',
+		width: '100%',
+		height: 80,
+		top: 0,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	},
+	
+	"#creditRow":{
+		layout: 'vertical',
+		width: '100%',
+		top: 0,
+	},
+		
+	".rowrow":{
+		width: '90%',
+		height: 42,
+		top: 12,
+	},
+	
+	".top_bigger":{
+		top: 38
+	},
+	
+	".separator":{
+		height: 1,
+		width:'35%',
+		backgroundColor: '#e0e0e0'
+	},
+	
+	".bold":{
+		width: '100%',
+		color: Alloy.Globals.BLUE_COLOR,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		font:{
+			fontSize: 24,
+			fontFamily:"Wask_New_Bold",
+		},
+	},
+	".bold[platform=ios]":{
+		font:{
+			fontSize: 26,
+			fontFamily:"WaskNew-Bold",
+		},
+	},
+	
+	".labl-credits":{
+		width: '100%',
+		height: '100%',
+		color: '#000',
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	},
+	
+	".labl-bold":{
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		width: '90%',
+		font:{
+			fontSize: 12,
+			fontFamily:"sans-serif",
+			fontWeight:"bold"
+		},
+	},
+	".labl-bold[platform=ios]":{
+		font:{
+			fontSize: 16,
+			fontFamily:"sans-serif",
+			fontWeight:"bold"
+		},
+	},
+		
+	".Rbutton":{
+		height: '100%',
+		width:"160dp",
+		color:"#ffffff",
+		borderRadius: 5,
+		backgroundColor:"#ee5c5f",
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		wordWrap: false,
+		font:{
+			fontSize: 19,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".Rbutton[platform=ios]":{
+		font:{
+			fontSize: 23,
+			fontFamily:"WaskNew-Bold"
+		},
+	},

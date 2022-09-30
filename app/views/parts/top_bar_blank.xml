@@ -1,0 +1,9 @@
+<Alloy>
+	<Require src="parts/alert_popin" id="AlertDialog" />
+	<View id="topbar" zIndex="400">
+		<View id="insideBar" class="navBar">
+			<Label class="label-text" id="navBarText">...</Label>
+			<Button id="closebutton" />
+		</View>
+	</View>
+</Alloy>

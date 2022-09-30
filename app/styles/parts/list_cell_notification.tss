@@ -1,0 +1,152 @@
+".templateCell":{
+	height: 90,
+	width: Ti.UI.FILL,
+	borderRadius: 0,
+	touchEnabled:true
+},
+
+".template_container":{
+	left: 0,
+	width: '100%',
+	zIndex:10,
+	touchEnabled:true,
+	backgroundColor: '#fff'
+},
+".template_container[platform=ios]":{
+	left: 0,
+},
+
+	".notif_photo_container":{
+		left: 16,
+		top: 12,
+		width: 66,
+		height: 66,
+		borderWidth: 1,
+		borderColor: '#949494',
+		backgroundColor: '#fff',
+		borderRadius: 32,
+		touchEnabled:false,
+	},
+	".notif_photo_container[if=Alloy.Globals.the_u_is_on_landscape]":{
+		visible: false,
+	},
+	
+		".notif_photo":{
+			touchEnabled:false,
+			top:0,
+			left:0,
+			width: '100%',
+			height:  '100%',
+		},
+
+	".labl":{
+		left:98,
+		color:'#3b3b3b',
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+		font:{
+			fontSize: 16,
+			fontFamily:"sans-serif"
+		},
+	},
+	".labl[platform=ios]":{
+		font:{
+			fontSize: 12,
+			fontFamily:"sans-serif"
+		},
+	},
+	
+	".notif_text":{
+		top:12,
+		width:'55%',
+		height:60,
+		color:"black",
+		wordWrap: false,
+		touchEnabled:true,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		font:{
+			fontSize: 17
+		},
+	},
+	".notif_text[platform=ios]":{
+		font:{
+			fontSize: 13
+		},
+	},
+	".notif_text[if=Alloy.Globals.the_u_is_on_landscape]":{
+		top: 8,
+		left: 16,
+		font:{
+			fontSize: 11
+		},
+	},
+	
+	".notif_text_date":{
+		bottom:10,
+		right:"16dp",
+		color:Alloy.Globals.BLUE_COLOR,
+		wordWrap: false,
+		touchEnabled:false,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+		font:{
+			fontSize: 15,
+			fontFamily:"Wask_New"
+		},
+	},
+	".notif_text_date[platform=ios]":{
+		font:{
+			fontSize: 11,
+			fontFamily:"WaskNew"
+		},
+	},
+	
+	".decline":{
+		top: 24,
+		right:"52dp",
+		width: 24,
+		height: 24,
+		borderRadius: 7,
+		touchEnabled: true,
+		focusable: false,
+	},
+
+
+	".accept":{
+		top: 24,
+		right:"16dp",
+		width: 24,
+		height:24,
+		borderRadius: 7,
+		touchEnabled: true,
+		focusable: false,
+	},
+
+	"#separator": {
+		bottom: 0,
+		width:'100%',
+		height: 0.5,
+		backgroundColor: '#d2d2d2'
+	},
+
+".notif_delete":{
+	top: 0,
+	right: -91,
+	zIndex: 0,
+	height: "100%",
+	width: 90,
+	borderRadius: 0,
+	color: "white",
+	backgroundColor: "#e9787c",
+	touchEnabled:true,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 21,
+		fontWeight: 'bold'
+	},
+},
+".notif_delete[platform=ios]":{
+	font:{
+		fontSize: 17,
+		fontWeight: 'bold'
+	},
+},

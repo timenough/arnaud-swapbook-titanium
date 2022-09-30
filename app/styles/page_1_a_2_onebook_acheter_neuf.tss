@@ -1,0 +1,199 @@
+".window":{
+	backgroundColor:"white",
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+
+".content":{
+	top: 80,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: false,
+},
+
+".label1":{
+	top:'20dp',
+	color:Alloy.Globals.BLUE_COLOR,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 34,
+		fontFamily:"Wask_New_Bold"
+	},
+},
+".label1[platform=ios]":{
+	font:{
+		fontSize: 28,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".label2":{
+	top:'14dp',
+	color:"#616161",
+	width:'85%',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 26,
+		fontFamily:"Wask_New_Bold"
+	},
+},
+".label2[platform=ios]":{
+	font:{
+		fontSize: 22,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".view-field":{
+	top: '12dp',
+	width:'85%',
+	height:44,
+	borderColor:'#ababab',
+	borderWidth:1,
+	borderRadius:6,
+	backgroundColor:'#ffffff',
+    backgroundSelectedColor:'#ffffff',
+    backgroundFocusedColor:'#ffffff',
+},
+
+".first":{
+	top: '14dp',
+},
+
+".no-borders":{
+	height:44,
+	borderColor:'transparent',
+	borderWidth:0,
+	borderRadius:0,
+	layout:'horizontal',
+	touchEnabled: true
+},
+
+".field":{
+	color:'#868686',
+	width:'100%',
+	left:20,
+	height:'100%',
+	borderRadius:6,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:'transparent',
+    backgroundFocusedColor:'transparent',
+	keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+	returnKeyType:Ti.UI.RETURNKEY_DEFAULT,
+	borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+	font:{
+		fontSize:26,
+		fontFamily:"Wask_New"
+	},
+	zIndex: 3,
+},
+".field[platform=ios]":{
+	font:{
+		fontSize:26,
+		fontFamily:"WaskNew"
+	},
+},
+
+".field-prenom":{
+	hintText:'Prénom',
+},
+
+".field-nom":{
+	hintText:'Nom',
+},
+
+".field-addr1":{
+	hintText:'Adresse',
+},
+
+".field-addr2":{
+	hintText:'Apt, suite, etc. (optionnel)',
+},
+
+".field-ville":{
+	hintText:'Ville',
+},
+
+".field-pays":{
+	hintText:'Pays',
+},
+
+".field-cp":{
+	hintText:'Code postal',
+},
+
+".field-tel":{
+	hintText:'Telephone (optionnel)',
+},
+
+".check":{
+	left:0,
+	top: '1dp',
+	layout:'horizontal',
+	width:20,
+	height:18,
+	borderColor:'#ababab',
+	borderWidth:1,
+	borderRadius:4,
+	backgroundColor:'transparent',
+	touchEnabled: true
+},
+
+".save":{
+	left:'10dp',
+	top:0,
+	layout:'horizontal',
+	color:"#616161",
+	touchEnabled: true,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+	font:{
+		fontSize: 20,
+		fontFamily:"Wask_New_Bold"
+	},
+},
+".save[platform=ios]":{
+	font:{
+		fontSize: 16,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".button":{
+	top: '12dp',
+	bottom: '42dp',
+	height: 38,
+	width:"160dp",
+	color:"#ffffff",
+	borderRadius: 5,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	wordWrap: false,
+	font:{
+		fontSize: 27,
+		fontFamily:"Wask_New_Bold"
+	},
+	backgroundColor:"#33c691",
+},
+".button[platform=ios]":{
+	font:{
+		fontSize: 23,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".modal_search_photo":{
+	left:8,
+	top: 7,
+},
+
+".modal_search_close":{
+	right:9,
+	top: 7,
+}

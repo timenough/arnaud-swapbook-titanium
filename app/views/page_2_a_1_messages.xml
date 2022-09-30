@@ -1,0 +1,29 @@
+<Alloy>
+	<Collection src="Conversations" instance="true" id="conversationsRefreshable"/>
+	<Collection src="Notifications" instance="true" id="notificationsRefreshable"/>
+    <View id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_blank" id="navBar" />
+    	
+	    <View class="contain-content" id="main">
+    	
+	    	<View id="tabBarTop">
+				<Button class="button selected" id="gotoMessages" fortab="MESSAGES">MESSAGES</Button>
+					<View class="tabSeparator" />
+				<Button class="button" id="gotoNotifications" fortab="NOTIFICATIONS">NOTIFICATIONS</Button>
+			</View>
+
+			<Label id="empty">Vide</Label>
+	    	
+			<Widget id="refreshingWIDGET" src="nl.fokkezb.pullToRefresh" onRelease="localRefresher" >
+	  		
+				<TableView id="the_table_view" dataCollection="$.conversationsRefreshable" disableBounce="true" />
+				
+			</Widget>
+	     	
+		</View>
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="no_left_badge_update" />
+		
+	</View>
+</Alloy>

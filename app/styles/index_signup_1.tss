@@ -1,0 +1,204 @@
+".window":{
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+
+".containerBackground":{
+	top:0,
+	left:Alloy.Globals.backdropImageLeft,
+	height: Alloy.Globals.backdropImageHeight,
+	width: Alloy.Globals.backdropImageWidth,
+	preventDefaultImage: true
+},
+
+".signinback":{
+	color:'#fff',
+	top:'6%',
+	right:'7%',
+	zIndex: 10,
+	touchEnabled: true,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:'transparent',
+    backgroundFocusedColor:'transparent',
+	font:{
+		fontSize:16,
+		fontWeight:'bold',
+		fontFamily:"Wask_New_Bold"
+	},
+},
+
+	".signinback[platform=ios]":{
+		font:{
+			fontSize:20,
+			fontWeight:'bold',
+			fontFamily:"WaskNew-Bold"
+		},
+	}
+		
+".under-container":{
+	top: 0,
+	left:Alloy.Globals.backdropImageLeft,
+	width: '100%',
+	contentWidth: Alloy.Globals.backdropImageWidth,
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: false,
+	height:Ti.UI.FILL,
+	layout: 'vertical',
+	zIndex: 1,
+}
+		
+".photo":{
+	top:'10%',
+	width: Ti.UI.FILL,
+	height: 220,
+	backgroundColor: "#1a000000",
+}
+	
+	"#banner_img_user":{
+		width: 164,
+		height:164,
+		borderRadius: 80
+	},
+	
+	"#banner_img_user_overlay":{
+		backgroundColor: "#49000000",
+		width: 164,
+		height:164,
+		borderRadius: 80,
+		borderWidth: 2,
+		borderColor: "#fff",
+	},
+	
+		"#banner_img_user_overlay_picto":{
+			width: 50,
+			height:50,
+		},
+		
+".label-swapbook":{
+	top:40,
+	font:{
+		fontSize:26,
+		fontFamily:"Wask_New_Bold"
+	},
+	height: 36,
+	color:"#fff",
+	backgroundColor:'transparent',
+	zIndex: 3
+},
+
+	".label-swapbook[platform=ios]":{
+		font:{
+			fontSize:36,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+
+".img-line":{
+	top:0,
+	width:'85%',
+	zIndex: 8
+},
+
+".view-field":{
+	top:12,
+	width:'85%',
+	height:40,
+	borderRadius:5,
+	backgroundColor:'#ffffff',
+    backgroundSelectedColor:'#ffffff',
+    backgroundFocusedColor:'#ffffff',
+},
+
+".view-field-first":{
+	top:24,
+},
+
+".view-field-img":{
+	top:6,
+	left:8,
+	width:28,
+	height:28,
+	zIndex: 2
+},
+
+".field":{
+	color:'#000',
+	width:'100%',
+	left:42,
+	height:'100%',
+	borderRadius:5,
+	backgroundColor:'transparent',
+    backgroundSelectedColor:'transparent',
+    backgroundFocusedColor:'transparent',
+	keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+	returnKeyType:Ti.UI.RETURNKEY_NEXT,
+	borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+	zIndex: 3,
+	font:{
+		fontSize:18,
+		fontFamily:"Wask_New"
+	},
+},
+
+	".field[platform=ios]":{
+		font:{
+			fontSize:22,
+			fontFamily:"WaskNew"
+		},
+	},
+
+"#bEmail":{
+	keyboardType: Ti.UI.KEYBOARD_TYPE_EMAIL,
+	returnKeyType: Ti.UI.RETURNKEY_NEXT
+},
+
+"#bFirstname":{
+	returnKeyType: Ti.UI.RETURNKEY_DONE
+},
+
+".button-sign-view":{
+	top:24,
+	width:'85%',
+	height:45,
+	borderRadius:4,
+},
+
+".button-sign":{
+	top:24,
+	width:'85%',
+	height:44,
+	color:'#fff',
+	backgroundColor:'#ee5c5f',
+	borderRadius:5,
+	font:{
+		fontSize:20,
+		fontWeight:'bold',
+		fontFamily:"Wask_New_Bold"
+	},
+	zIndex: 3,
+},
+
+	".button-sign[platform=ios]":{
+		font:{
+			fontSize:24,
+			fontWeight:'bold',
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+	".button-sign-fb-img":{
+		top:8,
+		left:8,
+		width:30,
+		height:30,
+		zIndex: 4
+	},
+	
+	".facebook":{
+		top:0,
+		left:0,
+		width:'100%',
+		height:'100%',
+		backgroundColor:'#3b5999',
+	},

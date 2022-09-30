@@ -1,0 +1,143 @@
+".window":{
+	backgroundColor:"white",
+	orientationModes: [
+		Ti.UI.PORTRAIT
+	]
+},
+
+".content":{
+	top: 80,
+	left: Alloy.Globals.backdropImageLeft,
+	layout: 'vertical',
+	width: '100%',
+	height: Ti.UI.FILL,
+	showVerticalScrollIndicator: false,
+	showHorizontalScrollIndicator: false,
+},
+
+".row":{
+	layout: 'horizontal',
+	touchEnabled: "true",
+	width: '80%',
+	height: 42,
+	top: 12
+},
+
+".row[if=Alloy.Globals.iPhoneShortWidth]":{
+	width: '90%',
+},
+
+".top_bigger":{
+	top: 32
+},
+
+".separator":{
+	height: 1,
+	backgroundColor: '#e0e0e0'
+},
+
+".labl":{
+	height: '100%',
+	width: '84%',
+	color:"#000",
+	wordWrap: false,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font:{
+		fontSize: 9,
+		fontFamily:"sans-serif"
+	},
+},
+".labl[platform=ios]":{
+	font:{
+		fontSize: 13,
+		fontFamily:"sans-serif"
+	},
+},
+
+".labl[if=Alloy.Globals.iPhoneShortWidth]":{
+	left: 4,
+	width: '78%',
+},
+
+".bold":{
+	height: '110%',
+	font:{
+		fontSize: 13,
+		fontFamily:"sans-serif",
+		fontWeight:"bold"
+	},
+},
+".bold[platform=ios]":{
+	font:{
+		fontSize: 17,
+		fontFamily:"sans-serif",
+		fontWeight:"bold"
+	},
+},
+
+".Switch":{
+	height: '100%',
+	width: '16%',
+	onTintColor:Alloy.Globals.BLUE_COLOR,
+},
+
+".Switch[if=Alloy.Globals.iPhoneShortWidth]":{
+	left: 6,
+},
+
+".row-container-for-center": {
+	width: Ti.UI.SIZE,
+	height: '100%'
+},
+
+".link_picto": {
+	left:0,
+	width:26,
+	height:26,
+},
+
+".button":{
+	left:6,
+	height:"80%",
+	layout: 'horizontal',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	wordWrap: false,
+	font:{
+		fontSize: 20,
+		fontFamily:"Wask_New_Bold"
+	},
+},
+".button[platform=ios]":{
+	font:{
+		fontSize: 24,
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+".logout":{
+	color:Alloy.Globals.BLUE_COLOR,
+},
+
+".terms":{
+	width: '100%',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	color:"gray",
+	font:{
+		fontSize: 8,
+		fontFamily:"sans-serif"
+	},
+},
+".terms[platform=ios]":{
+	font:{
+		fontSize: 12,
+		fontFamily:"sans-serif"
+	},
+},
+
+".conditions[if=Alloy.Globals.iPhoneShortWidth]":{
+	width: '100%',
+	left: 0,
+},

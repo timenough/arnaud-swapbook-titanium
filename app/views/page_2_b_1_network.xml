@@ -1,0 +1,42 @@
+<Alloy>
+	<Collection src="PeopleUsers" instance="true" id="usersRefreshable"/>
+	<Collection src="PeopleFriends" instance="true" id="friendsRefreshable"/>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_blank" id="navBar" />
+    	
+	    <View class="contain-content" id="main">
+    	
+	    	<View id="tabBarTop">
+				<Button class="button selected" id="gotoDecouverte" fortab="DECOUVERTE">DÉCOUVERTE</Button>
+					<View id="tabSeparator" class="tabSeparator" />
+				<Button class="button" id="gotoReseau" fortab="RESEAU">MON RÉSEAU</Button>
+			</View>
+			
+			<View class="find" id="find">
+				<Button class="find_button" id="FindGodFather" touchenabled="true">Trouver un Parrain</Button>
+			</View>
+
+			<Label id="empty">Vide</Label>
+	    	
+			<ListView id="the_list_view_1" disableBounce="true" defaultItemTemplate="UserDecouverteRow">
+  				<Widget id="infinitingWIDGET" src="nl.fokkezb.infiniteScroll" onEnd="localInfiniter" msgTap="Charger plus d'utilisateurs" msgDone="Tous les utilisateurs ont été chargés" msgError="Charger les utilisateurs à nouveau"  />
+				<Templates>
+					<Require src="parts/list_cell_user_decouverte" />
+				</Templates>
+			</ListView>
+				
+			<Widget id="refreshingWIDGET" src="nl.fokkezb.pullToRefresh" onRelease="localRefresher" >
+				<ListView id="the_list_view_2" disableBounce="false" defaultItemTemplate="UserReseauRow">
+					<Templates>
+						<Require src="parts/list_cell_user_reseau" />
+					</Templates>
+				</ListView>
+			</Widget>
+	     	
+		</View>
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="no_right_badge_update" />
+		
+	</Window>
+</Alloy>

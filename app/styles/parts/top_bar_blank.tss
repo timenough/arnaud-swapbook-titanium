@@ -1,0 +1,63 @@
+"#topbar": {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 82
+},
+"#topbar[platform=android]":{
+	height: 70,
+},
+
+"#closebutton":{
+	top: 34,
+	right: '6%',
+	width: 30,
+	height: 30,
+	backgroundColor: 'transparent',
+	touchEnabled:true,
+	selectedColor: '#fff',
+	tintColor: '#fff',
+	visible: false,
+},
+
+"#closebutton[platform=ios]":{
+	image: '/images/crossBlue.png',
+},
+"#closebutton[platform=android]":{
+	top: 20,
+	left: '7%',
+	width: 34,
+	height: 34,
+	backgroundImage: '/images/crossBlue.png',
+},
+
+".navBar":{
+	borderWidth:1,
+	left:-5,
+	right:-5,
+	top:-2,
+    index:10,
+    height: 82,
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+	borderColor:Alloy.Globals.BLUE_COLOR
+},
+".navBar[platform=android]":{
+	height: 70,
+},
+
+".label-text": {
+	top: 34,
+	viewShadowRadius: 5,
+	color: '#ffffff',
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 36,
+		fontFamily: 'Wask_New_Bold'
+	},
+},
+".label-text[platform=ios]": {
+	font: {
+		fontSize: 32,
+		fontFamily: 'WaskNew-Bold'
+	}
+},

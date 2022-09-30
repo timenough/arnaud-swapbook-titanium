@@ -1,0 +1,11 @@
+<Alloy>
+	<Require src="parts/alert_popin" id="AlertDialog" />
+	<View id="topbar" zIndex="400">
+		<View id="insideBar" class="navBar">
+			<Button id="menubutton" />
+			<Button id="backbutton" />
+			<Label class="label-text" id="navBarText">...</Label>
+		</View>
+		<Button id="searchbutton" height="0" width="0" visible="false" />
+	</View>
+</Alloy>

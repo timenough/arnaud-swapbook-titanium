@@ -1,0 +1,124 @@
+<Alloy>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_default" id="navBar" customparameter="achat" />
+	    	
+    	<View id="modal_search">
+			<View class="view-field modal_search_view_field">
+				<ImageView class="modal_search_photo" image="/images/loupeBlue.png" />
+				<TextField class="field modal_search_field" id="the_search_field" bindId="the_search_field" focused="true" hintText="Rechercher un livre, un auteur, une catégorie..." />
+				<ImageView class="modal_search_close" id="modal_search_close" image="/images/crossBlue.png" />
+			</View>
+		</View>
+		
+		<ScrollView class="content" id="the_scroll_view">
+			
+			<View class="scroll_view_part1">
+				<View class="seller_photo_container">
+					<ImageView id="sellerPhoto" bindId="sellerPhoto" class="seller_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" />
+				</View>
+				<View class="seller_ratings">
+					<ImageView id="rank1" bindId="rank1" class="seller_rating" image="/images/starEmpty.png" />
+					<ImageView id="rank2" bindId="rank2" class="seller_rating" image="/images/starEmpty.png" />
+					<ImageView id="rank3" bindId="rank3" class="seller_rating" image="/images/starEmpty.png" />
+					<ImageView id="rank4" bindId="rank4" class="seller_rating" image="/images/starEmpty.png" />
+					<ImageView id="rank5" bindId="rank5" class="seller_rating" image="/images/starEmpty.png" />
+				</View>
+				<Label id="sellerName" bindId="sellerName" class="labl seller_name" text="..." />
+				<Label id="sellerUniv" bindId="sellerUniv" class="labl seller_univ" text="..." />
+				<Label id="sellerDiplome" bindId="sellerDiplome" class="labl seller_diplome" text="..." />
+				<View class="seller_desc_and_tags">
+					<View class="seller_desc">
+						<Label class="labl seller_desc_label" text="Présentation :" />
+						<Label id="sellerDesc" class="labl seller_desc_value" text="" />
+					</View>
+				</View>
+				<ScrollView id="userTags" class="user_tags_container">
+					<!-- <Label class="labl user_tag" text=" Tag1        " /> -->
+				</ScrollView>
+				<View id="separator1" />
+			</View>
+			
+			<View class="scroll_view_part2">
+				<View class="the_main_row row_1">
+					<View class="rows">
+						<View class="the_main_col the_main_col_common_vertical_1 list_img_book_container">
+							<ImageView id="bookPhoto" class="book_img" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-book-swapbook.png" />
+						</View>
+						<View class="the_main_col the_main_col_common_vertical_1 list_txt_book_container">
+							<Label id="bookTitle" class="labl book_title" text="..." />
+							<Label id="bookAuthor" class="labl book_author" text="..." />
+							<Label id="bookEdition" class="labl book_edition" text="..." />
+							<Label id="bookPrice" class="labl book_price" text="..." />
+							<Label id="bookState" class="labl book_state" text="..." />
+							<View id="editSale" class="buy_other_button editSale" touchEnabled="true" visible="false">
+								<Label class="buy_other_button_img_label" text="MODIFIER" />
+							</View>
+						</View>
+					</View>
+				</View>
+				<View class="the_main_row row_2">
+					<View class="rows row_2">
+						<View id="adviceR" class="the_main_col first_col advice_row">
+							<Label id="bookAdvice" class="labl book_advice" text="Conseil sur le livre :" />
+						</View>
+						<View class="the_main_col next_col">
+							<Label id="bookAdvicevalue" class="labl book_advice_value" text="Un super bouquin" />
+						</View>
+					</View>
+				</View>
+				<View class="the_main_row row_3">
+					<View class="rows row_3">
+						<View class="the_main_col first_col tags_row">
+							<Label id="bookTags" class="labl book_tags" text="Tags :" />
+						</View>
+						<View class="the_main_col next_col">
+							<ScrollView id="bookTags" class="book_tags_container">
+								<!-- <Label class="labl book_tag" text=" Tag1        " /> -->
+							</ScrollView>
+						</View>
+					</View>
+				</View>
+				<View id="separator2" />
+			</View>
+			
+			<View id="sellerOtherBooks" class="scroll_view_part3">
+				<Label class="labl other_books" id="othersByTitle" text="D'autres livres vendus par ... :" />
+				<ScrollView id="otherBooks" class="other_books_container">
+					<!--
+					<View class="oneOtherBook">
+						<View class="list_img_obook_container">
+							<ImageView class="book_img" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-book-swapbook.png" />
+						</View>
+						<Label class="labl other_book_price" text="13€" />
+						<Label class="labl other_book_state" text="Bon état" />
+						<View id="buyOtherBookButton" class="buy_other_button">
+							<ImageView class="buy_other_button_img" image="/images/cart.png" visible="true" />
+							<Label class="buy_other_button_img_label" text="RETIRER" visible="false" />
+						</View>
+					</View>
+					-->
+				</ScrollView>
+				<View id="separator3" />
+			</View>
+			
+			<View class="scroll_view_part4">
+				<View id="ValiderPanier" class="cart_total">
+					<View class="crow">
+						<View class="row-container-for-center">
+							<ImageView class="cart" image="/images/cart.png" />
+							<Label id="TotalPanier" class="cart_money">: 0 €</Label>
+						</View>
+					</View>
+					<View class="rows">
+						<Label class="cart_word">ACHETER</Label>
+					</View>
+				</View>
+			</View>
+			
+		</ScrollView>
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

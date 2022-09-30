@@ -1,0 +1,64 @@
+<Alloy>
+    <View id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_conversation" id="navBar" />
+		
+		<View class="code" id="code">
+			<Label class="code_labl" id="code_labl">ENVOIES TON CODE DE TRANSACTION</Label>
+			<Button class="code_button" id="SendCode" touchenabled="true">ENVOYER</Button>
+		</View>
+		
+		<View class="start_screen" id="start_screen">
+			<ImageView class="start_img" id="start_img" image="/images/Default.png" />
+			<Label class="start_labl" id="start_labl">Chat utilisateur</Label>
+		</View>
+	
+		<View id="adjust_keyboard" class="field-container">
+			<View class="top_border" />
+			<ImageView id="user_photo" class="photo" image="/images/camera.png" />
+			<View class="view-field" id="adjust_keyboard_field">
+				<TextArea class="field" id="user_input" bindId="user_input" focused="true" hintText="Aa" value="Aa" maxLength="700" />
+			</View>
+			<ImageView id="user_ok" class="send" image="/images/sendGray.png" />
+		</View>
+		
+		<View id="adjust_keyboard_behind" class="field-over-container" />
+		
+		<WebView class="content" id="the_scroll_view" />
+		
+	    <ScrollView id="modal_menuOuter" class="modal_menuOuter" disableBounce="true">
+	
+	    	<View id="modal_banner">
+				<ImageView id="modal_banner_img" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" />
+				<View id="modal_banner_overlay" />
+				<ImageView id="modal_banner_img_user" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" />
+				<Label id="modal_banner_uname">Laure</Label>
+				<TextField id="user_rename" bindId="user_rename" class="" focused="false" visible="false" />
+				<ImageView id="addGroupPhoto" image="/images/messengerPhoto.png" touchenabled="true" />
+				<ImageView id="goToUserProfile" image="/images/messengerProfile.png" touchenabled="true" />
+				<ImageView id="modal_close" image="/images/messengerClose.png" touchenabled="true" />
+	    	</View>
+	    	
+			<Label id="renameGroupSave" class="renameGroup" touchenabled="true">Enregistrer ce nom de discussion</Label>
+			
+	    	<ScrollView id="modal_participants_list" />
+			
+			<Label id="renameGroup" class="renameGroup" mode="display" touchenabled="true">Renommer la discussion</Label>
+	    	
+	    	<View id="modal_search">
+				<ImageView class="photo modal_search_photo" image="/images/loupeGray.png" />
+				<View class="view-field modal_search_view_field">
+					<TextField class="field modal_search_field" id="user_search_input" bindId="user_search_input" focused="true" hintText="Recherche dans vos amis" />
+				</View>
+			</View>
+			
+	    	<ScrollView id="modal_possible_list" />
+	    	
+	    </ScrollView>
+		
+	    <View id="modal_menuOuter_shadow" class="modal_menuOuter_shadow" />
+		
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="no_left_badge_update" />
+		
+	</View>
+</Alloy>

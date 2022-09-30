@@ -1,0 +1,120 @@
+<Alloy>
+	<Collection src="BookSellers" instance="true" id="sellersRefreshable"/>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_default" id="navBar" customparameter="achat" />
+	    	
+    	<View id="modal_search">
+			<View class="view-field modal_search_view_field">
+				<ImageView class="modal_search_photo" image="/images/loupeBlue.png" />
+				<TextField class="field modal_search_field" id="the_search_field" bindId="the_search_field" focused="true" hintText="Rechercher un livre, un auteur, une catégorie..." />
+				<ImageView class="modal_search_close" id="modal_search_close" image="/images/crossBlue.png" />
+			</View>
+		</View>
+    	
+	    <View id="viewOneBook">
+	    	
+			<Widget id="refreshingWIDGET" src="nl.fokkezb.pullToRefresh" onRelease="localRefresher">
+				
+				<TableView id="the_table_view" dataCollection="$.sellersRefreshable">
+	  		
+		    		<HeaderView id="the_main_view_container">
+						<View id="the_main" baseheight="390">
+							<View class="the_main_row row_1">
+								<View class="floating">
+									<Label id="bookPrices" class="labl book_prices" text="..." />
+								</View>
+								<View class="floating">
+									<Label id="bookSellers" class="labl book_sellers" text="..." />
+								</View>
+								<View class="rows">
+									<View class="the_main_col the_main_col_common_vertical_1 list_img_book_container">
+										<ImageView id="bookPhoto" class="book_img" />
+									</View>
+									<View class="the_main_col the_main_col_common_vertical_1 list_txt_book_container">
+										<Label id="bookTitle" class="labl book_title" text="..." />
+										<Label id="bookAuthor" class="labl book_author" text="..." />
+										<Label id="bookEdition" class="labl book_edition" text="..." />
+									</View>
+								</View>
+							</View>
+							<View class="the_main_row row_2">
+								<View class="rows row_2">
+									<View id="adviceR" class="the_main_col first_col advice_row">
+										<Label id="bookAdvice" class="labl book_advice" textA="Conseil du BDE :" textB="Meilleur conseil :" />
+									</View>
+									<View class="the_main_col next_col">
+										<Label id="bookAdvicevalue" class="labl book_advice_value" text="..." />
+									</View>
+								</View>
+							</View>
+							<View class="the_main_row row_3">
+								<View class="rows row_3">
+									<View class="the_main_col first_col tags_row">
+										<Label id="bookTags" class="labl book_tags" text="Tags :" />
+									</View>
+									<View class="the_main_col next_col">
+										<ScrollView id="bookTags" class="book_tags_container">
+											<!--<Label class="labl book_tag" text=" Tag        " />-->
+										</ScrollView>
+									</View>
+								</View>
+							</View>
+							<View class="the_main_row row_4" id="bookDescriptionParent">
+								<Label id="bookDescription" class="labl book_desc" text="..." />
+								<Label id="bookDescriptionMore" class="labl book_show_more" text="Afficher plus" atext="Afficher moins" rtext="Afficher moins" />
+							</View>
+							<View id="separator1" />
+							<View id="separator1_next1" class="the_main_row row_2">
+								<View class="rows">
+									<Label class="labl book_ailleurs" text="AILLEURS, TU AURAIS PAYÉ SANS CONSEIL :" />
+								</View>
+							</View>
+							<View id="separator1_next2" class="the_main_row row_6">
+								<View class="rows reseller1">
+									<Label id="amazonPrice" class="labl book_reseller_price" />
+									<ImageView class="book_reseller_img" image="/images/resellerAmazon.png" />
+								</View>
+							</View>
+							<!--
+							<View id="separator1_next3" class="the_main_row row_5">
+								<View class="rows reseller2">
+									<Label id="fnacPrice" class="labl book_reseller_price" text="18€ sur" />
+									<ImageView class="book_reseller_img" image="/images/resellerFnac.png" />
+								</View>
+							</View>
+							-->
+							<View id="separator2" />
+							<View id="separator2_title" class="the_main_row row_6">
+								<View class="rows">
+									<Label id="sellers">VENDEURS</Label>
+								</View>
+							</View>
+							<View id="separator2_next1" class="the_main_row row_6" visible="false">
+								<View class="rows reseller1 button_view">
+									<Label id="addAlert" class="labl button" text="Créer une alerte" status="off" textswitchA="Retirer l'alerte" textswitchB="Créer une alerte" />
+								</View>
+							</View>
+							<View id="separator2_next2" class="the_main_row row_3" visible="false">
+								<View class="rows reseller1">
+									<Label class="labl book_reseller_price ortext" text="ou"  visible="false" />
+								</View>
+							</View>
+							<View id="separator2_next3" class="the_main_row row_6" visible="false">
+								<View class="rows reseller1 button_view">
+									<Label id="buyNew" class="labl button" text="Acheter NEUF (xx€)" />
+								</View>
+							</View>
+				    	</View>
+		    		</HeaderView>
+				
+				</TableView>
+	    	 
+	    	 </Widget>
+	     	
+		</View>
+
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

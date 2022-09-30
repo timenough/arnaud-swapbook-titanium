@@ -1,0 +1,133 @@
+".window":{
+	width:'100%',
+	backgroundColor: "#ffffff",
+	orientationModes: [
+        Ti.UI.PORTRAIT
+    ]
+},
+".window[platform=android]": {
+	exitOnClose: true
+},
+
+"#main": {
+	left: 0,
+	width:'100%',
+	height: Ti.UI.FILL
+},
+
+	"#the_table_view":{
+		top: 80,
+		zIndex: 3,
+		left: Alloy.Globals.backdropImageLeft,
+		width:'100%',
+		height: Ti.UI.FILL,
+		backgroundColor:"#ffffff",
+		pullBackgroundColor: '#ffffff',
+		showVerticalScrollIndicator: false,
+		separatorColor:'#ffffff',
+		separatorHeight:'1dp'
+	},
+	"#the_table_view[platform=android]":{
+		top:68,
+	},
+	"#the_table_view[platform=ios]": {
+		tableSeparatorInsets: {
+			left: 0,
+			right: 0,
+			top: 0,
+			bottom: 0
+		},
+		separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_SINGLE_LINE,
+		selectionStyle : Ti.UI.iOS.TableViewCellSelectionStyle.NONE,
+		separatorHeight:'2dp'
+	},
+	
+		"#banner": {
+			top: 0,
+			left: 0,
+			width: Alloy.Globals.backdropImageWidth,
+			backgroundColor: Alloy.Globals.BLUE_COLOR,
+			height:120,
+		},
+			
+			"#banner_img":{
+				top:0,
+				left:0,
+				width:'100%',
+				zIndex: 2
+			},
+			"#banner_img[platform=ios]": {
+				bottom: "2dp"
+			},
+			
+			"#banner_overlay":{
+				top: 0, 
+				height:'100%',
+				width:'100%',
+				zIndex: 3,
+				backgroundGradient: {
+			        type: 'linear',
+			        startPoint: { x: '0%', y: '0%' },
+			        endPoint: { x: '0%', y: '100%' },
+			        colors: [ 
+			        	{ color: '#b3000000', offset: 0 },
+			      		{ color: '#1a000000', offset: 1 } 
+			       	],
+			    }
+			},
+			
+			"#banner_title":{
+				top:32,
+				width:'90%',
+				wordWrap: false,
+			  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+				color:"#fff",
+				zIndex: 4,
+				font:{
+					fontSize: 29,
+					fontFamily:"Wask_New_Bold"
+				}
+			},
+			"#banner_title[platform=ios]":{
+				font:{
+					fontSize: 24,
+					fontFamily:"WaskNew-Bold"
+				}
+			},
+	
+			"#banner_subtitle":{
+				top:64,
+				width:'80%',
+				font:{
+					fontSize:25
+				},
+				wordWrap: false,
+			  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+				color:"#fff",
+				zIndex: 4,
+				font:{
+					fontSize: 21,
+					fontFamily:"Wask_New"
+				}
+			},
+			"#banner_subtitle[platform=ios]":{
+				font:{
+					fontSize: 24,
+					fontFamily:"WaskNew"
+				}
+			},
+
+"#tabBar": {
+	backgroundColor: "transparent",
+	zindex: 1000
+},
+
+".modal_search_photo":{
+	left:8,
+	top: 7,
+},
+
+".modal_search_close":{
+	right:9,
+	top: 7,
+}

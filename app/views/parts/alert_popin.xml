@@ -1,0 +1,36 @@
+<Alloy>
+	<View id="alertMask" class="alertMask">
+		<View id="alertOuter" class="alertOuter">
+			<View id="alertInner" class="alertInner">
+	   			<Label id="alertTitle" class="alertTitle" text="-- --" />
+				<View id="separator" />
+				<ScrollView id="theMessages">
+					<View id="theMessagesAlternative" />
+					<Label id="alertMessage1" class="alertMessage1" text="-- --" />
+					<Label id="alertMessage2" class="alertMessage2" text="-- --" />
+					<View id="theMessagesAlternative2" />
+				</ScrollView>
+	   			<View id="one_button">
+					<Label id="alertSoloButton" class="alertSoloButton bRed" text="OK" />
+				</View>
+				<View id="two_buttons">
+			        <Label id="alertDuoButton1" class="alertDuoButton bWhite" text="CANCEL" />
+		        	<Label id="alertDuoButton2" class="alertDuoButton bBlue" text="CONFIRM" />
+				</View>
+			</View>
+		</View>
+	</View>
+	<View class="offline_screen" id="offline_screen" visible="false">
+		<ImageView class="offline_img" id="offline_img" image="/images/Default.png" />
+		<Label class="offline_labl" id="offline_labl">Tu n'es plus connecté(e) à internet !</Label>
+		<Label class="offline_labl" id="offline_labl2" />
+	</View>
+	<View id="alertNotificationBar" touchEnabled="true" visible="false">
+		<View class="alertNotification_photo_container" touchEnabled="true">
+			<ImageView id="alertNotificationPhoto" bindId="alertNotificationPhoto" class="alertNotification_photo" image="http://api.randomuser.me/portraits/men/4.jpg" />
+		</View>
+		<Label id="alertNotificationTitle" bindId="alertNotificationTitle" class="labl alertNotification_title" touchEnabled="true" text="..." />
+		<Label id="alertNotificationBody" bindId="alertNotificationBody" class="labl alertNotification_body" touchEnabled="true" text="..." />
+		<View id="separator2" touchEnabled="true" />
+	</View>
+</Alloy>

@@ -1,0 +1,23 @@
+".is": {
+    top: "0dp",
+
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE
+}
+
+".isCenter": {
+    height: "90dp",
+    bottom: "0dp"
+}
+
+".isIndicator": {
+    style: Ti.UI.ActivityIndicatorStyle.DARK
+}
+
+".isText": {
+    wordWrap: false,
+    color: '#777',
+    font: {
+        fontSize: "15dp"
+    }
+}

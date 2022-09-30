@@ -1,0 +1,61 @@
+<Alloy>
+	<Window class="container" id="window" navBarHidden="true" statusBarStyle="Ti.UI.iOS.StatusBar.LIGHT_CONTENT">
+		
+		<Require src="parts/alert_popin" id="AlertDialog" />
+		
+		<ImageView class="containerBackground" image="/images/bg.jpg" />
+		
+		<Label class="signinback" id="siginBackButton">Déjà inscrit?</Label>
+
+		<ScrollView class="under-container" id="cont">
+				
+			<View class="photo" id="photoBg">
+				<ImageView id="banner_img_user" image="/images/blank.png" />
+				<View id="banner_img_user_overlay" touchEnabled="true">
+					<ImageView id="banner_img_user_overlay_picto" image="/images/cameraSwitchOn.png" />
+				</View>
+			</View>
+			
+			<Label class="label-swapbook">INSCRIS-TOI !</Label>
+			<ImageView class="img-line" image="/images/textfield.png" />
+			
+			<View class="view-field view-field-first">
+				<ImageView class="view-field-img" image="/images/formTextfield_User.png" />
+				<TextField class="field field-pseudo" id="userPseudo" maxLength="200" />
+			</View>
+			<View class="view-field view-field-email">
+				<ImageView class="view-field-img" image="/images/formTextfield_Mail.png" />
+				<TextField class="field field-email" id="bEmail" maxLength="255" />
+			</View>
+			<View class="view-field view-field-password">
+				<ImageView class="view-field-img" image="/images/formTextfield_Pass.png" />
+				<TextField class="field field-password" id="bPassword" passwordMask="true" />
+			</View>
+			<View class="view-field view-field-prenom">
+				<ImageView class="view-field-img" image="/images/formTextfield_User.png" />
+				<TextField class="field field-prenom" id="bFirstname" maxLength="50" />
+			</View>
+			<View class="view-field view-field-prenom">
+				<ImageView class="view-field-img" image="/images/formTextfield_User.png" />
+				<TextField class="field field-civilite" id="userCivilite" editable="false" 
+						cvalue="-1" 
+						selectType="SHORT" 
+						selectBigLineOne="Ta civilité" 
+						selectSHORTKeys="Monsieur,Madame,Mademoiselle,Société,BDE,Annuler" 
+						selectSHORTVals="M,Mme,Mlle,Soc,BDE,0" 
+						onClick="Alloy.Globals.showSelect_BIG_or_SHORT" />
+			</View>
+	
+			<View class="button-sign-view">
+				<ImageView class="button-sign-fb-img" id="facebookButtonPicto" image="/images/facebookIcon.png" />
+				<Button class="button-sign facebook" id="facebookButton">Connexion Facebook</Button>
+			</View>
+									
+			<Button class="button-sign" id="step1Button">Valider et créer mon compte</Button>
+			
+			<View top="30" height="30" />
+			
+		</ScrollView>
+		
+	</Window>
+</Alloy>

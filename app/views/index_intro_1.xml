@@ -1,0 +1,19 @@
+<Alloy>
+	<Window class="container" id="window" navBarHidden="true" statusBarStyle="Ti.UI.iOS.StatusBar.LIGHT_CONTENT">
+		
+		<ImageView class="containerBackground" id="bg" image="/images/bg_intro_2.jpg" />
+
+		<View class="view-banner">
+			<Label class="next" id="nextButton">Passer</Label>
+		</View>
+			
+		<Label class="text" id="text">Prépare ta rentrée à moindre coût et achète des livres à des étudiants plus âgés.</Label>
+		
+		<View class="view-buttons">
+			<Button class="button on first" id="one"></Button>
+			<Button class="button off" id="two"></Button>
+			<Button class="button off" id="three"></Button>
+		</View>
+		
+	</Window>
+</Alloy>

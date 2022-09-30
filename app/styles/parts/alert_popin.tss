@@ -1,0 +1,322 @@
+".alertMask": {
+  backgroundColor: "#6000",
+  visible: false,
+  zIndex: 1000
+}
+
+".alertOuter": {
+  width: "290dp",
+  height: "212dp",
+  backgroundColor:"#ffffff",
+  borderRadius: 0,
+}
+
+".alertRadius": {
+  borderRadius: 10,
+}
+
+".alertInner": {
+  top: '0dp',
+  right: '0dp',
+  left: '0dp',
+  width: Ti.UI.FILL,
+  layout: 'vertical'
+}
+
+".alertTitle": {
+  top: '18dp',
+	color:Alloy.Globals.BLUE_COLOR,
+	font:{
+		fontSize: 22,
+		fontFamily:"Wask_New_Bold"
+	},
+}
+".alertTitle[platform=ios]":{
+	font:{
+		fontSize: 26,
+		fontFamily:"WaskNew-Bold"
+	},
+}
+
+"#separator": {
+	top: '16dp',
+	width:'15%',
+	height: 0.5,
+	backgroundColor: '#b7b5b5'
+}
+
+"#theMessages": {
+  top: 0,
+  width: "100%",
+  height: 100,
+  layout: 'vertical',
+}
+
+"#theMessagesAlternative": {
+  top: 0,
+  width: "100%",
+  height: 0,
+  visible: false,
+  layout: 'vertical',
+}
+
+"#theMessagesAlternative2": {
+  top: 0,
+  width: "100%",
+  height: 0,
+  visible: false,
+  layout: 'vertical',
+}
+
+	".alertMessage1": {
+  	  top: '18dp',
+	  width: "90%",
+	  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	  verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	  wordwrap: false,
+	  font: {
+	    fontSize: 21,
+			fontFamily:"sans-serif",
+			fontWeight: "normal"
+	  }
+	}
+	".alertMessage1[platform=ios]":{
+		font:{
+			fontSize: 13,
+		},
+	}
+	
+	".alertMessage2": {
+	  top: '12dp',
+	  width: "90%",
+	  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	  verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	  wordwrap: false,
+	  font: {
+	    fontSize: 21,
+		fontFamily:"sans-serif",
+		fontWeight: "normal"
+	  }
+	}
+	".alertMessage2[platform=ios]":{
+		font:{
+			fontSize: 13,
+		},
+	}
+
+"#one_button": {
+	height:Ti.UI.FILL,
+	width:'100%',
+  	top: 0,
+	layout:"vertical"
+}
+
+".alertSoloButton": {
+  	top: 0,
+	height: 32,
+	width: "43%",
+	borderRadius: 5,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	wordWrap: false,
+	font:{
+		fontSize: 22,
+		fontFamily:"Wask_New_Bold"
+	},
+}
+".alertSoloButton[platform=ios]":{
+	font:{
+		fontSize: 18,
+		fontFamily:"WaskNew-Bold"
+	},
+}
+
+"#two_buttons": {
+	width:'100%',
+  	top: '12dp',
+	bottom: 0,
+	left: 0,
+	right: 0,
+	height: 40,
+	layout:"horizontal"
+}
+
+".alertDuoButton": {
+	left:0,
+	top:0,
+	width:"50%",
+	height:"100%",
+	borderRadius: 0,
+	borderWidth:1,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	wordWrap: false,
+	font:{
+		fontSize: 22,
+		fontFamily:"Wask_New_Bold"
+	},
+}
+".alertDuoButton[platform=ios]":{
+	font:{
+		fontSize: 18,
+		fontFamily:"WaskNew-Bold"
+	},
+}
+
+".bWhite": {
+	color:Alloy.Globals.BLUE_COLOR,
+	backgroundColor:"#fff",
+	borderColor:Alloy.Globals.BLUE_COLOR,
+}
+
+".bBlue": {
+	color:"#fff",
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+	borderColor:Alloy.Globals.BLUE_COLOR,
+}
+
+".bGreen": {
+	color:"#fff",
+	backgroundColor:"#33c691",
+}
+
+".bRed": {
+	color:"#fff",
+	backgroundColor:"#f74f55",
+}
+
+
+".offline_screen":{
+    visible: true,
+    zIndex: 10000,
+	layout: 'vertical',
+	touchEnabled: true,
+	backgroundColor: 'white'
+},
+
+	".offline_img":{
+		top:'30%',
+		width:"140dp",
+		height:"140dp",
+		zIndex: 2
+	},
+	
+	".offline_labl":{
+		top: '6dp',
+		width: "90%",
+		height: 46,
+		color:Alloy.Globals.BLUE_COLOR,
+		zIndex: 3,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		wordWrap: false,
+		font:{
+			fontSize: 19,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".offline_labl[platform=ios]":{
+		font:{
+			fontSize: 23,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	"#offline_labl2":{
+		width: "70%",
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+		height: 150,
+		font:{
+			fontSize: 15,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	"#offline_labl2[platform=ios]":{
+		font:{
+			fontSize: 20,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+"#alertNotificationBar":{
+	backgroundColor: "#d6d6d6",
+	zIndex: 10001,
+	width: '100%',
+	height: 0/*'84dp'*/,
+	top: -90,
+	left: 0,
+},
+	
+	".alertNotification_photo_container":{
+		left: 12,
+		top: 24,
+		width: 50,
+		height: 50,
+		borderWidth: 0,
+		borderRadius: 24,
+	},
+	
+		".alertNotification_photo":{
+			top:0,
+			left:0,
+			width: '100%',
+			height:  '100%',
+		},
+	
+	".labl":{
+		left:74,
+		width:'80%',
+		color:'#000000',
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+		font:{
+			fontSize: 16,
+			fontFamily:"sans-serif"
+		},
+	},
+	".labl[platform=ios]":{
+		font:{
+			fontSize: 12,
+			fontFamily:"sans-serif"
+		},
+	},
+	
+	".alertNotification_title":{
+		top: 25,
+		height: 22,
+		layout:"vertical",
+		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+		touchEnabled:true,
+		wordWrap: false,
+		font:{
+			fontSize: 21,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".alertNotification_title[platform=ios]":{
+		font:{
+			fontSize: 17,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+	".alertNotification_body":{
+		top: 45,
+		height: 20,
+		color:"black",
+		wordWrap: true,
+		font:{
+			fontSize: 16
+		},
+	},
+	".alertNotification_body[platform=ios]":{
+		font:{
+			fontSize: 12
+		},
+	},
+
+	"#separator2": {
+		width: '12%',
+		bottom:5,
+		height: 5,
+		borderRadius: 3,
+		backgroundColor: '#b7b5b5'
+	}

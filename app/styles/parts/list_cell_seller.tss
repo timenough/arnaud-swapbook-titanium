@@ -1,0 +1,179 @@
+".templateCell":{
+	height: 110,
+	width: Ti.UI.FILL,
+	borderRadius: 0,
+	touchEnabled:true
+},
+
+".template_container":{
+	left: '13dp',
+},
+".template_container[platform=ios]":{
+	left: 0,
+},
+	
+	".seller_photo_container":{
+		left: 20,
+		top: 16,
+		width: 76,
+		height: 76,
+		borderWidth: 1,
+		borderColor: 'gray',
+		borderRadius: 38,
+	},
+	".seller_photo_container[platform=ios]":{
+		left: 20,
+	},
+	
+		".seller_photo":{
+			top:0,
+			left:0,
+			width: '100%',
+			height:  '100%',
+		},
+	
+	".seller_ratings":{
+		left: 102,
+		top: 17,
+		width: 160,
+		layout: 'horizontal'
+	},
+	".seller_ratings[platform=ios]":{
+		left: 102,
+	},
+	
+		".seller_rating":{
+			left:"3dp",
+			width: 12,
+			height: 12,
+		},
+	
+	".labl":{
+		color:'#3b3b3b',
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+		font:{
+			fontSize: 16,
+			fontFamily:"sans-serif"
+		},
+	},
+	".labl[platform=ios]":{
+		font:{
+			fontSize: 12,
+			fontFamily:"sans-serif"
+		},
+	},
+	
+	".seller_name":{
+		left:106,
+		top:34,
+		layout:"vertical",
+		color:Alloy.Globals.BLUE_COLOR,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+		touchEnabled:true,
+		wordWrap: false,
+		font:{
+			fontSize: 22,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".seller_name[platform=ios]":{
+		font:{
+			fontSize: 18,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+	".seller_univ":{
+		top:58,
+		left:106,
+		color:"black",
+		wordWrap: false,
+	},
+	".seller_univ[platform=ios]":{
+		font:{
+			fontSize: 9
+		},
+	},
+	
+	".seller_diplome":{
+		top:71,
+		left:106,
+		color:"black",
+		wordWrap: false,
+	},
+	".seller_diplome[platform=ios]":{
+		font:{
+			fontSize: 9
+		},
+	},
+	
+	".book_price":{
+		right:28,
+		top:14,
+		color:"black",
+		width:"80dp",
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		touchEnabled:true,
+		wordWrap: false,
+		font:{
+			fontSize: 27,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".book_price[platform=ios]":{
+		font:{
+			fontSize: 23,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+	
+	".book_state":{
+		right:32,
+		top:41,
+		width:"74dp",
+		color:Alloy.Globals.BLUE_COLOR,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		touchEnabled:true,
+		wordWrap: false,
+		font:{
+			fontSize: 19,
+			fontFamily:"Wask_New_Bold"
+		},
+	},
+	".book_state[platform=ios]":{
+		font:{
+			fontSize: 15,
+			fontFamily:"WaskNew-Bold"
+		},
+	},
+
+	".buy_button":{
+		right:32,
+		bottom:16,
+		height: 30,
+		width:"74dp",
+		color:"#ffffff",
+		borderRadius: 5,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		wordWrap: false,
+		font:{
+			fontSize: 22,
+			fontFamily:"Wask_New_Bold"
+		},
+		backgroundColor:"#33c691",
+	},
+	".buy_button[platform=ios]":{
+		font:{
+			fontSize: 18,
+			fontFamily:"WaskNew-Bold"
+		},,
+	},
+
+	"#separator": {
+		bottom: 0,
+		width:'90%',
+		height: 0.5,
+		backgroundColor: '#b7b5b5'
+	}
+	

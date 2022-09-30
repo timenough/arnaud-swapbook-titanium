@@ -1,0 +1,93 @@
+<Alloy>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_default" id="navBar" customparameter="achat" />
+	    	
+    	<View id="modal_search">
+			<View class="view-field modal_search_view_field">
+				<ImageView class="modal_search_photo" image="/images/loupeBlue.png" />
+				<TextField class="field modal_search_field" id="the_search_field" bindId="the_search_field" focused="true" hintText="Rechercher un livre, un auteur, une catégorie..." />
+				<ImageView class="modal_search_close" id="modal_search_close" image="/images/crossBlue.png" />
+			</View>
+		</View>
+		
+		<ScrollView class="content" id="the_scroll_view">
+
+			<Label class="label1">RECAPITULATIF</Label>
+
+			<View class="the_books" id="booksRecap">
+				<!--
+				<View class="rows">
+					<View class="the_main_col the_main_col_common_vertical_1 list_img_book_container">
+						<ImageView id="bookPhoto" class="book_img" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-book-swapbook.png" />
+					</View>
+					<View class="the_main_col the_main_col_common_vertical_1 list_txt_book_container">
+						<Label id="bookTitle" class="labl book_title" text="Principes de finance moderne" />
+						<View class="book_author_and_edition">
+							<Label id="bookAuthor" class="labl book_author" text="Robert Goffin  |" />
+							<Label id="bookEdition" class="labl book_edition" text=" 6ème édition - 2012" />
+						</View>
+						<View class="book_price_and_state">
+							<Label id="bookPrice" class="labl book_price" text="11€" />
+							<Label id="bookState" class="labl book_state" text=" - Neuf" />
+						</View>
+						<View class="book_separator" />
+					</View>
+				</View>
+				-->
+			</View>
+
+			<View class="the_paydatas">
+				<View class="separator" />
+				<Label class="title">Votre adresse de livraison</Label>
+				<Label class="value " id="NomPrenom">--</Label>
+				<Label class="value valueNEXT" id="Rue">--y</Label>
+				<Label class="value valueNEXT" id="CP_Ville">--</Label>
+				<Label class="value valueNEXT" id="Pays">--</Label>
+				<Label class="value valueNEXT" id="Tel">--</Label>
+				<View class="separator" />
+				<Label class="title">Moyen de paiement</Label>
+				<View class="the_creditcard" id="useCreditCard" touchEnabled="true" status="notyet">
+					<ImageView class="creditcard" image="/images/creditCard.png" />
+					<Label class="value_creditcard" id="cr_hidden">XXXX - XXXX - XXXX - XXXX</Label>
+					<ImageView class="arrow" image="/images/arrowDown.png" id="useCreditCardImg" />
+				</View>
+				<View class="the_creditcard_details" id="confirmCard">
+					<View class="the_creditcard_details_row" id="confirmCardRow1">
+						<Label class="value_field">Date d'expiration</Label>
+						<TextField class="field field-date" id="cr_date1" />
+						<Label class="value_field slash">/</Label>
+						<TextField class="field field-date2" id="cr_date2" />
+					</View>
+					<View class="the_creditcard_details_row" id="confirmCardRow2">
+						<Label class="value_field">Code de vérification</Label>
+						<TextField class="field field-code" id="cr_code" />
+					</View>
+					<View class="separator" id="confirmCardRow3" />
+					<View class="the_creditcard_details_row money_row" id="useAccount" touchEnabled="true" status="off">
+						<ImageView class="account" image="/images/balance.png" />
+						<Label class="value_field money_label">Compte utilisateur Swapbook :</Label>
+						<Label class="value_field money" id="moneyAccount" payable_value="0">0€</Label>
+						<ImageView class="arrow" image="/images/arrowRight.png" id="useAccountImg" />
+					</View>
+				</View>
+				<View class="separator" />
+				<View class="add_cr" id="AddPayMethod" touchEnabled="true">
+					<Label class="value_field big">Ajouter, modifier un moyen de paiement...</Label>
+					<ImageView class="arrow" image="/images/plus.png" />
+				</View>
+				<View class="separator" />
+				<Label class="title right right_first" id="moneyToPay" to_pay_value="0">--</Label>
+				<Label class="right" id="moneyToPayHT">--</Label>
+				<Label class="right uped" id="moneyToPayPORT">--</Label>
+				<View class="view_pay_btn">
+					<Button class="button" id="Pay">VALIDER</Button>
+				</View>
+			</View>
+
+		</ScrollView>
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

@@ -1,0 +1,23 @@
+<Alloy>
+	<TableViewRow class="templateCell">
+		<View class="template_container">
+			<View class="seller_photo_container">
+				<ImageView id="sellerPhoto" bindId="sellerPhoto" class="seller_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" />
+			</View>
+			<View class="seller_ratings">
+				<ImageView id="rank1" bindId="rank1" class="seller_rating" image="/images/starEmpty.png" />
+				<ImageView id="rank2" bindId="rank2" class="seller_rating" image="/images/starEmpty.png" />
+				<ImageView id="rank3" bindId="rank3" class="seller_rating" image="/images/starEmpty.png" />
+				<ImageView id="rank4" bindId="rank4" class="seller_rating" image="/images/starEmpty.png" />
+				<ImageView id="rank5" bindId="rank5" class="seller_rating" image="/images/starEmpty.png" />
+			</View>
+			<Label id="sellerName" bindId="sellerName" class="labl seller_name" text="Laure" />
+			<Label id="sellerUniv" bindId="sellerUniv" class="labl seller_univ" text="2012-2015 : Dauphine" />
+			<Label id="sellerDiplome" bindId="sellerDiplome" class="labl seller_diplome" text="Master 2 Finance d'Entreprise" />
+			<Label id="bookPrice" bindId="bookPrice" class="labl book_price" text="12€" />
+			<Label id="bookState" bindId="bookState" class="labl book_state" text="Bon état" />
+			<Label id="buyButton" bindId="buyButton" class="labl buy_button" text="ACHETER" />
+			<View id="separator" />
+		</View>
+	</TableViewRow>
+</Alloy>

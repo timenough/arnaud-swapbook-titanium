@@ -1,0 +1,15 @@
+<Alloy>
+	<Require src="parts/alert_popin" id="AlertDialog" />
+	<View id="topbar" zIndex="400">
+		<View id="insideBar" class="navBar">
+			<Button id="backbutton" />
+			<Label id="backbuttonTotal">+1</Label>
+			<View id="photoContainer" bindId="photoContainer" class="user_photo_container">
+				<ImageView id="navBarImage" bindId="navBarImage" class="user_photo" image="https://s3-eu-west-1.amazonaws.com/swapbook.fr/app-content/default-user-swapbook.jpg" />
+			</View>
+			<Label class="label-text" id="navBarText">...</Label>
+			<Label id="online" visible="false">• En ligne</Label>
+			<Label id="offline" visible="false" locked_by_is_writing="false">Vu Aujourd'hui à 14h56</Label>
+		</View>
+	</View>
+</Alloy>

@@ -1,0 +1,55 @@
+<Alloy>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_default" id="navBar" customparameter="achat" />
+	    	
+    	<View id="modal_search">
+			<View class="view-field modal_search_view_field">
+				<ImageView class="modal_search_photo" image="/images/loupeBlue.png" />
+				<TextField class="field modal_search_field" id="the_search_field" bindId="the_search_field" focused="true" hintText="Rechercher un livre, un auteur, une catégorie..." />
+				<ImageView class="modal_search_close" id="modal_search_close" image="/images/crossBlue.png" />
+			</View>
+		</View>
+		
+		<ScrollView class="content" id="the_scroll_view">
+
+			<Label class="label1">FAIS-TOI LIVRER TON LIVRE NEUF A xx€</Label>
+			<Label class="label2">Adresse de livraison</Label>
+			
+			<View class="view-field first">
+				<TextField class="field field-prenom" id="bPrenom" />
+			</View>
+			<View class="view-field">
+				<TextField class="field field-nom" id="bNom" />
+			</View>
+			<View class="view-field">
+				<TextField class="field field-addr1" id="bAddr1" />
+			</View>
+			<View class="view-field">
+				<TextField class="field field-addr2" id="bAddr2" />
+			</View>
+			<View class="view-field">
+				<TextField class="field field-ville" id="bVille" />
+			</View>
+			<View class="view-field">
+				<TextField class="field field-pays" id="bPays" />
+			</View>
+			<View class="view-field">
+				<TextField class="field field-cp" id="bCp" />
+			</View>
+			<View class="view-field">
+				<TextField class="field field-tel" id="bTel" />
+			</View>
+			<View id="SaveDatas" class="view-field no-borders">
+				<Button class="check" id="bCheck" checked="no"></Button>
+				<Label class="save">Sauvegarder ces informations pour gagner du temps la prochaine fois</Label>
+			</View>
+
+			<Button class="button" id="ValidAlert">VALIDER</Button>
+			
+		</ScrollView>
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

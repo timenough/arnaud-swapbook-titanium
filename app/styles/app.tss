@@ -1,0 +1,134 @@
+"Window" : {
+	orientationModes: [
+        Ti.UI.PORTRAIT
+    ]
+},
+
+"ImageView" : {
+   defaultImage : 'blank.png',
+   hires: true
+},
+
+"TableView" : {
+    selectionStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE,
+},
+
+"Label":{
+	font:{
+		fontFamily:"Wask_New"
+	},
+},
+
+	"Label[platform=ios]":{
+		font:{
+			fontFamily:"WaskNew"
+		},
+	},
+	
+".container": {
+	top: 0,
+	left: 0,
+	height: Ti.UI.FILL,
+	extendEdges: Ti.UI.EXTEND_EDGE_TOP,
+	backgroundColor: '#3c3c3c',
+    navBarHidden:true,
+	clipMode: true,
+    tabBarHidden:true
+},
+
+".container[platform=windows]": {
+	top: -15
+},
+
+".row-container-for-center": {
+	height: '100%',
+	layout: 'horizontal',
+	center: {x:'50%',y:'50%'},
+},
+
+".text-onright": {
+	left: 0,
+	width: '100%',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+},
+
+"#loadingOuter": {
+	backgroundColor: Alloy.Globals.BLUE_COLOR,
+},
+
+"#loadingMessage": {
+	font:{
+			fontFamily:"Wask_New_Bold"
+	}
+},
+
+"#loadingMessage[platform=ios]":{
+	font:{
+		fontFamily:"WaskNew-Bold"
+	},
+},
+
+"#navBar": {
+	zIndex: 22
+},
+
+"#modal_search": {
+	top: 0,
+	zIndex: 1,
+	left: Alloy.Globals.backdropImageLeft,
+	width:'100%',
+	height: 46,
+	borderWidth:0,
+	borderRadius:0,
+	backgroundColor:Alloy.Globals.BLUE_COLOR_v2,
+},
+	
+	".modal_search_view_field":{
+		left: '2%',
+		top: '11%',
+		color:'#868686',
+		width:'96%',
+		height:'78%',
+		borderRadius:10,
+		backgroundColor:"#ffffff",
+	    zIndex:4,
+	},
+	
+	".modal_search_photo":{
+		left:15,
+		top: 12,
+		layout: 'absolute',
+		width:21,
+		height:21,
+		opacity: 0.5,
+		zIndex:10
+	},
+	
+	".modal_search_close":{
+		right:16,
+		top: 12,
+		layout: 'absolute',
+		width:22,
+		height:22,
+		opacity: 0.8,
+		zIndex:10
+	},
+	
+	".modal_search_field":{
+		color:Alloy.Globals.BLUE_COLOR_v3,
+		width:'84%',
+		left:34,
+		height: '84%',
+		zIndex: 3,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+		keyboardType:Ti.UI.KEYBOARD_TYPE_DEFAULT,
+		returnKeyType:Ti.UI.RETURNKEY_SEARCH ,
+		font:{
+			fontSize:11,
+		},
+	},
+	".modal_search_field[platform=ios]":{
+		font:{
+			fontSize:15,
+		},
+	},

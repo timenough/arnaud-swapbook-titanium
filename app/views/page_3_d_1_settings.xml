@@ -1,0 +1,59 @@
+<Alloy>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_no_search" id="navBar" />
+		
+		<ScrollView class="content" id="the_scroll_view">
+
+	    	<View class="row top_bigger">
+				<Label class="labl bold">J'accepte de recevoir toutes les notifications push</Label>
+				<Switch id="sAll" class="Switch" value="false" onChange="switchChange1"/>
+			</View>
+			
+	    	<View class="row separator top_bigger" />
+
+	    	<View class="row top_bigger">
+				<Label class="labl bold">Filtrer les notifications</Label>
+			</View>
+	    	<View class="row">
+				<Label class="labl">Notifications de messages</Label>
+				<Switch id="s1" class="Switch" value="false" onChange="switchChange2"/>
+			</View>
+	    	<View class="row">
+				<Label class="labl">Notifications de confirmation d'achat</Label>
+				<Switch id="s2" class="Switch" value="false" onChange="switchChange2"/>
+			</View>
+	    	<View class="row">
+				<Label class="labl">Notifications de confirmation de vente</Label>
+				<Switch id="s3" class="Switch" value="false" onChange="switchChange2"/>
+			</View>
+	    	<View class="row">
+				<Label class="labl">Notifications BDE</Label>
+				<Switch id="s4" class="Switch" value="false" onChange="switchChange2"/>
+			</View>
+	    	<View class="row">
+				<Label class="labl">Notifications Swapbook</Label>
+				<Switch id="s5" class="Switch" value="false" onChange="switchChange2"/>
+			</View>
+
+	    	<View class="row top_bigger">
+				<View class="row-container-for-center">
+					<ImageView class="link_picto" image="/images/disconnect.png" />
+					<Button class="button logout" id="LogOut">Déconnexion</Button>
+				</View>
+			</View>
+
+	    	<View class="row conditions">
+				<Button class="button conditions" id="Terms">
+					<Label class="labl terms conditions" id="TermsLbl">Lire les conditions générales d'utilisation</Label>
+				</Button>
+			</View>
+			
+	    	<View class="row"/>
+			
+		</ScrollView>
+    	
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

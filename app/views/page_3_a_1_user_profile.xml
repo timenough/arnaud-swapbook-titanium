@@ -1,0 +1,256 @@
+<Alloy>
+	<Collection src="UserTransactions" instance="true" id="transactionsRefreshable"/>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_no_search" id="navBar" customparameter="hideBar" />
+	    	
+    	<View id="modal_search">
+			<View class="modal_search_view_field">
+				<ImageView class="modal_search_photo" image="/images/loupeBlue.png" />
+				<TextField class="modal_search_field" id="the_search_field" bindId="the_search_field" focused="true" hintText="Recherches un établissement..." />
+				<ImageView class="modal_search_close" id="modal_search_close" image="/images/crossBlue.png" />
+			</View>
+		</View>
+			
+		<View id="searchbarhelp">
+			<Label class="line1" id="searchBarHelpLine1">...</Label>
+			<Label class="line2" id="searchBarHelpLine2">...</Label>
+		</View>
+		
+		<ScrollView class="content" id="the_scroll_view">
+	
+			<View id="the_scroll_view_container" layout="horizontal" height="2200" dheight="2200">
+				
+				<View id="banner">
+					<ImageView id="banner_img" image="/images/blank.png" />
+					<View id="banner_overlay" />
+					<View id="banner_go_back_button" touchEnabled="true">
+						<ImageView id="banner_go_back_button_picto" image="/images/back.png" />
+					</View>
+					<ImageView id="banner_go_to_button_picto" visible="false" image="/images/profileAdduser_garcon.png" just_affect_visibility="yes" touchEnabled="true" />
+					<ImageView id="banner_img_user" image="/images/blank.png" />
+					<View id="banner_img_user_overlay" touchEnabled="true">
+						<ImageView id="banner_img_user_overlay_picto" image="/images/cameraSwitchOn.png" />
+					</View>
+					<Label id="banner_uname">...</Label>
+					<Label id="banner_ucurrent">...</Label>
+					<Label id="banner_upath">...</Label>
+				</View>
+				
+				<View id="only_in_display_fields" class="row-parent" height="136" dheight="136">
+			    	<View class="row top_bigger">
+			    		<View class="row-container-for-center request-mutual" id="TotalMutalFriendsCont">
+							<ImageView class="mutal_friends_picto" id="TotalMutalFriendsPicto" image="/images/profileMutalfriends.png" />
+							<Label class="labl labl-lefted" id="TotalMutalFriends"></Label>
+						</View>
+					</View>
+					<View class="row_separator" />
+			    	<View class="row" id="friendStatusRow1">
+						<Label class="labl labl-centered" id="RequestOrNot"></Label>
+					</View>
+			    	<View class="row row-parent" id="friendStatusRow2" visible="false">
+			    		<View class="row row50percent">
+			    			<View class="row-container-for-center request-accept" touchEnabled="true">
+								<Button class="labl" id="AcceptRequest" touchEnabled="true">ACCEPTER</Button>
+								<ImageView class="accept_or_decline_picto" id="AcceptRequest" image="/images/validate.png" touchEnabled="true" />
+							</View>
+						</View>
+			    		<View class="row row50percent">
+			    			<View class="row-container-for-center request-decline" touchEnabled="true">
+								<Button class="labl" id="DeclineRequest" touchEnabled="true">REFUSER</Button>
+								<ImageView class="accept_or_decline_picto" id="DeclineRequest" image="/images/crossBlue.png" touchEnabled="true" />
+							</View>
+						</View>
+					</View>
+					<View class="row_separator" id="only_in_display_fields_separator" />
+				</View>
+				
+				<View id="only_in_edition_fields" visible="false" class="row-parent" height="834" dheight="834">
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Nom d'utilisateur Swapbook</Label>
+						<View class="view-field">
+							<TextField class="field" id="userPseudo" hintText="Ton pseudonyme pour te connecter" maxLength="200" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Adresse email de connexion</Label>
+						<View class="view-field">
+							<TextField class="field" id="userEmail" hintText="Ton adresse email pour te connecter" maxLength="255" />
+						</View>
+		    		</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-pass">
+							<Label class="labl-field">Mot de passe</Label>
+							<View class="view-field" id="passField">
+								<TextField class="field" id="userPass" passwordMask="true" maxLength="255" />
+							</View>
+						</View>
+						<View class="view-field-c-simple view-field-tel">
+							<Label class="labl-field text-onright">N° de téléphone</Label>
+							<View class="view-field" id="phoneField">
+								<TextField class="field field-onright" id="userPhone" hintText="Portable ou fixe" maxLength="18" />
+							</View>
+						</View>
+					</View>
+					<View class="view-field-c-simple view-field-c-simple-first">
+						<Label class="labl-field">Nom(s) de famille</Label>
+						<View class="view-field">
+							<TextField class="field" id="userNom" hintText="Ton ou tes nom(s) de famille" maxLength="50" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple view-field-c-simple-first">
+						<Label class="labl-field">Prénom(s)</Label>
+						<View class="view-field">
+							<TextField class="field" id="userPrenom" hintText="Ton ou tes prénom(s)" maxLength="50" />
+						</View>
+		    		</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-naissance">
+							<Label class="labl-field">Date de naissance</Label>
+							<View class="view-field" id="naissanceField">
+								<TextField class="field" id="userDateNaissance" hintText="DD/MM/AAAA" maxLength="10" />
+								<ImageView class="editable_arrow_picto_date" image="/images/calendar.png" touchEnabled="false" />
+							</View>
+						</View>
+						<View class="view-field-c-simple view-field-sexe">
+							<Label class="labl-field text-onright">Civilité</Label>
+							<View class="view-field" id="civiliteField">
+								<TextField class="field field-onright" id="userCivilite" hintText="M, Mme, Mlle" editable="false" 
+									cvalue="-1" 
+									selectType="SHORT" 
+									selectBigLineOne="Ta civilité" 
+									selectBIGParentItem="" 
+									selectBIGChildItem="" 
+									onClick="Alloy.Globals.showSelect_BIG_or_SHORT" />
+								<ImageView class="editable_arrow_picto_right" image="/images/formTextfield_Arrow.png" touchEnabled="false" />
+							</View>
+						</View>
+					</View>
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Adresse (rue et voie)</Label>
+						<View class="view-field"  id="addresseField">
+							<TextField class="field" id="userAdresse" hintText="Lieu de résidence" maxLength="50" />
+						</View>
+		    		</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-cp">
+							<Label class="labl-field">Code Postal</Label>
+							<View class="view-field" id="cpField">
+								<TextField class="field" id="userCP" hintText="XXXXX" maxLength="5" />
+							</View>
+						</View>
+						<View class="view-field-c-simple view-field-ville">
+							<Label class="labl-field text-onright">Ville</Label>
+							<View class="view-field" id="villeField">
+								<TextField class="field field-onright" id="userVille" hintText="Ta ville" maxLength="160" />
+							</View>
+						</View>
+					</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-cp">
+							<Label class="labl-field">ID document d'identité</Label>
+							<View class="view-field" id="idField">
+								<TextField class="field" id="userID" hintText="Ton pays" maxLength="255" />
+							</View>
+						</View>
+						<View class="view-field-c-simple view-field-ville">
+							<Label class="labl-field text-onright">Pays de résidence</Label>
+							<View class="view-field" id="paysField">
+								<TextField class="field field-onright" id="userPays" hintText="D'un document d'indentité" maxLength="50" />
+							</View>
+						</View>
+					</View>
+					<View class="row_separator top_bigger_separator" />
+				</View>
+				
+				<View class="row-parent" height="Ti.UI.FILL">
+					<View class="view-field-c-simple row-parent large-85 large-85-top-4" id="conseilEtudiant" height="124" dheight="124" >
+						<Label class="labl-field">Présentation, conseil étudiant</Label>
+						<View class="view-field view-field-description" id="conseilField">
+							<TextArea class="field field-description" id="userConseil" focused="false" hintText="400 caractères max." maxLength="400" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple no-limit large-85 top_shorter" id="parcoursContainer" height="20" dheight="20">
+						<Label class="labl-field" id="parcoursLabl">Parcours</Label>
+						<View class="view-field no-limit">
+							<View class="pathways" id="parcoursEdition" layout="vertical">
+								<!-- 
+								<View class="pathways_row">
+									<ImageView class="editable_pen_picto" image="/images/writing.png" onClick="attach_and_open_a_sub_Form" Ref="path_4587"  />
+									<View class="pathways_main_col pathways_main_col_common_vertical_1 left_side_container">
+										<ImageView class="left_side_picto" image="/images/profilePath_sco.png" />
+									</View>
+									<View class="pathways_center_separator" />
+									<View class="pathways_main_col pathways_main_col_common_vertical_1 center_container">
+										<Label class="pathways-line1" text="Dauphine 2014/2015 - Master Innovation - Parcours Digital" />
+										<View class="pathways-line2">
+											<Label class="pathways-line2-labl" text="mai 2016 - juillet 2016" />
+										</View>
+									</View>
+								</View>
+								-->
+							</View>
+						</View>
+		    		</View>
+					<View class="row-button-centered row-button-centered-low-margin" id="NewPathRow">
+						<Button class="Tbutton" id="NewPath" onClick="attach_and_open_a_sub_Form" Ref="newval" NewButton="true">Nouvel élément</Button>
+		    		</View>
+					<View class="view-field-c-simple" id="choosenPath" height="70" dheight="70" >
+						<Label class="labl-field">Parcours retenu et affiché</Label>
+						<View class="view-field" id="posteField">
+							<TextField class="field" id="userParcoursRetenu" hintText="Choisis ton parcours le plus marquant" 
+								onClick="pick_the_favorite_pathway" 
+								cvalue="path_0_null" 
+								touchEnabled="true" 
+								editable="false" 
+								selectType="BIG" 
+								selectCase="creation" 
+								selectBigLineOne="Ton parcours actuel à mettre en avant" 
+								selectBigLineTwo="et qui sera affiché sur Swapbook" />
+							<ImageView class="editable_arrow_picto" image="/images/formTextfield_Arrow.png" touchEnabled="false" />
+						</View>
+					</View>
+					<View class="row_separator top_bigger_separator" id="choosenPathseparator" />
+					<View class="view-field-c-simple" id="tagsInitial" height="70" dheight="70">
+						<Label class="labl-field" id="NoInterests">Centres d'intérêt</Label>
+		    			<View layout="horizontal">
+							<View class="view-field view-field-tag view-field-tag-first" id="Container_A">
+								<TextField class="field field-tag" id="tag1" maxLength="100" />
+							</View>
+							<View class="view-field view-field-tag" id="Container_B">
+								<TextField class="field field-tag" id="tag2" maxLength="100" />
+							</View>
+							<ImageView class="plus" id="addTags" image="/images/plusBlue.png" />
+						</View>
+		    		</View>
+					<View id="DivTagsContainer" height="0" dheight="0" layout="vertical" />
+					<View id="sellerOtherBooks" class="view-field-c-simple" height="270" dheight="270">
+						<Label class="labl-field" id="NoBook">Livres en vente</Label>
+						<ScrollView id="otherBooks" class="other_books_container">
+							<!--
+							<View class="oneOtherBook oneOtherBook-first">
+								<View class="list_img_obook_container">
+									<ImageView class="book_img" image="https://unsplash.it/349/501" />
+								</View>
+								<Label class="other_book_price" text="13€" />
+								<Label class="other_book_state" text="Bon état" />
+								<View id="buyOtherBookButton" class="buy_other_button">
+									<ImageView class="buy_other_button_img" image="/images/cart.png" visible="true" />
+								</View>
+							</View>
+						-->
+						</ScrollView>
+					</View>
+					<Button class="Tbutton Tbutton-margin" id="Sell">Ajouter un livre</Button>
+					<Button class="Rbutton" id="Update">METTRE À JOUR</Button>
+					<View class="row top_bigger" height="50" />
+				</View>
+				
+			</View>
+				
+		</ScrollView>
+				
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

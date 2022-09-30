@@ -1,0 +1,66 @@
+<Alloy>
+	<Collection src="UserTransactions" instance="true" id="transactionsRefreshable"/>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_no_search" id="navBar" />
+	
+	    <View class="container">
+		
+	    	<View id="tabBarTop">
+				<View class="tabSeparator" />
+		    	<View class="button selected" id="gotoSales" fortab="SALES" touchEnabled="true">
+					<ImageView class="picto" image="/images/longarrowUp.png" id="gotoSalesPicto" />
+					<Label class="labl labl-btn labl-btn-selected" id="gotoSalesLabel">0€</Label>
+				</View>
+		    	<View class="button" id="gotoBuys" fortab="BUYS" touchEnabled="true">
+					<ImageView class="picto" image="/images/longarrowDownBlue.png" id="gotoBuysPicto" />
+					<Label class="labl labl-btn" id="gotoBuysLabel">0€</Label>
+				</View>
+		    	<View class="button" id="gotoCredits" fortab="CREDITS" touchEnabled="true">
+					<ImageView class="picto" image="/images/creditsBlue.png" id="gotoCreditsPicto" />
+					<Label class="labl labl-btn" id="gotoCreditsLabel">0€</Label>
+				</View>
+			</View>
+			
+			<View class="content" id="the_scroll_view">
+	    	
+				<Widget id="refreshingWIDGET" src="nl.fokkezb.pullToRefresh" onRelease="prePopulateTransactionsRefresher">
+					
+					<TableView class="under-content" id="the_table_view" dataCollection="$.transactionsRefreshable">
+		  		
+			    		<HeaderView class="the_table_view_header">
+				    		<View class="row" id="the_table_view_header">
+								<Label class="labl bold" id="the_table_view_title">MES VENTES</Label>
+					    		<View id="creditRow" visible="false" height="0">
+						    		<View class="rowrow">
+										<Label class="labl labl-credits labl-bold" id="how_much_user_have">Tu disposes de 150€ de crédit.</Label>
+						    		</View>
+						    		<View class="rowrow" id="credits_row_1">
+										<Label class="labl labl-credits">Profites-en pour acheter de nouveaux livres</Label>
+						    		</View>
+							    	<View class="rowrow" id="credits_row_2">
+										<Button class="Rbutton" id="gotoHomepage">Voir tous les livres</Button>
+									</View>
+									<View class="row separator top_bigger" />
+						    		<View class="rowrow top_bigger" id="credits_row_3">
+										<Label class="labl labl-credits">Sinon tu peux nous demander à les créditer sur ton compte bancaire</Label>
+						    		</View>
+							    	<View class="rowrow" id="credits_row_4">
+										<Button class="Rbutton" id="askCreditsBankTransfer">Créditer</Button>
+									</View>	
+					    		</View>
+				    		</View>
+			    		</HeaderView>
+					
+					</TableView>
+		    	 
+		    	 </Widget>
+				
+			</View>
+    	
+		</View>
+				
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

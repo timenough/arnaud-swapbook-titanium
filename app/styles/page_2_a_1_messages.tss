@@ -1,0 +1,115 @@
+".window":{
+	left: 0,
+	top: 0,
+	width:'100%',
+	backgroundColor: "white",
+	orientationModes: [
+        Ti.UI.LANDSCAPE_LEFT,
+        Ti.UI.LANDSCAPE_RIGHT,
+        Ti.UI.PORTRAIT,
+        Ti.UI.UPSIDE_PORTRAIT
+    ]
+},
+".window[platform=android]": {
+	exitOnClose: true
+},
+
+"#main": {
+	left: 0,
+	width:'100%',
+	height: Ti.UI.FILL,
+	layout: 'vertical'
+},
+	
+	"#tabBarTop": {
+		top: 80,
+		width:'100%',
+		backgroundColor: Alloy.Globals.BLUE_COLOR,
+		height: 40,
+		layout: 'horizontal'
+	},
+
+		".button":{
+			height: "100%",
+			width:"49%",
+			color:Alloy.Globals.BLUE_COLOR_v2,
+			borderRadius: 0,
+			backgroundColor: Alloy.Globals.BLUE_COLOR,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+			font:{
+				fontSize: 26,
+				fontFamily:"Wask_New_Bold"
+			},
+		},
+		".button[platform=ios]":{
+			font:{
+				fontSize: 22,
+				fontFamily:"WaskNew-Bold"
+			},
+		},
+		
+		".selected":{
+			color:"#ffffff",
+		},
+
+		".tabSeparator": {
+			width:1,
+			height: '84%',
+			backgroundColor: 'white'
+		},
+	
+	"#empty":{
+		visible: false,
+		top: 0,
+		left: 0,
+		zIndex: 1000,
+		height: 0,
+		width:Ti.UI.FILL,
+		color:"gray",
+		backgroundColor: "transparent",
+		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+		font:{
+			fontSize: 32,
+			fontFamily:"Wask_New"
+		},
+	},
+	"#empty[platform=ios]":{
+		font:{
+			fontSize: 28,
+			fontFamily:"WaskNew"
+		},
+	},
+	
+	"#the_table_view":{
+		top: 0,
+		left: Alloy.Globals.backdropImageLeft,
+		width:'100%',
+		height: Ti.UI.FILL,
+		zIndex: 3,
+		backgroundColor:"#ffffff",
+		pullBackgroundColor: '#ffffff',
+		showVerticalScrollIndicator: false,
+		separatorColor:'#ffffff',
+		separatorHeight:'1dp'
+	},
+	"#the_table_view[platform=android]":{
+		top:68,
+	},
+	"#the_table_view[platform=ios]": {
+		tableSeparatorInsets: {
+			left: 0,
+			right: 0,
+			top: 0,
+			bottom: 0
+		},
+		separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_SINGLE_LINE,
+		selectionStyle : Ti.UI.iOS.TableViewCellSelectionStyle.NONE,
+		separatorHeight:'2dp'
+	},
+	
+"#tabBar": {
+	backgroundColor: "transparent",
+	zindex: 1000
+}

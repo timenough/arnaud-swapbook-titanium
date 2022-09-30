@@ -1,0 +1,18 @@
+<Alloy>
+	<View id="bottomBar" zIndex="400">
+    	<View class="view-button" id="button2">
+			  <ImageView id="button2_img" class="button-picto TAG" autoStyle="true" />
+        </View> 
+		<View class="top-border" />
+	    <View id="insideBar_2" class="tabBar">
+	    	<View class="view-button" id="button1" touchEnabled="true" onClick="Alloy.Globals.app.openController" controller="page_2_a_1_messages_LANDSCAPE">
+				  <ImageView id="button1_img" class="button-picto BAG" autoStyle="true" />
+	        </View>
+	        <Label class="view-badge" id="button1badge" cumul="9999999" visible="false" touchEnabled="true" onClick="Alloy.Globals.app.openController" controller="page_2_a_1_messages_LANDSCAPE">0</Label>
+	    	<View class="view-button" id="button3" touchEnabled="true" onClick="Alloy.Globals.app.openController" controller="page_2_b_1_network">
+				  <ImageView id="button3_img" class="button-picto CHAT" autoStyle="true" />
+	        </View> 
+	        <Label class="view-badge" id="button3badge" cumul="0" visible="false" touchEnabled="true" onClick="Alloy.Globals.app.openController" controller="page_2_b_1_network">0</Label>
+	    </View>
+	   </View>
+</Alloy>

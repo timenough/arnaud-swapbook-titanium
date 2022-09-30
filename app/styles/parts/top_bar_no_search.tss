@@ -1,0 +1,102 @@
+"#topbar": {
+	top: 0,
+	left: 0,
+	width: Ti.UI.FILL,
+	height: 82
+},
+"#topbar[platform=android]":{
+	height: 70,
+},
+
+".navBar":{
+	borderWidth:1,
+	left:-5,
+	right:-5,
+	top:-2,
+    index:10,
+    height: 82,
+	backgroundColor:Alloy.Globals.BLUE_COLOR,
+	borderColor:Alloy.Globals.BLUE_COLOR
+},
+".navBar[platform=android]":{
+	height: 70,
+},
+
+"#menubutton":{
+	top: 38,
+	left: '6%',
+	width: 22,
+	height: 22,
+	backgroundColor: 'transparent',
+	touchEnabled:true,
+	selectedColor: '#fff',
+	tintColor: '#fff',
+},
+
+"#menubutton[platform=ios]":{
+	image: '/images/hamburger.png',
+},
+"#menubutton[platform=android]":{
+	top: 20,
+	left: '7%',
+	width: 34,
+	height: 34,
+	backgroundImage: '/images/hamburger.png',
+},
+
+"#backbutton":{
+	visible: false,
+	top: 38,
+	left: '6%',
+	width: 26,
+	height: 26,
+	backgroundColor: 'transparent',
+	touchEnabled:true,
+	selectedColor: '#fff',
+	tintColor: '#fff',
+},
+"#backbutton[platform=ios]":{
+	image: '/images/back.png',
+},
+"#backbutton[platform=android]":{
+	top: 20,
+	left: '7%',
+	width: 34,
+	height: 34,
+	backgroundImage: '/images/back.png',
+},
+
+"#searchbutton": {
+	top: 38,
+	right: '5%',
+	width: 24,
+	height: 24,
+	backgroundColor: 'transparent',
+	tintColor: '#ffffff'
+},
+"#searchbutton[platform=ios]":{
+	image: '/images/loupe.png',
+},
+"#searchbutton[platform=android]":{
+	top: 20,
+	width: 34,
+	height: 34,
+	backgroundImage: '/images/loupe.png',
+},
+
+".label-text": {
+	top: 36,
+	viewShadowRadius: 5,
+	color: '#ffffff',
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 28,
+		fontFamily: 'Wask_New_Bold'
+	},
+},
+".label-text[platform=ios]": {
+	font: {
+		fontSize: 28,
+		fontFamily: 'WaskNew-Bold'
+	}
+},

@@ -1,0 +1,228 @@
+<Alloy>
+	<Collection src="UserTransactions" instance="true" id="transactionsRefreshable"/>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+		<Require src="parts/top_bar_default" id="navBar" customparameter="vente" />
+	    	
+    	<View id="modal_search">
+			<View class="modal_search_view_field">
+				<ImageView class="modal_search_photo" image="/images/loupeBlue.png" />
+				<TextField class="modal_search_field" id="the_search_field" bindId="the_search_field" focused="true" hintText="Rechercher un livre, un auteur, une catégorie..." />
+				<ImageView class="modal_search_close" id="modal_search_close" image="/images/crossBlue.png" />
+			</View>
+		</View>
+	
+	    <View class="container">
+		
+	    	<View id="tabBarTop" visible="false" height="0">
+				<View class="tabSeparator" />
+		    	<View class="button" id="gotoStep1TAB" touchEnabled="true">
+					<Label class="labl labl-btn-step current-step" id="step1Bar">1</Label>
+					<View class="labl-btn-view">
+						<Label class="labl labl-btn" id="step1Title">ÉTAT DU LIVRE</Label>
+						<ImageView class="picto" image="/images/validateBlue.png" id="step1ValidPicto" visible="false" />
+					</View>
+				</View>
+		    	<View class="button" id="gotoStep2TAB" touchEnabled="true">
+					<Label class="labl labl-btn-step" id="step2Bar">2</Label>
+					<View class="labl-btn-view">
+						<Label class="labl labl-btn" id="step2Title">PRIX DE VENTE</Label>
+						<ImageView class="picto" image="/images/validateBlue.png" id="step2ValidPicto" visible="false" />
+					</View>
+				</View>
+		    	<View class="button" id="gotoStep3TAB" touchEnabled="true">
+					<Label class="labl labl-btn-step" id="step3Bar">3</Label>
+					<View class="labl-btn-view">
+						<Label class="labl labl-btn" id="step3Title">VALIDATION</Label>
+						<ImageView class="picto" image="/images/validateBlue.png" id="step3ValidPicto" visible="false" />
+					</View>
+				</View>
+			</View>
+			
+			<ScrollView class="content" id="the_scroll_view">
+	
+		    	<View class="step step0" visible="false" id="step0Div" dheight="500" height="500">
+		    		
+		    		<View class="row top_bigger">
+			    		<View class="row-container-for-center">
+							<View class="view-field scan" touchEnabled="true" id="ScanBook">
+								<ImageView class="scan-picto" image="/images/cameraRed.png" />
+								<Label class="labl labl-red field-space ">Scannes le code barre de ton livre</Label>
+							</View>
+						</View>
+		    		</View>
+					<Label class="labl bold super-bold top_bigger">OU</Label>
+		    		<View class="row top_bigger">
+						<Label class="labl bold">INSÈRES LE CODE ISBN DE TON LIVRE</Label>
+		    		</View>
+					<View class="view-field-c-simple">
+						<View class="view-field">
+							<TextField class="field" id="ISBN" hintText="ISBN (souvent à côté du code barre)" maxLength="30" />
+						</View>
+		    		</View>
+			    	<View class="row">
+						<Button class="Rbutton" id="gotoStep0">VALIDER</Button>
+					</View>
+					
+				</View>
+	
+		    	<View class="step step1" visible="false" height="0" id="step1Div" dheight="540">
+					
+					<View class="row" />
+		    		<View class="row top_bigger">
+						<Label class="labl bold bold-bigger">ÉTAT DU LIVRE</Label>
+		    		</View>
+			    	<View class="row top_bigger">
+						<Button class="Rbutton button-smaller" id="neuf">Comme neuf</Button>
+					</View>
+			    	<View class="row top_bigger_little">
+						<Button class="Rbutton button-smaller" id="tres_bon">Très bon</Button>
+					</View>
+			    	<View class="row top_bigger_little">
+						<Button class="Rbutton button-smaller" id="fatigue">Un peu fatigué</Button>
+					</View>
+			    	<View class="row top_bigger_little">
+						<Button class="Rbutton button-smaller" id="abime">Très abimé</Button>
+					</View>
+			    	<View class="row top_bigger">
+						<Button class="labl bold bold-bigger bold-black" id="gotoStep1" bypass="true">NEXT</Button>
+					</View>
+						
+				</View>
+	
+		    	<View class="step step2" top="0" visible="false" height="0" id="step2Div" dheight="520" height="0">
+					
+					<View class="row" />
+		    		<View class="row top_bigger">
+						<Label class="labl bold">TON LIVRE SE VEND SUR SWAPBOOK POUR</Label>
+		    		</View>
+					<Label class="labl top_bigger bold super-bold super-bold-price" id="Price">0.00€</Label>
+		    		<View class="row top_bigger">
+						<Label class="labl bold">ALORS QU'AILLEURS TU LE VENDRAIS</Label>
+		    		</View>
+					<View class="row" layout="absolute">
+		    			<View width="210" layout="horizontal">
+							<ImageView class="reseller_img" image="/images/resellerAmazon.png" />
+							<Label id="amazonPrice" class="labl reseller_price" />
+		    			</View>
+		    		</View>
+			    	<View class="row top_bigger">
+						<Button class="Rbutton Vbutton button-longer" id="gotoStep2b" bypass="true" acceptOffer="true">J'ACCEPTE VOTRE OFFRE</Button>
+					</View>
+					<Label class="labl terms" id="gotoStep2" bypass="true">ou je fixe mon propre prix</Label>
+					
+				</View>
+	
+		    	<View class="step step3" top="0" visible="false" height="0" id="step3Div" dheight="1360">
+		    		
+					<View class="row" />
+		    		<View class="row top_bigger">
+						<Label class="labl bold" id="step3DivTitle">VÉRIFIES TES INFORMATIONS</Label>
+		    		</View>
+					<View class="list_img_book_container top_bigger_little">
+						<ImageView id="bookImg" class="book_img" cvalue="" />
+						<ImageView id="changePhoto" class="book_photo" image="/images/messengerPhoto.png" />
+					</View>
+		    		<View class="row top_shorter">
+						<Label class="labl-field labl-photo" id="changePhotoLbl">Remplacer la couverture</Label>
+					</View>
+					<View class="view-field-c-simple view-field-c-simple-first">
+						<Label class="labl-field">Titre</Label>
+						<View class="view-field">
+							<TextField class="field" id="bookTitle" hintText="Titre du livre" maxLength="55" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Auteur</Label>
+						<View class="view-field">
+							<TextField class="field" id="bookAuthor" hintText="Auteur(s) du livre" maxLength="50" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Editeur</Label>
+						<View class="view-field">
+							<TextField class="field" id="bookEditor" hintText="Société d'édition du livre" maxLength="50" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Edition</Label>
+						<View class="view-field">
+							<TextField class="field" id="bookEdition" hintText="Édition du livre" maxLength="50" />
+						</View>
+		    		</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-state">
+							<Label class="labl-field">État</Label>
+							<View class="view-field">
+								<TextField class="field" id="bookState" cvalue="" editable="false" />
+								<OptionDialog class="field" id="bookStateOptions" title="État du livre" visible="false" height="0">
+						            <Options>
+						                <Option>Comme neuf</Option>
+						                <Option>Très bon</Option>
+						                <Option>Un peu fatigué</Option>
+						                <Option>Très abimé</Option>
+						                <Option>Annuler</Option>
+						            </Options>
+        						</OptionDialog>
+							</View>
+						</View>
+						<View class="view-field-c-simple view-field-price">
+							<Label class="labl-field text-onright">Prix désiré en €</Label>
+							<View class="view-field" id="priceField">
+								<TextField class="field field-onright" id="bookPrice" hintText="0.00" maxLength="8" />
+							</View>
+						</View>
+					</View>
+					<View class="view-field-c-double">
+						<View class="view-field-c-simple view-field-price-port">
+							<Label class="labl-field">Frais de port en €</Label>
+							<View layout="horizontal" width="100%">
+								<View class="view-field view-field-port">
+									<TextField class="field" id="bookPricePort" hintText="0.00" maxLength="8" />
+								</View>
+								<Label class="labl-field labl-field-help">à payer en plus par l'acheteur, si envoi postal.</Label>
+			    			</View>
+			    		</View>
+					</View>
+					<View class="view-field-c-simple view-field-c-simple-description">
+						<Label class="labl-field">Description/Synopsis</Label>
+						<View class="view-field view-field-description">
+							<TextArea class="field field-description" id="bookDesc" focused="false" hintText="600 caractères max." maxLength="600" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Avis personnel</Label>
+						<View class="view-field">
+							<TextField class="field" id="bookAdvice" hintText="Feedback en 250 caractères max." maxLength="200" />
+						</View>
+		    		</View>
+					<View class="view-field-c-simple">
+						<Label class="labl-field">Tags</Label>
+		    			<View layout="horizontal">
+							<View class="view-field view-field-tag view-field-tag-first" id="Container_A">
+								<TextField class="field field-tag" id="tag1" maxLength="100" />
+							</View>
+							<View class="view-field view-field-tag" id="Container_B">
+								<TextField class="field field-tag" id="tag2" maxLength="100" />
+							</View>
+							<ImageView class="plus" id="addTags" image="/images/plusBlue.png" />
+						</View>
+		    		</View>
+					<View id="step3DivTagsContainer" height="0" layout="vertical" />
+			    	<View class="row top_bigger">
+						<Button class="Rbutton Vbutton" id="Sell">VENDRE</Button>
+					</View>
+			    	<View class="row top_bigger" id="couldPause" visible="false" height="0">
+						<Button class="Rbutton" id="Pause" todo="paused" todo_book_id="0">SUSPENDRE</Button>
+					</View>
+		    		
+				</View>
+				
+			</ScrollView>
+    	
+		</View>
+				
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

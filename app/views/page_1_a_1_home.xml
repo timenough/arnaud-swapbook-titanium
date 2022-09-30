@@ -1,0 +1,38 @@
+<Alloy>
+	<Collection src="BookSales" instance="true" id="salesRefreshable"/>
+    <Window id="window" class="window" navBarHidden ="true">
+    	
+        <Require src="parts/lateral_menu" id="SlideMenu"  customparameter="0" />
+		<Require src="parts/top_bar_default" id="navBar" customparameter="achat" />
+    	
+    	<View id="modal_search">
+			<View class="view-field modal_search_view_field">
+				<ImageView class="modal_search_photo" image="/images/loupeBlue.png" />
+				<TextField class="field modal_search_field" id="the_search_field" bindId="the_search_field" focused="true" hintText="Rechercher un livre, un auteur, une catégorie..." />
+				<ImageView class="modal_search_close" id="modal_search_close" image="/images/crossBlue.png" />
+			</View>
+		</View>
+    	
+	    <View class="contain-content" id="main">
+	    	
+			<TableView id="the_table_view">
+				
+  				<Widget id="infinitingWIDGET" src="nl.fokkezb.infiniteScroll" onEnd="Alloy.Globals.loadReloadSearchBooks_loader" msgTap="Charger plus de livres" msgDone="Tous les livres ont été chargés" msgError="Charger les livres à nouveau"   />
+  		
+	    		<HeaderView>
+			    	<View id="banner">
+						<ImageView id="banner_img" image="/images/header_page_1_a_1_home.jpg" />
+						<View id="banner_overlay" />
+						<Label id="banner_title">Bienvenue !</Label>
+						<Label id="banner_subtitle">Voici les derniers livres en vente :</Label>
+			    	</View>
+	    		</HeaderView>
+
+	    	 </TableView>
+	     	
+		</View>
+
+		<Require src="parts/bottom_bar" id="tabBar" customparameter="button2" />
+		
+	</Window>
+</Alloy>

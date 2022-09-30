@@ -1,0 +1,20 @@
+<Alloy>
+	<NavigationWindow id="navigationDefault" module="xp.ui">
+		<Window class="container" id="window" navBarHidden="true">
+			
+			<Require src="parts/alert_popin" id="AlertDialog" />
+	
+			<ImageView class="containerBackground" image="/images/bg.jpg" />
+
+			<ImageView class="logo-swapbook" image="/images/spinBlank.png" />
+			<Label class="label-swapbook" id="title">swapbook</Label>
+			
+			<TextField class="field-username" id="bUsername" xtitle="Nom d'utilisateur ou email" />
+			<TextField class="field-password" id="bPassword" xtitle="Mot de passe" />
+			<Button class="button-sign signin" id="signinButton" touchEnabled="true" titleA="Se connecter" titleB="Annuler">Se connecter</Button>
+			<Button class="button-sign signup" id="signupButton" touchEnabled="true">Créer un compte</Button>
+			<Label class="button-sign passloss" id="PassLoss" touchEnabled="true" titleA="Mot de passe oublié ?" titleB="Envoyer le mot de passe par email" />
+			
+		</Window>
+	</NavigationWindow>
+</Alloy>
